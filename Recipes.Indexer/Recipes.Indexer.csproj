@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>dotnet-Recipes.Indexator-E12F4CCA-3B83-4B0A-B9DF-F7FB65710219</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MassTransit.RabbitMQ" Version="8.0.0-develop.394" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Core.Settings\Core.Settings.csproj" />
+      <ProjectReference Include="..\Entities\Entities.csproj" />
+      <ProjectReference Include="..\Core.RabbitMQ\Core.RabbitMQ.csproj" />
+    </ItemGroup>
+</Project>
