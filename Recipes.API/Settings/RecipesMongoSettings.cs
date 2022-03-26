@@ -4,7 +4,7 @@ namespace Recipes.API.Settings;
 
 public class RecipesMongoSettings: IMongoSettings
 {
-    public string ConnectionString { get; set; }
-    public string Database { get; set; }
-    public string CollectionName { get; set; }
+    public string ConnectionString { get; set; } = null!;
+    public string Database { get; set; } = null!;
+    public string RecipesCollectionName { get; set; } = null!;
 }

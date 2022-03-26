@@ -1,21 +1,16 @@
-﻿using Core.MongoDb;
-using Entities;
-using FastEndpoints;
-using Microsoft.Extensions.Options;
-using MongoDB.Driver;
+﻿using FastEndpoints;
 using Recipes.API.Models.CreateRecipe;
-using Recipes.API.Settings;
+using Recipes.API.Services;
 
 namespace Recipes.API.Endpoints;
 
 public class CreateRecipeEndpoint: Endpoint<CreateRecipeRequest, CreateRecipeResponse>
 {
-    private readonly IMongoCollection<Recipe> _collection;
+    private readonly CreateRecipeService _createRecipeService;
     
-    public CreateRecipeEndpoint(IMongoFactory mongoFactory, RecipesMongoSettings mongoSettings)
+    public CreateRecipeEndpoint(CreateRecipeService createRecipeService)
     {
-        _collection = mongoFactory.GetDataBase(mongoSettings.ConnectionString, mongoSettings.Database)
-            .GetCollection<Recipe>(mongoSettings.CollectionName);
+        _createRecipeService = createRecipeService;
     }
     
     public override void Configure()
@@ -27,16 +22,11 @@ public class CreateRecipeEndpoint: Endpoint<CreateRecipeRequest, CreateRecipeRes
 
     public override async Task HandleAsync(CreateRecipeRequest req, CancellationToken ct)
     {
-        var recipe = new Recipe
-        {
-            Id = Guid.NewGuid().ToString()
-        };
-        
-        await _collection.InsertOneAsync(recipe, cancellationToken: ct);
+        var recipeId = await _createRecipeService.CreateService(req, "");
 
         await SendAsync(new CreateRecipeResponse
         {   
-            Id = recipe.Id
+            Id = recipeId
         }, cancellation: ct);
     }
 }

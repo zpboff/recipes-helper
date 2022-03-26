@@ -14,6 +14,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.MongoDb", "Core.MongoD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{CE9DBBA1-DC7F-46AC-8606-DE055C064864}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{A9C0CFB6-5F07-494D-9D86-D30A6DF2A225}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth", "Auth\Auth.csproj", "{A874D48A-73DE-4280-A0B4-749CD8A1054C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +48,10 @@ Global
 		{0D8A6127-1CD5-4F91-98EC-6F5D10257F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D8A6127-1CD5-4F91-98EC-6F5D10257F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D8A6127-1CD5-4F91-98EC-6F5D10257F01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A874D48A-73DE-4280-A0B4-749CD8A1054C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A874D48A-73DE-4280-A0B4-749CD8A1054C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A874D48A-73DE-4280-A0B4-749CD8A1054C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A874D48A-73DE-4280-A0B4-749CD8A1054C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4E9C48DF-BBE3-4FF4-B208-A48B42AA1242} = {CE9DBBA1-DC7F-46AC-8606-DE055C064864}
