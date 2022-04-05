@@ -1,32 +1,39 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using Auth.Models;
 using Auth.Settings;
 using Core.MongoDb;
 using IdentityServer4.Models;
 using IdentityServer4.Stores;
+using Mapster;
 using MongoDB.Driver;
 
 namespace Auth.Stores;
 
 public class GrantsStore : IPersistedGrantStore
 {
-    private readonly IMongoCollection<PersistedGrant> _grantsCollection;
-
+    private readonly IMongoCollection<PersistedGrantEntity> _grantsCollection;
 
     public GrantsStore(IMongoFactory mongoFactory, AuthMongoSettings settings)
     {
         _grantsCollection = mongoFactory.GetDataBase(settings.ConnectionString, settings.Database)
-            .GetCollection<PersistedGrant>(settings.GrantsCollectionName);
+            .GetCollection<PersistedGrantEntity>(settings.GrantsCollectionName);
     }
 
     public async Task StoreAsync(PersistedGrant grant)
     {
-        await _grantsCollection.InsertOneAsync(grant);
+        var grantEntity = grant.Adapt<PersistedGrantEntity>();
+        grantEntity.Id = Guid.NewGuid().ToString();
+        
+        await _grantsCollection.InsertOneAsync(grantEntity);
     }
 
-    public Task<PersistedGrant> GetAsync(string key)
+    public async Task<PersistedGrant> GetAsync(string key)
     {
-        return _grantsCollection.Find(GetKeyFilter(key)).FirstAsync();
+        var grantEntity = await _grantsCollection.Find(GetKeyFilter(key)).FirstAsync();
+
+        return grantEntity.Adapt<PersistedGrant>();
     }
 
     public async Task<IEnumerable<PersistedGrant>> GetAllAsync(PersistedGrantFilter filter)
@@ -44,18 +51,18 @@ public class GrantsStore : IPersistedGrantStore
         return _grantsCollection.DeleteManyAsync(GetComplexFilter(filter));
     }
     
-    private FilterDefinition<PersistedGrant> GetKeyFilter(string key)
+    private FilterDefinition<PersistedGrantEntity> GetKeyFilter(string key)
     {
-        return Builders<PersistedGrant>.Filter.Eq(g => g.Key, key);
+        return Builders<PersistedGrantEntity>.Filter.Eq(g => g.Key, key);
     }
     
-    private FilterDefinition<PersistedGrant> GetComplexFilter(PersistedGrantFilter filter)
+    private FilterDefinition<PersistedGrantEntity> GetComplexFilter(PersistedGrantFilter filter)
     {
-        return Builders<PersistedGrant>.Filter.And(
-            Builders<PersistedGrant>.Filter.Eq(g => g.Type, filter.Type),
-            Builders<PersistedGrant>.Filter.Eq(g => g.ClientId, filter.ClientId),
-            Builders<PersistedGrant>.Filter.Eq(g => g.SessionId, filter.SessionId),
-            Builders<PersistedGrant>.Filter.Eq(g => g.SubjectId, filter.SubjectId)
+        return Builders<PersistedGrantEntity>.Filter.And(
+            Builders<PersistedGrantEntity>.Filter.Eq(g => g.Type, filter.Type),
+            Builders<PersistedGrantEntity>.Filter.Eq(g => g.ClientId, filter.ClientId),
+            Builders<PersistedGrantEntity>.Filter.Eq(g => g.SessionId, filter.SessionId),
+            Builders<PersistedGrantEntity>.Filter.Eq(g => g.SubjectId, filter.SubjectId)
         );
     }
 }
