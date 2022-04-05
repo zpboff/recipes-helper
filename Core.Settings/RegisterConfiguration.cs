@@ -14,7 +14,7 @@ namespace Core.Settings
                 
             foreach (var setting in settings)
             {
-                services.AddSingleton(setting, configuration.Get(setting));
+                services.AddSingleton(setting, configuration.GetSection(setting.Name).Get(setting));
             }
             
             return services;

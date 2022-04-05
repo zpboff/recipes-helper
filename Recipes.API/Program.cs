@@ -1,6 +1,8 @@
+global using FastEndpoints;
+global using FastEndpoints.Validation;
 using Core.MongoDb;
 using Core.Settings;
-using FastEndpoints;
+using Recipes.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,8 @@ builder.Services.AddFastEndpoints();
 builder.Services
     .RegisterMongoDb()
     .RegisterConfiguration(builder.Configuration);
+
+builder.Services.AddTransient<CreateRecipeService>();
 
 var app = builder.Build();
 

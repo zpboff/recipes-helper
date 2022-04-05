@@ -29,7 +29,9 @@ namespace Auth
             {
                 new Client
                 {
-                    ClientId = "Recipes.API"
+                    ClientId = "Recipes.API",
+                    Description = "Recipes.API",
+                    Enabled = true
                 },
                 new Client
                 {
