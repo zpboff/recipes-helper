@@ -1,4 +1,6 @@
-﻿namespace Recipes.API.Models.CreateRecipe;
+﻿using FastEndpoints.Validation;
+
+namespace Recipes.API.Models.CreateRecipe;
 
 public class CreateRecipeRequest
 {

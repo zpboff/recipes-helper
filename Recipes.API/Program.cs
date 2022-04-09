@@ -1,7 +1,8 @@
-global using FastEndpoints;
-global using FastEndpoints.Validation;
 using Core.MongoDb;
 using Core.Settings;
+using FastEndpoints;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using Recipes.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,17 @@ builder.Services
     .RegisterConfiguration(builder.Configuration);
 
 builder.Services.AddTransient<CreateRecipeService>();
+builder.Services
+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.Authority = builder.Configuration.GetConnectionString("IdentityServerUrl");
+
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateAudience = false
+        };
+    });
 
 var app = builder.Build();
 
@@ -26,6 +38,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseFastEndpoints();
