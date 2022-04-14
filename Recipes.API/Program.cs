@@ -17,6 +17,7 @@ builder.Services
 
 builder.Services.AddTransient<CreateRecipeService>();
 builder.Services
+    .AddAuthorization()
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {

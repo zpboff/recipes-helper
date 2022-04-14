@@ -1,13 +1,13 @@
 ﻿using FastEndpoints;
 using Recipes.API.Models.CreateRecipe;
 using Recipes.API.Services;
+using Microsoft.AspNetCore.Identity;
 
 namespace Recipes.API.Endpoints;
 
 public class CreateRecipeEndpoint: Endpoint<CreateRecipeRequest, CreateRecipeResponse>
 {
     private readonly CreateRecipeService _createRecipeService;
-    
     public CreateRecipeEndpoint(CreateRecipeService createRecipeService)
     {
         _createRecipeService = createRecipeService;
