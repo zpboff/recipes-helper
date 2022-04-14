@@ -1,8 +1,6 @@
-﻿using Core.Settings;
+﻿namespace Core.RabbitMQ;
 
-namespace Core.RabbitMQ;
-
-public class RabbitSettings: ISettings
+public class RabbitSettings: IRabbitSettings
 {
     public string Host { get; set; } = null!;
     public string User { get; set; } = null!;

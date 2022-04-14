@@ -1,20 +1,15 @@
-using System.Reflection;
-using Core.Settings;
+using Core.RabbitMQ;
 using MassTransit;
-using Recipes.Indexer;
 using Recipes.Indexer.Settings;
 
 var host = Host.CreateDefaultBuilder(args)
     .ConfigureServices(services =>
     {
-        services.AddMassTransit(x =>
+        services.AddRabbit(configurator =>
         {
-            x.SetKebabCaseEndpointNameFormatter();
-            x.AddDelayedMessageScheduler();
-            var entryAssembly = Assembly.GetEntryAssembly();
-            x.AddConsumers(entryAssembly);
+            configurator.AddDelayedMessageScheduler();
             
-            x.UsingRabbitMq((context, cfg) =>
+            configurator.UsingRabbitMq((context, cfg) =>
             {
                 var settings = context.GetService<RecipesIndexerRabbitSettings>();
                 

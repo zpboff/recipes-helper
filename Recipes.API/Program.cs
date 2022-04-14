@@ -1,4 +1,5 @@
 using Core.MongoDb;
+using Core.RabbitMQ;
 using Core.Settings;
 using FastEndpoints;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -12,7 +13,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddFastEndpoints();
 builder.Services
-    .RegisterMongoDb()
+    .AddMongoDb()
+    .AddRabbit()
     .RegisterConfiguration(builder.Configuration);
 
 builder.Services.AddTransient<CreateRecipeService>();

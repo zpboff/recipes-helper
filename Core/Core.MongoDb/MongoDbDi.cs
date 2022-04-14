@@ -4,7 +4,7 @@ namespace Core.MongoDb;
 
 public static class MongoDbDi
 {
-    public static IServiceCollection RegisterMongoDb(this IServiceCollection services)
+    public static IServiceCollection AddMongoDb(this IServiceCollection services)
     {
         services.AddTransient<IMongoFactory, MongoFactory>();
         

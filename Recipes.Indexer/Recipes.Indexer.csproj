@@ -13,8 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Core.Settings\Core.Settings.csproj" />
+      <ProjectReference Include="..\Core\Core.RabbitMQ\Core.RabbitMQ.csproj" />
       <ProjectReference Include="..\Entities\Entities.csproj" />
-      <ProjectReference Include="..\Core.RabbitMQ\Core.RabbitMQ.csproj" />
     </ItemGroup>
 </Project>

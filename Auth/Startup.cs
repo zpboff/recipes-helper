@@ -37,7 +37,7 @@ namespace Auth
             
             services
                 .RegisterConfiguration(Configuration)
-                .RegisterMongoDb();
+                .AddMongoDb();
         }
 
         public void Configure(IApplicationBuilder app)
