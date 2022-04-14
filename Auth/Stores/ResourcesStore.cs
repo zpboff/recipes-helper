@@ -20,11 +20,11 @@ namespace Auth.Stores
 
         public ResourcesStore(IMongoFactory mongoFactory, AuthMongoSettings settings)
         {
-            _apiScopesCollection = mongoFactory.GetDataBase(settings.ConnectionString, settings.Database)
+            _apiScopesCollection = mongoFactory.GetDataBase(settings)
                 .GetCollection<ApiScopeEntity>(settings.ApiScopesCollectionName);
-            _identityResourcesCollection = mongoFactory.GetDataBase(settings.ConnectionString, settings.Database)
+            _identityResourcesCollection = mongoFactory.GetDataBase(settings)
                 .GetCollection<IdentityResourceEntity>(settings.IdentityResourcesCollectionName);
-            _apiResourcesCollection = mongoFactory.GetDataBase(settings.ConnectionString, settings.Database)
+            _apiResourcesCollection = mongoFactory.GetDataBase(settings)
                 .GetCollection<ApiResourceEntity>(settings.ApiResourcesCollectionName);
         }
 

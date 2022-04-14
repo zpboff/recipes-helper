@@ -4,5 +4,5 @@ namespace Core.MongoDb;
 
 public interface IMongoFactory
 {
-    IMongoDatabase GetDataBase(string connectionString, string dataBase);
+    IMongoDatabase GetDataBase(IMongoSettings settings);
 }

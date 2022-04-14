@@ -4,10 +4,10 @@ namespace Core.MongoDb;
 
 public class MongoFactory: IMongoFactory
 {
-    public IMongoDatabase GetDataBase(string connectionString, string dataBase)
+    public IMongoDatabase GetDataBase(IMongoSettings settings)
     {
-        var client = new MongoClient(connectionString);
+        var client = new MongoClient($"mongodb://{settings.User}:{settings.Password}@{settings.Host}");
 
-        return client.GetDatabase(dataBase);
+        return client.GetDatabase(settings.Database);
     }
 }

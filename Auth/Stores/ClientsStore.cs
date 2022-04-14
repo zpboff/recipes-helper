@@ -14,7 +14,7 @@ namespace Auth.Stores
 
         public ClientsStore(IMongoFactory mongoFactory, AuthMongoSettings settings)
         {
-            _clientsCollection = mongoFactory.GetDataBase(settings.ConnectionString, settings.Database)
+            _clientsCollection = mongoFactory.GetDataBase(settings)
                 .GetCollection<ClientEntity>(settings.ClientsCollectionName);
         }
         

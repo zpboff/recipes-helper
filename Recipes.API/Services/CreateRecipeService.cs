@@ -13,7 +13,7 @@ public class CreateRecipeService
 
     public CreateRecipeService(IMongoFactory mongoFactory, RecipesMongoSettings mongoSettings)
     {
-        _collection = mongoFactory.GetDataBase(mongoSettings.ConnectionString, mongoSettings.Database)
+        _collection = mongoFactory.GetDataBase(mongoSettings)
             .GetCollection<Recipe>(mongoSettings.RecipesCollectionName);
     }
 

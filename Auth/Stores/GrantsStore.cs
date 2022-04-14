@@ -17,7 +17,7 @@ public class GrantsStore : IPersistedGrantStore
 
     public GrantsStore(IMongoFactory mongoFactory, AuthMongoSettings settings)
     {
-        _grantsCollection = mongoFactory.GetDataBase(settings.ConnectionString, settings.Database)
+        _grantsCollection = mongoFactory.GetDataBase(settings)
             .GetCollection<PersistedGrantEntity>(settings.GrantsCollectionName);
     }
 

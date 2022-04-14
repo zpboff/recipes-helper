@@ -1,1 +1,0 @@
-docker run --name mongodb -d -v D:\DockerVolumes\MongoDb:/data/db mongo
