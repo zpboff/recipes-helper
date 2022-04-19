@@ -2,6 +2,7 @@
 using Entities.Recipe;
 using Mapster;
 using MassTransit;
+using Messages;
 using MongoDB.Driver;
 using Recipes.API.Models.CreateRecipe;
 using Recipes.API.Settings;
@@ -29,7 +30,10 @@ public class CreateRecipeService
         recipe.UserId = userId;
 
         await _collection.InsertOneAsync(recipe);
-        await _publishEndpoint.Publish(recipe);
+        await _publishEndpoint.Publish(new RecipeMessage
+        {
+            Recipe = recipe
+        });
 
         return recipe.Id;
     }

@@ -5,10 +5,11 @@ using System.Text.Json.Serialization;
 using Entities;
 using Entities.Recipe;
 using MassTransit;
+using Messages;
 
 namespace Recipes.Indexer;
 
-public class RecipesIndexer: IConsumer<Recipe>
+public class RecipesIndexer: IConsumer<RecipeMessage>
 {
     private readonly ILogger<RecipesIndexer> _logger;
 
@@ -17,15 +18,13 @@ public class RecipesIndexer: IConsumer<Recipe>
         _logger = logger;
     }
 
-    public async Task Consume(ConsumeContext<Recipe> context)
+    public async Task Consume(ConsumeContext<RecipeMessage> context)
     {
-        var recipe = context.Message;
+        var recipe = context.Message.Recipe;
         
         try
         {
-            await using Stream stream = File.Create(Path.Combine(Directory.GetCurrentDirectory(), recipe.Id));
-            var fileContent = JsonSerializer.Serialize(recipe);
-            await stream.WriteAsync(Encoding.UTF8.GetBytes(fileContent));
+            
         }
         catch (Exception e)
         {

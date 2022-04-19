@@ -35,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rabbitmq", "rabbitmq", "{3B
 		.docker-compose\rabbitmq\docker-compose.yml = .docker-compose\rabbitmq\docker-compose.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messages", "Messages\Messages.csproj", "{A6A61469-1D19-4508-9AEB-F9AACEC4C04A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{6C0F3B55-0A27-40B4-8184-EDA6EF19A113}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C0F3B55-0A27-40B4-8184-EDA6EF19A113}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C0F3B55-0A27-40B4-8184-EDA6EF19A113}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6A61469-1D19-4508-9AEB-F9AACEC4C04A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6A61469-1D19-4508-9AEB-F9AACEC4C04A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6A61469-1D19-4508-9AEB-F9AACEC4C04A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6A61469-1D19-4508-9AEB-F9AACEC4C04A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0F19B7B9-F81D-4240-9740-2E0BCB03A124} = {CE9DBBA1-DC7F-46AC-8606-DE055C064864}
