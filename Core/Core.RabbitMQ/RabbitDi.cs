@@ -6,8 +6,8 @@ namespace Core.RabbitMQ;
 
 public static class RabbitDi
 {
-    public static IServiceCollection AddRabbit<T>(this IServiceCollection services, Action<IBusRegistrationConfigurator>? configure = null)
-        where T: RabbitSettings
+    public static IServiceCollection AddRabbit<TSettings>(this IServiceCollection services, Action<IBusRegistrationConfigurator>? configure = null)
+        where TSettings: RabbitSettings
     {
         services.AddMassTransit(configurator =>
         {
@@ -19,7 +19,7 @@ public static class RabbitDi
             
             configurator.UsingRabbitMq((context,cfg) =>
             {
-                var settings = context.GetRequiredService<T>();
+                var settings = context.GetRequiredService<TSettings>();
                 
                 cfg.Host(settings.Host, hostConf =>
                 {
