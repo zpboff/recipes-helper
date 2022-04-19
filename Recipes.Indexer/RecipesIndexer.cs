@@ -41,10 +41,7 @@ public class RecipesIndexer : IConsumer<RecipeMessage>
                 await client.Indices.CreateAsync(_settings.Index, c => c.Map<RecipeDocument>(d => d.AutoMap<RecipeDocument>()));
             }
             
-            await client.IndexAsync(new IndexRequest<RecipeDocument>
-            {
-                Document = document
-            });
+            await client.IndexDocumentAsync(document);
         }
         catch (Exception e)
         {
