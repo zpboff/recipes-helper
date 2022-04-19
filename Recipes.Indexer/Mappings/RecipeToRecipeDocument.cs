@@ -1,12 +1,13 @@
-﻿using Entities.Recipe;
+﻿using Core.Mapper;
+using Entities.Recipe;
 using Mapster;
 using Recipes.Indexer.Models;
 
 namespace Recipes.Indexer.Mappings;
 
-public static class RecipeToRecipeDocument
+public class RecipeToRecipeDocument: IMappingProfile
 {
-    public static void RegisterRecipeToRecipeDocument(this TypeAdapterConfig config)
+    public void Register(TypeAdapterConfig config)
     {
         config.NewConfig<Recipe, RecipeDocument>()
             .Map(dest => dest.Ingredients, src => src.Ingredients.Select(i => i.Name));
