@@ -5,6 +5,7 @@ using FastEndpoints;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Recipes.API.Services;
+using Recipes.API.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +15,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddFastEndpoints();
 builder.Services
     .AddMongoDb()
-    .AddRabbit()
+    .AddRabbit<RecipesRabbitSettings>()
     .RegisterConfiguration(builder.Configuration);
 
 builder.Services.AddTransient<CreateRecipeService>();

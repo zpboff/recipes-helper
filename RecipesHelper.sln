@@ -18,6 +18,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Settings", "Core\Core.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.SqlDb", "Core\Core.SqlDb\Core.SqlDb.csproj", "{6C0F3B55-0A27-40B4-8184-EDA6EF19A113}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docker-compose", ".docker-compose", "{09C08F90-5D97-4ADA-AFD5-BE38F27145E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "elastic", "elastic", "{99DCCC5F-8E79-4573-81B3-92AFC23BDB6E}"
+	ProjectSection(SolutionItems) = preProject
+		.docker-compose\elastic\docker-compose.yml = .docker-compose\elastic\docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mongo", "mongo", "{96624377-5D89-4BB7-81D4-8AFFEC806AC2}"
+	ProjectSection(SolutionItems) = preProject
+		.docker-compose\mongo\docker-compose.yml = .docker-compose\mongo\docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rabbitmq", "rabbitmq", "{3B1ACAF2-2316-4AD5-9344-8EEAD5C1B24E}"
+	ProjectSection(SolutionItems) = preProject
+		.docker-compose\rabbitmq\docker-compose.yml = .docker-compose\rabbitmq\docker-compose.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,5 +79,8 @@ Global
 		{0131A9B5-1F3C-4D64-AB41-307ACBB7C0AC} = {CE9DBBA1-DC7F-46AC-8606-DE055C064864}
 		{B5D3508C-211B-4549-B079-90EDDC83D4D2} = {CE9DBBA1-DC7F-46AC-8606-DE055C064864}
 		{6C0F3B55-0A27-40B4-8184-EDA6EF19A113} = {CE9DBBA1-DC7F-46AC-8606-DE055C064864}
+		{99DCCC5F-8E79-4573-81B3-92AFC23BDB6E} = {09C08F90-5D97-4ADA-AFD5-BE38F27145E9}
+		{96624377-5D89-4BB7-81D4-8AFFEC806AC2} = {09C08F90-5D97-4ADA-AFD5-BE38F27145E9}
+		{3B1ACAF2-2316-4AD5-9344-8EEAD5C1B24E} = {09C08F90-5D97-4ADA-AFD5-BE38F27145E9}
 	EndGlobalSection
 EndGlobal

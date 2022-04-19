@@ -1,26 +1,16 @@
 using Core.RabbitMQ;
+using Core.Settings;
 using MassTransit;
 using Recipes.Indexer.Settings;
 
-var host = Host.CreateDefaultBuilder(args)
-    .ConfigureServices(services =>
+var builder = Host.CreateDefaultBuilder(args);
+
+var host = builder.ConfigureServices((context, services) =>
     {
-        services.AddRabbit(configurator =>
+        services.RegisterConfiguration(context.Configuration);
+        services.AddRabbit<RecipesIndexerRabbitSettings>(configurator =>
         {
             configurator.AddDelayedMessageScheduler();
-            
-            configurator.UsingRabbitMq((context, cfg) =>
-            {
-                var settings = context.GetService<RecipesIndexerRabbitSettings>();
-                
-                cfg.Host(new Uri(settings!.Host), hostConf =>
-                {
-                    hostConf.Username(settings.User);
-                    hostConf.Password(settings.Password);
-                });
-                
-                cfg.ConfigureEndpoints(context);
-            });
         });
     })
     .Build();

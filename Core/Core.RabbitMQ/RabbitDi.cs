@@ -6,7 +6,8 @@ namespace Core.RabbitMQ;
 
 public static class RabbitDi
 {
-    public static IServiceCollection AddRabbit(this IServiceCollection services, Action<IBusRegistrationConfigurator>? configure = null)
+    public static IServiceCollection AddRabbit<T>(this IServiceCollection services, Action<IBusRegistrationConfigurator>? configure = null)
+        where T: RabbitSettings
     {
         services.AddMassTransit(configurator =>
         {
@@ -15,11 +16,22 @@ public static class RabbitDi
             var entryAssembly = Assembly.GetEntryAssembly();
 
             configurator.AddConsumers(entryAssembly);
+            
+            configurator.UsingRabbitMq((context,cfg) =>
+            {
+                var settings = context.GetRequiredService<T>();
+                
+                cfg.Host(settings.Host, hostConf =>
+                {
+                    hostConf.Username(settings.User);
+                    hostConf.Password(settings.Password);
+                });
+
+                cfg.ConfigureEndpoints(context);
+            });
 
             configure?.Invoke(configurator);
         });
-        
-        services.AddTransient<RabbitBusFactory>();
         
         return services;
     }
