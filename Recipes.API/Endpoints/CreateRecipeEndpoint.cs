@@ -15,7 +15,6 @@ public class CreateRecipeEndpoint: Endpoint<CreateRecipeRequest, CreateRecipeRes
     
     public override void Configure()
     {
-        AllowAnonymous();
         Post();
         Routes("/create-recipe");
     }
