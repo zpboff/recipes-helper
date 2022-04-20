@@ -5,10 +5,11 @@ namespace Identity.AppServices;
 
 public static class IdentityAppServicesDi
 {
-    public static IServiceCollection AddIdentityAppServices(this IServiceCollection services)
+    public static IServiceCollection AddIdentityAppServices<TSettings>(this IServiceCollection services)
+        where TSettings : IdentitySettings
     {
-        services.AddTransient<IAuthorizedApiProvider, AuthorizedApiProvider>();
-        
+        services.AddTransient<IAuthorizedApiProvider<TSettings>, AuthorizedApiProvider<TSettings>>();
+
         return services;
     }
 }

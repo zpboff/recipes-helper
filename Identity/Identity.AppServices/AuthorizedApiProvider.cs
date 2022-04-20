@@ -6,11 +6,18 @@ using Newtonsoft.Json;
 
 namespace Identity.AppServices;
 
-public class AuthorizedApiProvider: IAuthorizedApiProvider
+public class AuthorizedApiProvider<TSettings>: IAuthorizedApiProvider<TSettings> where TSettings: IdentitySettings
 {
-    public async Task<T?> GetRequestAsync<T>(string identityServerUrl, string url) where T: class
+    private readonly TSettings _settings;
+
+    public AuthorizedApiProvider(TSettings settings)
     {
-        return await HandleRequestAsync(identityServerUrl, async client =>
+        _settings = settings;
+    }
+    
+    public async Task<T?> GetRequestAsync<T>(string url) where T: class
+    {
+        return await HandleRequestAsync(async client =>
         {
             var response = await client.GetAsync(url);
             response.EnsureSuccessStatusCode();
@@ -20,11 +27,11 @@ public class AuthorizedApiProvider: IAuthorizedApiProvider
         }).ConfigureAwait(false);
     }
     
-    public async Task<TResponse?> PostRequestAsync<TResponse, TRequest>(string identityServerUrl, string url, TRequest? request = null) 
+    public async Task<TResponse?> PostRequestAsync<TResponse, TRequest>(string url, TRequest? request = null) 
         where TResponse: class 
         where TRequest: class
     {
-        return await HandleRequestAsync(identityServerUrl, async client =>
+        return await HandleRequestAsync(async client =>
         {
             var json = JsonConvert.SerializeObject(request);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
@@ -37,10 +44,10 @@ public class AuthorizedApiProvider: IAuthorizedApiProvider
         }).ConfigureAwait(false);
     }
 
-    private async Task<TResponse?> HandleRequestAsync<TResponse>(string identityServerUrl, Func<HttpClient, Task<TResponse>> handler)
+    private async Task<TResponse?> HandleRequestAsync<TResponse>(Func<HttpClient, Task<TResponse>> handler)
     {
         var client = new HttpClient();
-        var disco = await client.GetDiscoveryDocumentAsync(identityServerUrl);
+        var disco = await client.GetDiscoveryDocumentAsync(_settings.IdenityServerUrl);
 
         var tokenResponse = await client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
         {
