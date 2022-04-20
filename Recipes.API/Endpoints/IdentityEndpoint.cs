@@ -8,6 +8,7 @@ public class IdentityEndpoint: Endpoint<object>
     {
         Get();
         Routes("/identity");
+        Policies("ApiScope");
     }
 
     public override async Task HandleAsync(object req, CancellationToken ct)

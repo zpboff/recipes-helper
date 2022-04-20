@@ -20,7 +20,14 @@ builder.Services
 
 builder.Services.AddTransient<CreateRecipeService>();
 builder.Services
-    .AddAuthorization()
+    .AddAuthorization(options =>
+    {
+        options.AddPolicy("ApiScope", policy =>
+        {
+            policy.RequireAuthenticatedUser();
+            policy.RequireClaim("scope", "Recipes.API");
+        });
+    })
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
