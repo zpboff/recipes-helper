@@ -20,28 +20,6 @@ public class HomeController : ControllerBase
     [Route("[action]")]
     public async Task Get()
     {
-        await _apiProvider.PostRequestAsync<CreateRecipeResponse, CreateRecipeRequest>(_settings.IdentityServerUrl,
-            $"{_settings.ApiUrl}/create-recipe", new CreateRecipeRequest
-            {
-                Title = "Кимчи",
-                Description = "Корейская закуска из капусты",
-                Ingredients = new[]
-                {
-                    new IngredientCreateModel
-                    {
-                        Name = "Пекинская капуста",
-                        Count = 1,
-                        Measurement = "шт."
-                    }
-                },
-                Steps = new[]
-                {
-                    new RecipeStepCreateModel
-                    {
-                        Index = 1,
-                        Content = "Сделайте хорошо"
-                    }
-                }
-            });
+        await _apiProvider.GetRequestAsync<object>(_settings.IdentityServerUrl, $"{_settings.ApiUrl}/identity");
     }
 }

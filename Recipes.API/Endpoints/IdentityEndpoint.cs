@@ -6,7 +6,7 @@ public class IdentityEndpoint: Endpoint<object>
 {
     public override void Configure()
     {
-        Post();
+        Get();
         Routes("/identity");
     }
 
@@ -14,7 +14,7 @@ public class IdentityEndpoint: Endpoint<object>
     {
         await SendAsync(new 
         {   
-            claims = User.Claims
+            claims = User.Claims.Select(c => c.Type)
         }, cancellation: ct);
     }
 }
