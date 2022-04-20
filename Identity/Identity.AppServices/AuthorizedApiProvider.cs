@@ -1,5 +1,4 @@
-﻿using System.Net.Http.Headers;
-using System.Net.Http.Json;
+﻿using System.Net.Http.Json;
 using System.Text;
 using Identity.Contracts;
 using IdentityModel.Client;
@@ -18,7 +17,7 @@ public class AuthorizedApiProvider: IAuthorizedApiProvider
             var result = await response.Content.ReadAsStringAsync();
         
             return JsonConvert.DeserializeObject<T>(result);
-        });
+        }).ConfigureAwait(false);
     }
     
     public async Task<TResponse?> PostRequestAsync<TResponse, TRequest>(string identityServerUrl, string url, TRequest? request = null) 
@@ -35,7 +34,7 @@ public class AuthorizedApiProvider: IAuthorizedApiProvider
             var result = await response.Content.ReadAsStringAsync();
         
             return JsonConvert.DeserializeObject<TResponse>(result);
-        });
+        }).ConfigureAwait(false);
     }
 
     private async Task<TResponse?> HandleRequestAsync<TResponse>(string identityServerUrl, Func<HttpClient, Task<TResponse>> handler)
@@ -58,6 +57,6 @@ public class AuthorizedApiProvider: IAuthorizedApiProvider
         
         client.SetBearerToken(tokenResponse.AccessToken);
 
-        return await handler(client);
+        return await handler(client).ConfigureAwait(false);
     }
 }

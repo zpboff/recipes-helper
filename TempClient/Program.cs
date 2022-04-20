@@ -1,43 +1,27 @@
-﻿using Core.Settings;
+using Core.Settings;
 using Identity.AppServices;
-using Identity.Contracts;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Recipes.API.Models.CreateRecipe;
-using TempClient;
 
-using var host = Host.CreateDefaultBuilder(args)
-    .ConfigureServices((context, services) => services
-        .RegisterConfiguration(context.Configuration)
-        .AddIdentityAppServices()
-    )
-    .Build();
+var builder = WebApplication.CreateBuilder(args);
 
-var apiProvider = host.Services.GetRequiredService<IAuthorizedApiProvider>();
-var settings = host.Services.GetRequiredService<TempClientSettings>();
+builder.Services
+    .RegisterConfiguration(builder.Configuration)
+    .AddIdentityAppServices()
+    .AddEndpointsApiExplorer()
+    .AddSwaggerGen()
+    .AddControllers();
 
-await apiProvider.PostRequestAsync<CreateRecipeResponse, CreateRecipeRequest>(settings.IdentityServerUrl,
-    $"{settings.ApiUrl}/create-recipe", new CreateRecipeRequest
-    {
-        Title = "Кимчи",
-        Description = "Корейская закуска из капусты",
-        Ingredients = new[]
-        {
-            new IngredientCreateModel
-            {
-                Name = "Пекинская капуста",
-                Count = 1,
-                Measurement = "шт."
-            }
-        },
-        Steps = new[]
-        {
-            new RecipeStepCreateModel
-            {
-                Index = 1,
-                Content = "Сделайте хорошо"
-            }
-        }
-    });
+var app = builder.Build();
 
-await host.RunAsync();
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
