@@ -4,10 +4,10 @@ using Mapster;
 using MassTransit;
 using Messages;
 using MongoDB.Driver;
+using Recipes.API.App.Settings;
 using Recipes.API.Models.CreateRecipe;
-using Recipes.API.Settings;
 
-namespace Recipes.API.Services;
+namespace Recipes.API.App.Services;
 
 public class CreateRecipeService
 {

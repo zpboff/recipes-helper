@@ -1,6 +1,6 @@
 ﻿using Core.MongoDb;
 
-namespace Recipes.API.Settings;
+namespace Recipes.API.App.Settings;
 
 public class RecipesMongoSettings: IMongoSettings
 {

@@ -5,8 +5,8 @@ using Core.Settings;
 using FastEndpoints;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using Recipes.API.Services;
-using Recipes.API.Settings;
+using Recipes.API.App.Services;
+using Recipes.API.App.Settings;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,7 +32,7 @@ builder.Services
         options.AddPolicy("ApiScope", policy =>
         {
             policy.RequireAuthenticatedUser();
-            policy.RequireClaim("scope", "Recipes.API");
+            policy.RequireClaim("scope", "Recipes.API.App");
         });
     })
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

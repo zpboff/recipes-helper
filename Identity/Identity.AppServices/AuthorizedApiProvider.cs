@@ -54,7 +54,7 @@ public class AuthorizedApiProvider<TSettings>: IAuthorizedApiProvider<TSettings>
             Address = disco.TokenEndpoint,
             ClientId = "TempClient",
             ClientSecret = "secret",
-            Scope = "Recipes.API"
+            Scope = "Recipes.API.App"
         });
 
         if (tokenResponse.IsError)

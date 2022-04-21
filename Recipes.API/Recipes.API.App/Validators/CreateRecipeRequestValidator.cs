@@ -1,7 +1,7 @@
 ﻿using FastEndpoints.Validation;
 using Recipes.API.Models.CreateRecipe;
 
-namespace Recipes.API.Validators;
+namespace Recipes.API.App.Validators;
 
 public class CreateRecipeRequestValidator : Validator<CreateRecipeRequest>
 {

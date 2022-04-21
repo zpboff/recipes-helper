@@ -1,7 +1,7 @@
 ﻿using FastEndpoints;
 using Serilog;
 
-namespace Recipes.API.Endpoints;
+namespace Recipes.API.App.Endpoints;
 
 public class IdentityEndpoint: Endpoint<object>
 {
