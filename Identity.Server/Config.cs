@@ -36,15 +36,15 @@ public static class Config
             },
             new Client
             {
-                ClientId = "web",
+                ClientId = "Web.BFF",
                 ClientSecrets =
                 {
-                    new Secret("secret".Sha256())
+                    new Secret("Web.BFF".Sha256())
                 },
                 AllowedGrantTypes = GrantTypes.Code,
                 RedirectUris =
                 {
-                    "https://localhost:5002/signin-oidc"
+                    "https://localhost:5001/signin-oidc"
                 },
                 PostLogoutRedirectUris =
                 {
