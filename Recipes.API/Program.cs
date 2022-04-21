@@ -11,6 +11,7 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.UseSentry();
 builder.Host.UseSerilog();
 
 builder.Services
@@ -21,6 +22,7 @@ builder.Services
     .AddRabbit<RecipesRabbitSettings>()
     .RegisterConfiguration(builder.Configuration)
     .AddLogging(builder.Configuration)
+    .AddHttpClient()
     .AddControllers();
 
 builder.Services.AddTransient<CreateRecipeService>();
@@ -53,6 +55,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+    
+app.UseRouting();
+app.UseSentryTracing();
 
 app.UseAuthentication();
 app.UseAuthorization();
