@@ -3,7 +3,7 @@ using Recipes.Search.Api;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
-    .AddServices()
+    .AddServices(builder.Configuration)
     .AddEndpointsApiExplorer()
     .AddSwaggerGen()
     .AddControllers();

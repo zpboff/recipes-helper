@@ -36,10 +36,16 @@ public class RecipesIndexer : IConsumer<RecipeMessage>
 
             if (!indexExistsResponse.Exists)
             {
-                await client.Indices.CreateAsync(_settings.Index, c => c.Map<RecipeDocument>(d => d.AutoMap<RecipeDocument>()));
+                await client.Indices.CreateAsync(_settings.Index, crd =>
+                {
+                    crd.Mappings(crm =>
+                    {
+                        crm.Enabled();
+                    });
+                });
             }
             
-            await client.IndexDocumentAsync(document);
+            await client.IndexAsync(document, _settings.Index);
         }
         catch (Exception e)
         {

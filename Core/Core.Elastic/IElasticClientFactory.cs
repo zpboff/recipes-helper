@@ -1,8 +1,8 @@
-﻿using Nest;
+﻿using Elastic.Clients.Elasticsearch;
 
 namespace Core.Elastic;
 
 public interface IElasticClientFactory
 {
-    ElasticClient GetClient(IElasticSettings settings);
+    ElasticsearchClient GetClient(IElasticSettings settings);
 }

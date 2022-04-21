@@ -8,12 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Mapster" Version="7.3.0" />
-        <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
-        <PackageReference Include="NEST" Version="7.17.1" />
-    </ItemGroup>
-
-    <ItemGroup>
       <_ContentIncludedByDefault Remove="Recipes.Indexer.Models\obj\project.assets.json" />
       <_ContentIncludedByDefault Remove="Recipes.Indexer.Models\obj\project.packagespec.json" />
       <_ContentIncludedByDefault Remove="Recipes.Indexer.Models\obj\Recipes.Indexer.Models.csproj.nuget.dgspec.json" />
@@ -26,5 +20,9 @@
       <ProjectReference Include="..\..\Core\Core.Settings\Core.Settings.csproj" />
       <ProjectReference Include="..\..\Recipes.API\Recipes.API.Models.Shared\Recipes.API.Models.Shared.csproj" />
       <ProjectReference Include="..\Recipes.Indexer.Models\Recipes.Indexer.Models.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0-preview.3.22175.4" />
     </ItemGroup>
 </Project>

@@ -11,6 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Core\Core.Elastic\Core.Elastic.csproj" />
       <ProjectReference Include="..\..\Recipes.Indexer\Recipes.Indexer.Models\Recipes.Indexer.Models.csproj" />
     </ItemGroup>
 
