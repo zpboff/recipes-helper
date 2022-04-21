@@ -55,6 +55,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.BFF", "Web\Web.BFF\Web.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Logging", "Core\Core.Logging\Core.Logging.csproj", "{B5160C15-C367-475A-94B5-E531895B2A28}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "seq", "seq", "{16DDB48F-48B1-4E52-98F9-314D7244F44F}"
+	ProjectSection(SolutionItems) = preProject
+		docker\seq\docker-compose.yml = docker\seq\docker-compose.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,5 +146,6 @@ Global
 		{733D0902-C49B-46DF-BDE1-C4F6CEE20FBE} = {15286349-8D3F-4FD5-BDB1-1CD9AE22EF67}
 		{144787CA-C399-4959-B978-F2B7212779BF} = {E6B86155-8803-4144-A345-700B040CA140}
 		{B5160C15-C367-475A-94B5-E531895B2A28} = {CE9DBBA1-DC7F-46AC-8606-DE055C064864}
+		{16DDB48F-48B1-4E52-98F9-314D7244F44F} = {09C08F90-5D97-4ADA-AFD5-BE38F27145E9}
 	EndGlobalSection
 EndGlobal

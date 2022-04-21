@@ -9,7 +9,7 @@ public class IdentityEndpoint: Endpoint<object>
     {
         Get();
         Routes("/identity");
-        Policies("ApiScope");
+        AllowAnonymous();
     }
 
     public override async Task HandleAsync(object req, CancellationToken ct)
