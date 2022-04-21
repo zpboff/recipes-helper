@@ -3,7 +3,7 @@ using Core.Mapper;
 using Core.RabbitMQ;
 using Core.Settings;
 using MassTransit;
-using Recipes.Indexer.Settings;
+using Recipes.Indexer.Service.Settings;
 
 var builder = Host.CreateDefaultBuilder(args);
 

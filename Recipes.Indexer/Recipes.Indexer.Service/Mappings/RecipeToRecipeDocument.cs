@@ -3,7 +3,7 @@ using Entities.Recipe;
 using Mapster;
 using Recipes.Indexer.Models;
 
-namespace Recipes.Indexer.Mappings;
+namespace Recipes.Indexer.Service.Mappings;
 
 public class RecipeToRecipeDocument: IMappingProfile
 {

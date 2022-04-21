@@ -1,6 +1,6 @@
 ﻿using Core.Elastic;
 
-namespace Recipes.Indexer.Settings;
+namespace Recipes.Indexer.Service.Settings;
 
 public class RecipesIndexerElasticSettings: ElasticSettings
 {

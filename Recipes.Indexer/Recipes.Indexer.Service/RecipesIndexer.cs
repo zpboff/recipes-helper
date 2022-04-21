@@ -1,13 +1,11 @@
 using Core.Elastic;
-using Mapster;
 using MapsterMapper;
 using MassTransit;
 using Messages;
-using Nest;
 using Recipes.Indexer.Models;
-using Recipes.Indexer.Settings;
+using Recipes.Indexer.Service.Settings;
 
-namespace Recipes.Indexer;
+namespace Recipes.Indexer.Service;
 
 public class RecipesIndexer : IConsumer<RecipeMessage>
 {

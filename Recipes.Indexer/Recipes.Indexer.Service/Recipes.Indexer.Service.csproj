@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>dotnet-Recipes.Indexator-E12F4CCA-3B83-4B0A-B9DF-F7FB65710219</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Mapster" Version="7.3.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
+        <PackageReference Include="NEST" Version="7.17.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Recipes.Indexer.Models\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="Recipes.Indexer.Models\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="Recipes.Indexer.Models\obj\Recipes.Indexer.Models.csproj.nuget.dgspec.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Core\Core.Elastic\Core.Elastic.csproj" />
+      <ProjectReference Include="..\..\Core\Core.Mapper\Core.Mapper.csproj" />
+      <ProjectReference Include="..\..\Core\Core.RabbitMQ\Core.RabbitMQ.csproj" />
+      <ProjectReference Include="..\..\Core\Core.Settings\Core.Settings.csproj" />
+      <ProjectReference Include="..\..\Entities\Entities.csproj" />
+      <ProjectReference Include="..\..\Messages\Messages.csproj" />
+      <ProjectReference Include="..\Recipes.Indexer.Models\Recipes.Indexer.Models.csproj" />
+    </ItemGroup>
+</Project>

@@ -1,6 +1,6 @@
 ﻿using Core.RabbitMQ;
 
-namespace Recipes.Indexer.Settings;
+namespace Recipes.Indexer.Service.Settings;
 
 public class RecipesIndexerRabbitSettings: RabbitSettings
 {
