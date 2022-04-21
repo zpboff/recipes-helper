@@ -17,7 +17,7 @@ public class CreateRecipeEndpoint: Endpoint<CreateRecipeRequest, CreateRecipeRes
     {
         Post();
         Routes("/create-recipe");
-        Policies("ApiScope");
+        AllowAnonymous();
     }
 
     public override async Task HandleAsync(CreateRecipeRequest req, CancellationToken ct)

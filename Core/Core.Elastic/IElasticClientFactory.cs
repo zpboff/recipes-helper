@@ -4,5 +4,5 @@ namespace Core.Elastic;
 
 public interface IElasticClientFactory
 {
-    ElasticClient GetClient(string connectionString, string index);
+    ElasticClient GetClient(IElasticSettings settings);
 }

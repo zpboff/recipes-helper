@@ -2,12 +2,14 @@
 
 namespace Core.Elastic;
 
-public class ElasticClientFactory: IElasticClientFactory
+public class ElasticClientFactory : IElasticClientFactory
 {
-    public ElasticClient GetClient(string connectionString, string index)
+    public ElasticClient GetClient(IElasticSettings settings)
     {
-        var settings = new ConnectionSettings(new Uri(connectionString)).DefaultIndex(index);
+        var connectionSettings = new ConnectionSettings(new Uri(settings.ConnectionString))
+            .DefaultIndex(settings.Index)
+            .BasicAuthentication(settings.User, settings.Password);
 
-        return new ElasticClient(settings);
+        return new ElasticClient(connectionSettings);
     }
 }

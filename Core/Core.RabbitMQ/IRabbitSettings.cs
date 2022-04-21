@@ -1,8 +1,8 @@
-﻿using Core.RabbitMQ;
+﻿using Core.Settings;
 
-namespace Recipes.API.Settings;
+namespace Core.RabbitMQ;
 
-public class RecipesRabbitSettings: IRabbitSettings
+public interface IRabbitSettings: ISettings
 {
     public string Host { get; set; }
     public string User { get; set; }

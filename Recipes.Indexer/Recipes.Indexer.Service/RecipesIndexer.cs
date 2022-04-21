@@ -30,7 +30,7 @@ public class RecipesIndexer : IConsumer<RecipeMessage>
         try
         {
             var document = _mapper.Map<RecipeDocument>(recipe);
-            var client = _clientFactory.GetClient(_settings.ConnectionString, _settings.Index);
+            var client = _clientFactory.GetClient(_settings);
 
             var indexExistsResponse = await client.Indices.ExistsAsync(_settings.Index);
 

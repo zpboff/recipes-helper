@@ -7,7 +7,7 @@ namespace Core.RabbitMQ;
 public static class RabbitDi
 {
     public static IServiceCollection AddRabbit<TSettings>(this IServiceCollection services, Action<IBusRegistrationConfigurator>? configure = null)
-        where TSettings: RabbitSettings
+        where TSettings: IRabbitSettings
     {
         services.AddMassTransit(configurator =>
         {
