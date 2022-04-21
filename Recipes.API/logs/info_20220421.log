@@ -1,0 +1,156 @@
+2022-04-21T12:35:53.7305215+03:00 [INF] (FastEndpoints.StartupTimer) Registered 2 endpoints in 1358 milliseconds.
+2022-04-21T12:35:53.7630634+03:00 [DBG] (Microsoft.Extensions.Hosting.Internal.Host) Hosting starting
+2022-04-21T12:35:54.0282828+03:00 [INF] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager) User profile is available. Using '"C:\Users\zakirov\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-04-21T12:35:54.0309303+03:00 [DBG] (MassTransit.Transports.BusDepot) Starting bus instances: "IBus"
+2022-04-21T12:35:54.0340810+03:00 [DBG] (MassTransit) Starting bus: rabbitmq://localhost/
+2022-04-21T12:35:54.0487179+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository) Reading data from file '"C:\Users\zakirov\AppData\Local\ASP.NET\DataProtection-Keys\key-23c8a1b8-2447-48e4-a449-ecddc0d8a584.xml"'.
+2022-04-21T12:35:54.0526007+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository) Reading data from file '"C:\Users\zakirov\AppData\Local\ASP.NET\DataProtection-Keys\key-5d7e1ff4-7b07-46d5-9a7c-c743d9297013.xml"'.
+2022-04-21T12:35:54.0528591+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository) Reading data from file '"C:\Users\zakirov\AppData\Local\ASP.NET\DataProtection-Keys\key-76157616-b495-4c8d-953b-62e66d809e8e.xml"'.
+2022-04-21T12:35:54.0531694+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository) Reading data from file '"C:\Users\zakirov\AppData\Local\ASP.NET\DataProtection-Keys\key-c69b7e72-17fc-4fd1-b993-9d1af7f16280.xml"'.
+2022-04-21T12:35:54.0533630+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository) Reading data from file '"C:\Users\zakirov\AppData\Local\ASP.NET\DataProtection-Keys\key-cda97095-b2d2-480a-86dd-570f3e178369.xml"'.
+2022-04-21T12:35:54.0535230+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository) Reading data from file '"C:\Users\zakirov\AppData\Local\ASP.NET\DataProtection-Keys\key-da2f0313-39cd-46fb-be0f-e1b81f4c1d7b.xml"'.
+2022-04-21T12:35:54.0537794+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository) Reading data from file '"C:\Users\zakirov\AppData\Local\ASP.NET\DataProtection-Keys\key-e2158166-9d3d-4988-aefc-e4e9438f8803.xml"'.
+2022-04-21T12:35:54.0574559+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager) Found key {23c8a1b8-2447-48e4-a449-ecddc0d8a584}.
+2022-04-21T12:35:54.0760378+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager) Found key {5d7e1ff4-7b07-46d5-9a7c-c743d9297013}.
+2022-04-21T12:35:54.0760607+03:00 [DBG] (MassTransit) Connect: "root@localhost:5672/"
+2022-04-21T12:35:54.0761868+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager) Found key {76157616-b495-4c8d-953b-62e66d809e8e}.
+2022-04-21T12:35:54.0762718+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager) Found key {c69b7e72-17fc-4fd1-b993-9d1af7f16280}.
+2022-04-21T12:35:54.0763881+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager) Found key {cda97095-b2d2-480a-86dd-570f3e178369}.
+2022-04-21T12:35:54.0765076+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager) Found key {da2f0313-39cd-46fb-be0f-e1b81f4c1d7b}.
+2022-04-21T12:35:54.0766453+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager) Found key {e2158166-9d3d-4988-aefc-e4e9438f8803}.
+2022-04-21T12:35:54.0970619+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver) Considering key {cda97095-b2d2-480a-86dd-570f3e178369} with expiration date 2022-07-13 06:10:28Z as default key.
+2022-04-21T12:35:54.0983882+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.TypeForwardingActivator) Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2022-04-21T12:35:54.1014678+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor) Decrypting secret element using Windows DPAPI.
+2022-04-21T12:35:54.1028112+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.TypeForwardingActivator) Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2022-04-21T12:35:54.1046903+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory) Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2022-04-21T12:35:54.1060734+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory) Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2022-04-21T12:35:54.1081539+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider) Using key {cda97095-b2d2-480a-86dd-570f3e178369} as the default key.
+2022-04-21T12:35:54.1087514+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService) Key ring with default key {cda97095-b2d2-480a-86dd-570f3e178369} was loaded during application startup.
+2022-04-21T12:35:54.1565735+03:00 [DBG] (Sentry.ISentryClient) Initializing Hub for Dsn: '"https://d2ac5d5df79944d98fe9a0d6495189fd@o1213349.ingest.sentry.io/6352479"'.
+2022-04-21T12:35:54.1582525+03:00 [DBG] (Sentry.ISentryClient) Using 'GzipBufferedRequestBodyHandler' body compression strategy with level Optimal.
+2022-04-21T12:35:54.1668153+03:00 [DBG] (Sentry.ISentryClient) New scope pushed.
+2022-04-21T12:35:54.1670774+03:00 [DBG] (Sentry.ISentryClient) Registering integration: '"AutoSessionTrackingIntegration"'.
+2022-04-21T12:35:54.1671775+03:00 [DBG] (Sentry.ISentryClient) Registering integration: '"AppDomainUnhandledExceptionIntegration"'.
+2022-04-21T12:35:54.1673833+03:00 [DBG] (Sentry.ISentryClient) Registering integration: '"AppDomainProcessExitIntegration"'.
+2022-04-21T12:35:54.1675797+03:00 [DBG] (Sentry.ISentryClient) Registering integration: '"TaskUnobservedTaskExceptionIntegration"'.
+2022-04-21T12:35:54.1677801+03:00 [DBG] (Sentry.ISentryClient) Registering integration: '"SentryDiagnosticListenerIntegration"'.
+2022-04-21T12:35:54.3240384+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer) Using development certificate: "CN=localhost" (Thumbprint: "1052898809A4F6512A36359A70719B533E28C96E")
+2022-04-21T12:35:54.3622747+03:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7114"
+2022-04-21T12:35:54.3623550+03:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5114"
+2022-04-21T12:35:54.3624452+03:00 [DBG] (Microsoft.AspNetCore.Hosting.Diagnostics) Loaded hosting startup assembly "Recipes.API"
+2022-04-21T12:35:54.3625371+03:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-21T12:35:54.3625736+03:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-21T12:35:54.3626163+03:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "C:\Repositories\recipes-helper\Recipes.API\"
+2022-04-21T12:35:54.3626592+03:00 [DBG] (Microsoft.Extensions.Hosting.Internal.Host) Hosting started
+2022-04-21T12:35:54.6477861+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets) Connection id ""0HMH3F9AH10Q3"" received FIN.
+2022-04-21T12:35:54.6544157+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMH3F9AH10Q3"" accepted.
+2022-04-21T12:35:54.6552452+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMH3F9AH10Q3"" started.
+2022-04-21T12:35:54.6690445+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware) Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2022-04-21T12:35:54.7460838+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMH3F9AH10Q4"" accepted.
+2022-04-21T12:35:54.7462552+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMH3F9AH10Q4"" started.
+2022-04-21T12:35:54.7586361+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMH3F9AH10Q3"" stopped.
+2022-04-21T12:35:54.8042894+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets) Connection id ""0HMH3F9AH10Q3"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2022-04-21T12:35:54.8479762+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware) Connection "0HMH3F9AH10Q4" established using the following protocol: Tls12
+2022-04-21T12:35:54.9706992+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:7114/swagger/index.html - -
+2022-04-21T12:35:54.9723626+03:00 [DBG] (Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware) Wildcard detected, all requests with hosts will be allowed.
+2022-04-21T12:35:54.9753715+03:00 [DBG] (Sentry.ISentryClient) New scope pushed.
+2022-04-21T12:35:54.9766066+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-04-21T12:35:55.0213842+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-04-21T12:35:55.0221510+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-04-21T12:35:55.1600731+03:00 [DBG] (Sentry.ISentryClient) Disposing scope.
+2022-04-21T12:35:55.1659018+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:7114/swagger/index.html - - - 200 - text/html;charset=utf-8 199.8945ms
+2022-04-21T12:35:55.4282116+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:7114/swagger/v1/swagger.json - -
+2022-04-21T12:35:55.4284016+03:00 [DBG] (Sentry.ISentryClient) New scope pushed.
+2022-04-21T12:35:55.4284598+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-04-21T12:35:55.4285239+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-04-21T12:35:55.4285683+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-04-21T12:35:55.5965286+03:00 [DBG] (Sentry.ISentryClient) Disposing scope.
+2022-04-21T12:35:55.5970044+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:7114/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 168.8243ms
+2022-04-21T12:35:58.2800439+03:00 [WRN] (MassTransit) Connection Failed: rabbitmq://localhost/
+RabbitMQ.Client.Exceptions.BrokerUnreachableException: None of the specified endpoints were reachable
+ ---> System.AggregateException: One or more errors occurred. (Connection failed)
+ ---> RabbitMQ.Client.Exceptions.ConnectFailureException: Connection failed
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at RabbitMQ.Client.Impl.TcpClientAdapter.ConnectAsync(String host, Int32 port)
+   at RabbitMQ.Client.Impl.TaskExtensions.TimeoutAfter(Task task, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingAddressFamily(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout, AddressFamily family)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingIPv4(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler..ctor(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.Framing.Impl.IProtocolExtensions.CreateFrameHandler(IProtocol protocol, AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.ConnectionFactory.CreateFrameHandler(AmqpTcpEndpoint endpoint)
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IList`1 hostnames, String clientProvidedName)
+   at MassTransit.RabbitMqTransport.ConnectionContextFactory.CreateConnection(ISupervisor supervisor) in /_/src/Transports/MassTransit.RabbitMqTransport/RabbitMqTransport/ConnectionContextFactory.cs:line 86
+2022-04-21T12:35:58.7325527+03:00 [DBG] (MassTransit) Endpoint Faulted: rabbitmq://localhost/WS7149_RecipesAPI_bus_pycyyyn7wrybkf47bdpng61wrz?temporary=true
+2022-04-21T12:36:06.1065810+03:00 [DBG] (MassTransit) Connect: "root@localhost:5672/"
+2022-04-21T12:36:10.2482229+03:00 [WRN] (MassTransit) Connection Failed: rabbitmq://localhost/
+RabbitMQ.Client.Exceptions.BrokerUnreachableException: None of the specified endpoints were reachable
+ ---> System.AggregateException: One or more errors occurred. (Connection failed)
+ ---> RabbitMQ.Client.Exceptions.ConnectFailureException: Connection failed
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at RabbitMQ.Client.Impl.TcpClientAdapter.ConnectAsync(String host, Int32 port)
+   at RabbitMQ.Client.Impl.TaskExtensions.TimeoutAfter(Task task, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingAddressFamily(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout, AddressFamily family)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingIPv4(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler..ctor(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.Framing.Impl.IProtocolExtensions.CreateFrameHandler(IProtocol protocol, AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.ConnectionFactory.CreateFrameHandler(AmqpTcpEndpoint endpoint)
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IList`1 hostnames, String clientProvidedName)
+   at MassTransit.RabbitMqTransport.ConnectionContextFactory.CreateConnection(ISupervisor supervisor) in /_/src/Transports/MassTransit.RabbitMqTransport/RabbitMqTransport/ConnectionContextFactory.cs:line 86
+2022-04-21T12:36:21.5207269+03:00 [DBG] (MassTransit) Connect: "root@localhost:5672/"
+2022-04-21T12:36:25.6539401+03:00 [WRN] (MassTransit) Connection Failed: rabbitmq://localhost/
+RabbitMQ.Client.Exceptions.BrokerUnreachableException: None of the specified endpoints were reachable
+ ---> System.AggregateException: One or more errors occurred. (Connection failed)
+ ---> RabbitMQ.Client.Exceptions.ConnectFailureException: Connection failed
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at RabbitMQ.Client.Impl.TcpClientAdapter.ConnectAsync(String host, Int32 port)
+   at RabbitMQ.Client.Impl.TaskExtensions.TimeoutAfter(Task task, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingAddressFamily(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout, AddressFamily family)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingIPv4(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler..ctor(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.Framing.Impl.IProtocolExtensions.CreateFrameHandler(IProtocol protocol, AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.ConnectionFactory.CreateFrameHandler(AmqpTcpEndpoint endpoint)
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IList`1 hostnames, String clientProvidedName)
+   at MassTransit.RabbitMqTransport.ConnectionContextFactory.CreateConnection(ISupervisor supervisor) in /_/src/Transports/MassTransit.RabbitMqTransport/RabbitMqTransport/ConnectionContextFactory.cs:line 86
