@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Recipes.Indexer.Models;
+using Recipes.Search.Api.Services;
 
 namespace Recipes.Search.Api.Controllers;
 
@@ -8,20 +9,18 @@ namespace Recipes.Search.Api.Controllers;
 public class SearchController : ControllerBase
 {
     private readonly ILogger<SearchController> _logger;
+    private readonly RecipesSearchService _searchService;
 
-    public SearchController(ILogger<SearchController> logger)
+    public SearchController(ILogger<SearchController> logger, RecipesSearchService searchService)
     {
         _logger = logger;
+        _searchService = searchService;
     }
 
     [Route("")]
     [HttpGet]
-    public IEnumerable<RecipeDocument> Search()
+    public async Task<IEnumerable<RecipeDocument>> Search([FromQuery] string query)
     {
-        return Enumerable.Range(1, 5).Select(_ => new RecipeDocument
-            {
-                Id = Guid.NewGuid().ToString()
-            })
-            .ToArray();
+        return await _searchService.Search(query);
     }
 }
