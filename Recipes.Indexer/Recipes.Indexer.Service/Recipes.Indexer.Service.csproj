@@ -24,8 +24,7 @@
       <ProjectReference Include="..\..\Core\Core.Mapper\Core.Mapper.csproj" />
       <ProjectReference Include="..\..\Core\Core.RabbitMQ\Core.RabbitMQ.csproj" />
       <ProjectReference Include="..\..\Core\Core.Settings\Core.Settings.csproj" />
-      <ProjectReference Include="..\..\Entities\Entities.csproj" />
-      <ProjectReference Include="..\..\Messages\Messages.csproj" />
+      <ProjectReference Include="..\..\Recipes.API\Recipes.API.Models.Shared\Recipes.API.Models.Shared.csproj" />
       <ProjectReference Include="..\Recipes.Indexer.Models\Recipes.Indexer.Models.csproj" />
     </ItemGroup>
 </Project>

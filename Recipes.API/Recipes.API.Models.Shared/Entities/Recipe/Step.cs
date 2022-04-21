@@ -1,7 +1,7 @@
-﻿namespace Entities.Recipe;
+﻿namespace Recipes.API.Models.Shared.Entities.Recipe;
 
-public class Step: IHasId
-{
+public class Step
+{   
     public string Id { get; set; } = null!;
     public int Index { get; set; }
     public string Content { get; set; }

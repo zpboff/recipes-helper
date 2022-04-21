@@ -1,6 +1,6 @@
 ﻿using Core.Mapper;
-using Entities.Recipe;
 using Mapster;
+using Recipes.API.Models.Shared.Entities.Recipe;
 using Recipes.Indexer.Models;
 
 namespace Recipes.Indexer.Service.Mappings;

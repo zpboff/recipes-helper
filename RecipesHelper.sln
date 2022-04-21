@@ -1,7 +1,5 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{3C0B1086-77C9-4A98-962B-B71B74227798}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{CE9DBBA1-DC7F-46AC-8606-DE055C064864}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.MongoDb", "Core\Core.MongoDb\Core.MongoDb.csproj", "{0F19B7B9-F81D-4240-9740-2E0BCB03A124}"
@@ -28,8 +26,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rabbitmq", "rabbitmq", "{3B
 	ProjectSection(SolutionItems) = preProject
 		docker\rabbitmq\docker-compose.yml = docker\rabbitmq\docker-compose.yml
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messages", "Messages\Messages.csproj", "{A6A61469-1D19-4508-9AEB-F9AACEC4C04A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Elastic", "Core\Core.Elastic\Core.Elastic.csproj", "{4532AF4E-9A1C-42D4-A7B5-25206B4DDC78}"
 EndProject
@@ -70,16 +66,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipes.API.App", "Recipes.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipes.API.Models", "Recipes.API\Recipes.API.Models\Recipes.API.Models.csproj", "{27616805-6A61-4EB1-9737-D3CB354EC865}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipes.API.Models.Shared", "Recipes.API\Recipes.API.Models.Shared\Recipes.API.Models.Shared.csproj", "{E8A43CE8-0B78-41DD-8BF6-A23DF98AA057}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3C0B1086-77C9-4A98-962B-B71B74227798}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C0B1086-77C9-4A98-962B-B71B74227798}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C0B1086-77C9-4A98-962B-B71B74227798}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C0B1086-77C9-4A98-962B-B71B74227798}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0F19B7B9-F81D-4240-9740-2E0BCB03A124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0F19B7B9-F81D-4240-9740-2E0BCB03A124}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F19B7B9-F81D-4240-9740-2E0BCB03A124}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -96,10 +90,6 @@ Global
 		{6C0F3B55-0A27-40B4-8184-EDA6EF19A113}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C0F3B55-0A27-40B4-8184-EDA6EF19A113}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C0F3B55-0A27-40B4-8184-EDA6EF19A113}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A6A61469-1D19-4508-9AEB-F9AACEC4C04A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A6A61469-1D19-4508-9AEB-F9AACEC4C04A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A6A61469-1D19-4508-9AEB-F9AACEC4C04A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A6A61469-1D19-4508-9AEB-F9AACEC4C04A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4532AF4E-9A1C-42D4-A7B5-25206B4DDC78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4532AF4E-9A1C-42D4-A7B5-25206B4DDC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4532AF4E-9A1C-42D4-A7B5-25206B4DDC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -148,6 +138,10 @@ Global
 		{27616805-6A61-4EB1-9737-D3CB354EC865}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27616805-6A61-4EB1-9737-D3CB354EC865}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27616805-6A61-4EB1-9737-D3CB354EC865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8A43CE8-0B78-41DD-8BF6-A23DF98AA057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8A43CE8-0B78-41DD-8BF6-A23DF98AA057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8A43CE8-0B78-41DD-8BF6-A23DF98AA057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8A43CE8-0B78-41DD-8BF6-A23DF98AA057}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0F19B7B9-F81D-4240-9740-2E0BCB03A124} = {CE9DBBA1-DC7F-46AC-8606-DE055C064864}
@@ -170,5 +164,6 @@ Global
 		{D900C87D-818D-492A-A7FF-CE37D086F018} = {D89F625F-1C89-456D-ACCF-D3E0EC5DA667}
 		{CC525CDB-459B-48B6-B542-B2A096A8CFC5} = {65E625EC-7AB4-4F8C-B67C-89019B10F392}
 		{27616805-6A61-4EB1-9737-D3CB354EC865} = {65E625EC-7AB4-4F8C-B67C-89019B10F392}
+		{E8A43CE8-0B78-41DD-8BF6-A23DF98AA057} = {65E625EC-7AB4-4F8C-B67C-89019B10F392}
 	EndGlobalSection
 EndGlobal

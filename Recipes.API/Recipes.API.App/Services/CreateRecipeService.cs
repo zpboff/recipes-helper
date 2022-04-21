@@ -1,11 +1,11 @@
 ﻿using Core.MongoDb;
-using Entities.Recipe;
 using Mapster;
 using MassTransit;
-using Messages;
 using MongoDB.Driver;
 using Recipes.API.App.Settings;
 using Recipes.API.Models.CreateRecipe;
+using Recipes.API.Models.Shared.Entities.Recipe;
+using Recipes.API.Models.Shared.Messages;
 
 namespace Recipes.API.App.Services;
 

@@ -1,4 +1,4 @@
-﻿namespace Entities;
+﻿namespace Recipes.API.Models.Shared.Entities;
 
 public interface IEntity: IHasId
 {

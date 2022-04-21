@@ -1,4 +1,4 @@
-﻿namespace Entities.Recipe;
+﻿namespace Recipes.API.Models.Shared.Entities.Recipe;
 
 public class Ingredient: IHasId
 {

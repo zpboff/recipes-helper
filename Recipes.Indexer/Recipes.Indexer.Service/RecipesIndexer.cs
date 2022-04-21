@@ -1,7 +1,7 @@
 using Core.Elastic;
 using MapsterMapper;
 using MassTransit;
-using Messages;
+using Recipes.API.Models.Shared.Messages;
 using Recipes.Indexer.Models;
 using Recipes.Indexer.Service.Settings;
 
