@@ -9,7 +9,7 @@ const Home: NextPage = () => {
             <Head>
                 <title>Create Next App</title>
                 <meta name="description" content="Recipes helper"/>
-                <link rel="icon" href="/favicon.ico"/>
+                <link rel="icon" href="/favicon.png"/>
             </Head>
             <header className={styles.header}>
                 Заголовок
