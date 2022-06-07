@@ -1,3 +1,15 @@
+:root {
+  --bg-color: #EEF0F2;
+  --content-color: #FFFFFF;
+  --primary-color: #ED254E;
+
+  --main-text: rgba(0, 0, 0, .865);
+  --main-text_reversed: rgb(256, 256, 256);
+  --additional-text: rgba(0, 0, 0, .48);
+  --additional-text_reversed: rgba(256, 256, 256, .48);
+  --not-active-text: rgba(0, 0, 0, .32);
+  --not-active-text_reversed: rgba(256, 256, 256, .32);
+}
 html,
 body {
   height: 100%;
@@ -20,8 +32,5 @@ a {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-:root {
-  --bg-color: #EEF0F2;
+  color: var(--main-text);
 }

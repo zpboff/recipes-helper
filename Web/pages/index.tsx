@@ -12,17 +12,13 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.png"/>
             </Head>
             <header className={styles.header}>
-                Заголовок
             </header>
-            <aside className={styles.aside}>
-                Меню
-            </aside>
+            {/*<aside className={styles.aside}>*/}
+            {/*    Меню*/}
+            {/*</aside>*/}
             <main className={styles.main}>
                 Контент
             </main>
-            <footer className={styles.footer}>
-                Подвал
-            </footer>
         </div>
     )
 }
