@@ -1,23 +1,25 @@
 import type {NextPage} from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { Container } from '../components/Container'
+import { Content } from '../components/Content'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
     return (
         <div className={styles.app}>
             <Head>
-                <title>Create Next App</title>
+                <title>Recipes helper</title>
                 <meta name="description" content="Recipes helper"/>
                 <link rel="icon" href="/favicon.png"/>
             </Head>
             <header className={styles.header}>
             </header>
-            {/*<aside className={styles.aside}>*/}
-            {/*    Меню*/}
-            {/*</aside>*/}
             <main className={styles.main}>
-                Контент
+                <Container>
+                    <Content>
+                    </Content>
+                </Container>
             </main>
         </div>
     )
