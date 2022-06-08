@@ -4,21 +4,14 @@ namespace Core.RabbitMQ;
 
 public class RabbitBusFactory
 {
-    private readonly IRabbitSettings _settings;
-
-    public RabbitBusFactory(IRabbitSettings settings)
-    {
-        _settings = settings;
-    }
-        
-    public IBusControl CreateBus(Action<IRabbitMqBusFactoryConfigurator>? configure)
+    public IBusControl CreateBus(string host, string user, string password, Action<IRabbitMqBusFactoryConfigurator>? configure = null)
     {
         var busFactory = Bus.Factory.CreateUsingRabbitMq(cfg =>
         {
-            cfg.Host(new Uri($"rabbitmq://{_settings.Host}"), h =>
+            cfg.Host(new Uri($"rabbitmq://{host}"), h =>
             {
-                h.Username(_settings.User);
-                h.Password(_settings.Password);
+                h.Username(user);
+                h.Password(password);
             });
 
             configure?.Invoke(cfg);

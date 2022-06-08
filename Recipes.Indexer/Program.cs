@@ -1,28 +1,30 @@
 using Core.RabbitMQ;
+using Core.Settings;
 using MassTransit;
+using Recipes.Indexer;
 using Recipes.Indexer.Settings;
 
 var host = Host.CreateDefaultBuilder(args)
-    .ConfigureServices(services =>
+    .ConfigureServices((context, services) =>
     {
+        services.RegisterConfiguration(context.Configuration);
+        services.AddTransient<RecipesIndexer>();
         services.AddRabbit(configurator =>
         {
             configurator.AddDelayedMessageScheduler();
-            
-            configurator.UsingRabbitMq((context, cfg) =>
-            {
-                var settings = context.GetService<RecipesIndexerRabbitSettings>();
-                
-                cfg.Host(new Uri(settings!.Host), hostConf =>
-                {
-                    hostConf.Username(settings.User);
-                    hostConf.Password(settings.Password);
-                });
-                
-                cfg.ConfigureEndpoints(context);
-            });
         });
     })
     .Build();
 
-await host.RunAsync();
+var settings = host.Services.GetService<RecipesIndexerRabbitSettings>();
+var busFactory = host.Services.GetService<RabbitBusFactory>();
+var bus = busFactory!.CreateBus(settings.Host, settings.User, settings.Password);
+
+try
+{
+    await bus.StartAsync();
+}
+finally
+{    
+    await bus.StopAsync();
+}
