@@ -9,6 +9,8 @@
   --additional-text_reversed: rgba(256, 256, 256, .48);
   --not-active-text: rgba(0, 0, 0, .32);
   --not-active-text_reversed: rgba(256, 256, 256, .32);
+  
+  --padding: 16px;
 }
 html,
 body {

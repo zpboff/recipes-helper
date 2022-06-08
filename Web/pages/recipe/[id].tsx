@@ -2,6 +2,7 @@
 import {useRouter} from 'next/router';
 import {NextPage} from "next";
 import Head from "next/head";
+import { Seo } from '../../components/Seo';
 
 type Props = {
     id: string;
@@ -10,10 +11,7 @@ type Props = {
 const Recipe: NextPage<Props> = ({ id }) => {
     return (
         <>
-            <Head>
-                <title>Рецепт - {id}</title>
-                <meta name="description" content={`Рецепт - ${id}`} />
-            </Head>
+            <Seo title={`Рецепт - ${id}`} description={`Рецепт - ${id}`} />
             Recipe - {id}
         </>
     );
