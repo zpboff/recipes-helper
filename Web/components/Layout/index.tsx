@@ -11,13 +11,34 @@ export const Layout: React.FC<PropsWithChildren> = ({ children }) => {
         <div className={styles.app}>
             <Head>
                 <link rel="icon" href="/favicon.png"/>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+                <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
             </Head>
             <header className={styles.header}>
                 <Link href="/">
-                    <a>
-                        <Image src="/logo.png" title="Recipes helper" alt="Recipes helper" width={32} height={32} />
+                    <a className={styles.navLink}>
+                        <Image 
+                            src="/logo.png"
+                            title="Recipes helper" 
+                            alt="Recipes helper" 
+                            width={32}
+                            height={32}
+                        />
                     </a>    
                 </Link>
+                <div className={styles.linkBlock}>
+                    <Link href="/login">
+                        <a className={styles.navLink}>
+                            Вход
+                        </a>
+                    </Link>
+                    <Link href="/register">
+                        <a className={styles.navLink}>
+                            Регистрация
+                        </a>
+                    </Link>
+                </div>
             </header>
             <aside className={styles.aside}>
                 

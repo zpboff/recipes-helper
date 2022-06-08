@@ -2,6 +2,7 @@
   --bg-color: #EEF0F2;
   --content-color: #FFFFFF;
   --primary-color: #ED254E;
+  --primary-color-dark: #D62045;
 
   --main-text: rgba(0, 0, 0, .865);
   --main-text_reversed: rgb(256, 256, 256);
@@ -16,8 +17,7 @@ html,
 body {
   height: 100%;
   width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 #__next {
