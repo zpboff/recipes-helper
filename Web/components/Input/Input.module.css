@@ -1,0 +1,43 @@
+﻿.inputContainer {
+    border-radius: var(--border-radius);
+    border: 1px solid var(--primary-color);
+    display: flex;
+    width: 100%;
+    height: 48px;
+    position: relative;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: text;
+    padding: 8px;
+}
+
+.leftIcon .label {
+    left: 40px;
+}
+
+.label {
+    position: absolute;
+    color: var(--additional-text);
+    transition: top 1s;
+}
+
+.active .label {
+    font-size: 12px;
+    bottom: calc(100% + 4px);
+}
+
+.leftIcon .input {
+    margin-left: 4px;
+}
+
+.rightIcon .input {
+    margin-right: 4px;
+}
+
+.rightIcon {
+    
+}
+
+.input {
+    height: 100%;
+}

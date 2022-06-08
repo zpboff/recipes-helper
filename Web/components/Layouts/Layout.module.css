@@ -22,7 +22,7 @@
 
 .navLink {
     color: var(--main-text_reversed);
-    padding: var(--padding);
+    padding: var(--padding) calc(var(--padding) * 1.5);
     display: inline-flex;
     align-items: center;
 }
