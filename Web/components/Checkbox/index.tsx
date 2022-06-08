@@ -11,8 +11,8 @@ const Checkbox: React.FC<Props> = ({ children, textPosition, className = "", ...
     return (
         <label className={styles.container}>
             {textPosition === "left" ? <>{children}&nbsp;</> : null}
-            <span className={styles.checkmark} />
             <input {...checkboxProps} type="checkbox" />
+            <span className={styles.checkmark} />
             {textPosition === "right" ? <>&nbsp;{children}</> : null}
         </label>        
     );
