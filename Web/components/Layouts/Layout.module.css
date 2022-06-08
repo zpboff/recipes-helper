@@ -45,6 +45,16 @@
     overflow-y: auto;
 }
 
+.pageContent {
+    background-color: var(--content-color);
+    border-color: transparent;
+    border-radius: 8px;
+    display: block;
+    min-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 .aside {
     border-right: 2px solid var(--primary-color);
 }

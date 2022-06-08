@@ -15,9 +15,9 @@ export const MainLayout: React.FC<PropsWithChildren> = ({ children }) => {
                     Меню
                 </aside>
                 <Container>
-                    <Content>
+                    <section className={styles.pageContent}>
                         {children}
-                    </Content>
+                    </section>
                 </Container>
             </div>
         </BaseLayout>
