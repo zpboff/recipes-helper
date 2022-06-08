@@ -3,6 +3,7 @@
   --content-color: #FFFFFF;
   --primary-color: #ED254E;
   --primary-color-dark: #D62045;
+  --disabled-color: rgba(256, 256, 256, .58);
 
   --main-text: rgba(0, 0, 0, .865);
   --main-text_reversed: rgb(256, 256, 256);

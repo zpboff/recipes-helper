@@ -13,6 +13,7 @@ import {LockIcon, MailIcon } from '../components/Icons';
 import { Button } from '../components/Button';
 import NavLink from 'next/link';
 import { Link } from '../components/Link';
+import { Checkbox } from '../components/Checkbox';
 
 type LoginParams = {
     email: string;
@@ -60,14 +61,16 @@ const Login: NextPageWithLayout = () => {
                 <Button type="submit" className={styles.submit}>
                     Войти
                 </Button>
-                <label htmlFor="stayLoggedIn">
-                    <Field id="stayLoggedIn" name="stayLoggedIn" type="checkbox"/>
-                    {" "}
-                    Запомнить меня
-                </label>
+                <Field id="stayLoggedIn" name="stayLoggedIn">
+                    {({ field }: any) => (
+                        <Checkbox textPosition="right" {...field}>
+                            Запомнить меня
+                        </Checkbox>
+                    )}
+                </Field>
             </Form>
             <section className={styles.additionalBlock}>
-                <div>
+                <div className={styles.relinking}>
                     <span className={styles.note}>Забыли пароль?</span>
                     {" "}
                     <NavLink href="/password-recover">
@@ -76,7 +79,7 @@ const Login: NextPageWithLayout = () => {
                         </Link>
                     </NavLink>
                 </div>
-                <div>
+                <div className={styles.relinking}>
                     <span className={styles.note}>Нет учетной записи?</span>
                     {" "}
                     <NavLink href="/register">

@@ -16,6 +16,6 @@
 }
 
 .button:disabled {
-    background-color: var(--primary-color);
+    background-color: var(--disabled-color);
     opacity: .1;
 }

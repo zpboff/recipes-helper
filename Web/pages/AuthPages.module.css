@@ -12,6 +12,7 @@
     border-radius: var(--border-radius);
     background-color: var(--content-color);
     padding: var(--padding-m);
+    margin-bottom: 24px;
 }
 
 .head {
@@ -41,5 +42,5 @@
 }
 
 .relinking {
-
+    margin-bottom: 8px;
 }
