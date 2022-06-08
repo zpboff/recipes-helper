@@ -1,20 +1,63 @@
 :root {
-  --bg-color: #EEF0F2;
-  --content-color: #FFFFFF;
-  --primary-color: #ED254E;
-  --primary-color-dark: #D62045;
-  --disabled-color: rgba(256, 256, 256, .58);
+  /*Логотип*/
+  --gm-0: #00BEA2;
+  /*Фон*/
+  --gm-10: #C6F5EC;
+  --gm-20: #A8EEE2;
+  --gm-30: #8BE7D8;
+  --gm-40: #6DDFCD;
+  /*Основной светлый*/
+  --gm-50: #4FD8C3;
+  /*Основной цвет */
+  --gm-60: #00C5A8;
+  --gm-70: #00B59A;
+  /*Плашка*/
+  --gm-80: #00A58D;
+  /*Текст, плашка при наведении*/
+  --gm-90: #00957F;
+  /*Текст при наведении, плашка при нажатии*/
+  --gm-100: #008571;
+  /*Текст при нажатии*/
+  --gm-110: #007564;
 
-  --main-text: rgba(0, 0, 0, .865);
-  --main-text_reversed: rgb(256, 256, 256);
-  --additional-text: rgba(0, 0, 0, .48);
-  --additional-text_reversed: rgba(256, 256, 256, .48);
-  --not-active-text: rgba(0, 0, 0, .32);
-  --not-active-text_reversed: rgba(256, 256, 256, .32);
+  /*Фон для зоны контента*/
+  --content: #FFFFFF;
+  /*Фон для блоков, боковой панели, меню второго уровня*/
+  --add-content: #F2F2F2;
+  /*Фон сервиса, плашки лайтбокса, выбранный пункт списка*/
+  --sub-content: #EBEBEB;
+  /*Неактивный текст, ватермарк, доп. иконка*/
+  --not-active-text: #ADADAD;
+  /*Дополнительный текст*/
+  --add-text: #858585;
+  /*Текст и иконки на белом фоне*/
+  --text: #222222;
+  /*Черный для прозрачности*/
+  --black: #000000;
+
+  /*Негативный котекст*/
+  /*Фон*/
+  --negative-bg: #FFDDD6;
+  /*Плашка*/
+  --negative-content: #DD473B;
+  /*Текст*/
+  --negative-text: #CB3D35;
   
-  --padding: 16px;
-  --padding-m: 32px;
-  --border-radius: 8px;
+  /*Положительный котекст*/
+  /*Фон*/
+  --positive-bg: #D7F8AE;
+  /*Плашка*/
+  --positive-content: #538A1B;
+  /*Текст*/
+  --positive-text: #477916;
+
+  /*Акцентный контекст*/
+  /*Фон*/
+  --warning-bg: #FFEEC2;
+  /*Плашка*/
+  --warning-content: #FCB73E;
+  /*Текст*/
+  --warning-text: #EF8B17;
 }
 
 html,
@@ -22,7 +65,7 @@ body {
   height: 100vh;
   width: 100vw;
   font-family: 'Roboto', sans-serif;
-  color: var(--main-text);
+  color: var(--text);
 }
 
 #__next {
@@ -43,8 +86,4 @@ a {
   outline: none;
   border: none;
   font-size: 14px;
-}
-
-h2 {
-  font-size: 24px;
 }
