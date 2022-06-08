@@ -1,10 +1,5 @@
 ﻿import { PropsWithChildren } from 'react';
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 import styles from "./Layout.module.css";
-import { Container } from '../Container';
-import { Content } from '../Content';
 import { BaseLayout } from './BaseLayout';
 
 export const MainLayout: React.FC<PropsWithChildren> = ({ children }) => {
@@ -14,11 +9,9 @@ export const MainLayout: React.FC<PropsWithChildren> = ({ children }) => {
                 <aside className={styles.aside}>
                     Меню
                 </aside>
-                <Container>
-                    <section className={styles.pageContent}>
-                        {children}
-                    </section>
-                </Container>
+                <section className={styles.pageContent}>
+                    {children}
+                </section>
             </div>
         </BaseLayout>
     )

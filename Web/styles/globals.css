@@ -10,6 +10,7 @@
   --gm-50: #4FD8C3;
   /*Основной цвет */
   --gm-60: #00C5A8;
+  --primary-color: var(--gm-60);
   --gm-70: #00B59A;
   /*Плашка*/
   --gm-80: #00A58D;
@@ -58,6 +59,9 @@
   --warning-content: #FCB73E;
   /*Текст*/
   --warning-text: #EF8B17;
+
+  /*Размеры*/
+  --m: 8px;
 }
 
 html,
