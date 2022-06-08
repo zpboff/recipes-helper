@@ -6,10 +6,7 @@ import styles from "./Layout.module.css";
 import { Container } from '../Container';
 import { Content } from '../Content';
 
-export type LayoutProps = {
-}
-
-export const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({ children }) => {
+export const Layout: React.FC<PropsWithChildren> = ({ children }) => {
     return (
         <div className={styles.app}>
             <Head>
@@ -22,6 +19,9 @@ export const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({ children }) =
                     </a>    
                 </Link>
             </header>
+            <aside className={styles.aside}>
+                
+            </aside>
             <main className={styles.main}>
                 <Container>
                     <Content>

@@ -4,7 +4,7 @@
     height: 100%;
     width: 100%;
     grid-template-rows: 64px 1fr;
-    grid-template-columns: 1fr;
+    grid-template-columns: 256px 1fr;
 }
 
 .header {
@@ -21,6 +21,7 @@
 }
 
 .aside {
+    border-right: 2px solid var(--primary-color);
 }
 
 .footer {
