@@ -1,0 +1,6 @@
+﻿.content {
+    background-color: var(--content-color);
+    border-color: transparent;
+    border-radius: 8px;
+    display: inline-flex;
+}

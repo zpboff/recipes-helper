@@ -1,0 +1,30 @@
+﻿.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    display: block;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #E2E2E2;
+    margin: 4px;
+    border-radius: 4px;
+}
+
+.container input:checked ~ .checkmark {
+    border-color: var(--primary-color-dark);
+    background-color: var(--primary-color);
+}
