@@ -1,11 +1,11 @@
-﻿import React from 'react';
-import { BaseIcon, IconProps } from './BaseIcon';
+﻿import React from "react";
+import { BaseIcon, IconProps } from "./BaseIcon";
 
 type Props = IconProps;
 
 const LockIcon: React.FC<Props> = (props) => {
     return (
-        <BaseIcon {...props}>
+        <BaseIcon {...props} viewBox="0 0 24 24">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <rect x={5} y={11} width={14} height={10} rx={2}></rect>
             <circle cx={12} cy={16} r={1}></circle>
@@ -14,4 +14,4 @@ const LockIcon: React.FC<Props> = (props) => {
     );
 };
 
-export {LockIcon}
+export { LockIcon };

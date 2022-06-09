@@ -1,34 +1,28 @@
-﻿import React, { PropsWithChildren } from 'react';
+﻿import clsx from "clsx";
+import React, { PropsWithChildren } from "react";
+import styles from "./Icon.module.css";
 
 export type IconProps = React.SVGProps<SVGSVGElement>;
 
-const defaultSize = 24;
-const defaultStrokeWidth = 2;
-const defaultStroke = "currentColor";
-const defaultFill = "none";
-const defaultStrokeLinecap = "round";
-const defaultStrokeLinejoin = "round"; 
-
-const BaseIcon: React.FC<PropsWithChildren<IconProps>> = ({ children, ...svgProps }) => {
-    const width = svgProps.width ?? svgProps.height ?? defaultSize;
-    const height = svgProps.height ?? svgProps.width ?? defaultSize;
-    
+const BaseIcon: React.FC<PropsWithChildren<IconProps>> = ({
+    children,
+    ...svgProps
+}) => {
     return (
         <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width={width} 
-            height={height} 
-            viewBox={`0 0 ${width} ${height}`}
             strokeWidth={2}
             stroke="currentColor"
             fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
             {...svgProps}
+            viewBox="0 0 24 24"
+            width={16}
+            height={16}
+            focusable={false}
+            className={clsx(styles.icon, svgProps.className)}
         >
             {children}
         </svg>
     );
 };
 
-export {BaseIcon}
+export { BaseIcon };
