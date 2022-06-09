@@ -22,13 +22,13 @@ const Header: React.FC<Props> = ({}) => {
                 </a>    
             </Link>
             <div className={styles.linkBlock}>
-                <Link href="/login" className={styles.navLink}>
-                    <a>
+                <Link href="/login">
+                    <a className={styles.navLink}>
                         Вход
                     </a>
                 </Link>
-                <Link href="/register" className={styles.navLink}>
-                    <a>
+                <Link href="/register">
+                    <a className={styles.navLink}>
                         Регистрация
                     </a>
                 </Link>
