@@ -1,21 +1,116 @@
-﻿.button {
-    display: flex;
-    background-color: var(--primary-color);
-    border-radius: var(--border-radius);
-    height: 40px;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    color: var(--main-text_reversed);
-    padding: var(--padding);
+﻿.wrapper {
+    display: inline-block;
+    line-height: normal;
+    padding: 1px;
+    height: var(--height);
+}
+
+.button {
+    appearance: none;
+    letter-spacing: normal;
+
+    font-family: inherit;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    font-variant: normal;
+
+    text-transform: none;
+    text-shadow: none;
+    text-align: center;
+
     cursor: pointer;
+
+    display: inline-block;
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    color: var(--text-color);
+
+    background: none center center / contain no-repeat padding-box
+        var(--bg-color);
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-shadow: var(--bg-color) 0px 0px 0px 1px;
+
+    font-size: var(--font-size);
+    line-height: calc(var(--font-size) + 6px);
+
+    border: initial;
+    border-radius: var(--m);
+    padding: var(--padding);
 }
 
-.button:hover {
-    background-color: var(--primary-color-dark);
+/*Размеры*/
+
+.small {
+    --height: var(--m4);
 }
 
-.button:disabled {
-    background-color: var(--disabled-color);
-    opacity: .1;
+.medium {
+    --height: var(--m5);
+}
+
+.medium .button {
+    --font-size: 16px;
+    --padding: 8px 16px;
+}
+
+.large {
+    --height: var(--m6);
+}
+
+.large .button {
+    --font-size: 18px;
+    --padding: 12px 20px;
+}
+
+/*Содержимое*/
+
+.caption {
+    position: relative;
+    white-space: nowrap;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+}
+
+.iconContainer {
+    display: inline-block;
+    width: 24px;
+    padding-right: 8px;
+}
+
+.icon {
+    display: inline-block;
+}
+
+/*Вариант*/
+
+.default {
+    --bg-color: var(--content);
+    --text-color: var(--text);
+}
+
+.primary {
+    --bg-color: var(--primary-color);
+    --text-color: var(--text-rv);
+}
+
+.success {
+    --bg-color: var(--positive-content);
+}
+
+.fail {
+    --bg-color: var(--negative-content);
+}
+
+.warning {
+    --bg-color: var(--warning-content);
+}
+
+.link {
+    --bg-color: var(--primary-color);
 }

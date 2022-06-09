@@ -18,6 +18,7 @@
     font-weight: 500;
     line-height: 18px;
     padding: var(--m2) var(--m3);
+    text-align: center;
 }
 
 .navLink:hover {
