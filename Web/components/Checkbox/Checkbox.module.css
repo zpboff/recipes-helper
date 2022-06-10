@@ -1,8 +1,8 @@
 ﻿.checkbox {
     width: 100%;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     cursor: pointer;
     user-select: none;
 }

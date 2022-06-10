@@ -9,7 +9,9 @@ export default {
 } as ComponentMeta<typeof Checkbox>;
 
 const Template: ComponentStory<typeof Checkbox> = (args) => (
-    <Checkbox {...args} />
+    <div style={{ width: "400px" }}>
+        <Checkbox {...args} />
+    </div>
 );
 
 export const Basic = Template.bind({});
@@ -17,5 +19,4 @@ export const Basic = Template.bind({});
 Basic.args = {
     children: "Check",
     disabled: false,
-    checked: true,
 };
