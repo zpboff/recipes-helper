@@ -1,4 +1,4 @@
-﻿.container {
+﻿.checkbox {
     width: 100%;
     display: flex;
     align-items: center;
@@ -7,7 +7,7 @@
     user-select: none;
 }
 
-.container input {
+.checkbox input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -25,11 +25,11 @@
     position: relative;
 }
 
-.container input:checked ~ .checkmark {
+.checkbox input:checked ~ .checkmark {
     background-color: var(--gm-80);
 }
 
-.container input:checked ~ .checkmark::after {
+.checkbox input:checked ~ .checkmark::after {
     content: "";
     position: absolute;
     border: solid var(--text-rv);
@@ -39,4 +39,17 @@
     width: 3px;
     left: 6px;
     top: 2px;
+}
+
+.checkbox input:disabled ~ .checkmark {
+    border-color: var(--gm-40);
+}
+
+.checkbox input:checked:disabled ~ .checkmark {
+    border-color: var(--gm-40);
+    background-color: var(--gm-40);
+}
+
+.checkbox input:disabled ~ .label {
+    color: var(--not-active-text);
 }

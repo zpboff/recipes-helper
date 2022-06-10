@@ -11,10 +11,12 @@ const Checkbox: React.FC<Props> = ({
     ...checkboxProps
 }) => {
     return (
-        <label className={styles.container}>
+        <label className={styles.checkbox}>
             <input {...checkboxProps} type="checkbox" />
             <span className={styles.checkmark} />
-            {!!children ? <>&nbsp;{children}</> : null}
+            {!!children ? (
+                <span className={styles.label}>&nbsp;{children}</span>
+            ) : null}
         </label>
     );
 };

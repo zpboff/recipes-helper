@@ -141,7 +141,7 @@
     --active-color: var(--gm-100);
     --text-color: var(--text-rv);
     --hover-color: var(--gm-90);
-    --disabled-color: var(--gm-20);
+    --disabled-color: var(--gm-40);
 }
 
 .success .button {

@@ -17,4 +17,5 @@ export const Basic = Template.bind({});
 Basic.args = {
     children: "Check",
     disabled: false,
+    checked: true,
 };
