@@ -31,7 +31,7 @@ Basic.args = {
     disabled: false,
 };
 
-export const WithIcon = Basic.bind({});
+export const WithIcon = Template.bind({});
 
 WithIcon.args = {
     children: "Button",
