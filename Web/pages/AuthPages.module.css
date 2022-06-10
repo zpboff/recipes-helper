@@ -24,10 +24,6 @@
     padding: 8px;
 }
 
-.icon {
-    color: var(--primary-color);
-}
-
 .note {
     color: var(--additional-text);
     font-size: 14px;

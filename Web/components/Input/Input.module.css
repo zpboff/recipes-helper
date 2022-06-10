@@ -1,14 +1,16 @@
-﻿.inputContainer {
-    border-radius: var(--border-radius);
-    border: 1px solid var(--primary-color);
+﻿.input {
+    border-radius: var(--m);
+    border: 2px solid var(--gm-80);
     display: flex;
     width: 100%;
     height: 48px;
     position: relative;
     align-items: center;
+    justify-content: flex-start;
     margin-bottom: 20px;
     cursor: text;
-    padding: 8px;
+    padding: var(--m);
+    font-size: 16px;
 }
 
 .leftIcon .label {
@@ -17,27 +19,29 @@
 
 .label {
     position: absolute;
-    color: var(--additional-text);
-    transition: top 1s;
+    color: var(--add-text);
+    transition: all 0.2s ease;
 }
 
-.active .label {
+input:not(:placeholder-shown) ~ .label,
+input:focus ~ .label {
     font-size: 12px;
-    bottom: calc(100% + 4px);
+    transform: translate3d(-14px, -15px, 0) scale(0.75);
 }
 
-.leftIcon .input {
+.leftIcon input {
     margin-left: 4px;
 }
 
-.rightIcon .input {
+.rightIcon input {
     margin-right: 4px;
 }
 
-.rightIcon {
-    
+.input input {
+    height: 100%;
+    font-size: inherit;
 }
 
-.input {
-    height: 100%;
+.icon {
+    color: var(--gm-80);
 }

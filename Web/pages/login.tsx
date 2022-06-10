@@ -18,7 +18,6 @@ import { Checkbox } from "../components/Checkbox";
 type LoginParams = {
     email: string;
     password: string;
-    stayLoggedIn: boolean;
 };
 
 const Login: NextPageWithLayout = () => {
@@ -29,7 +28,6 @@ const Login: NextPageWithLayout = () => {
                 defaultValues={{
                     email: "",
                     password: "",
-                    stayLoggedIn: false,
                 }}
                 onSubmit={console.log}
                 className={styles.form}
@@ -67,13 +65,6 @@ const Login: NextPageWithLayout = () => {
                 >
                     Войти
                 </Button>
-                <Field id="stayLoggedIn" name="stayLoggedIn">
-                    {({ field }: any) => (
-                        <Checkbox textPosition="right" {...field}>
-                            Запомнить меня
-                        </Checkbox>
-                    )}
-                </Field>
             </Form>
             <section className={styles.additionalBlock}>
                 <div className={styles.relinking}>
