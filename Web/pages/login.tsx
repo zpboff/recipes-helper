@@ -43,9 +43,10 @@ const Login: NextPageWithLayout = () => {
                         <Input
                             icon={<MailIcon className={styles.icon} />}
                             iconPosition="left"
-                            label="Email"
                             {...field}
-                        />
+                        >
+                            Email
+                        </Input>
                     )}
                 </Field>
                 <Field id="password" name="password">
@@ -55,7 +56,9 @@ const Login: NextPageWithLayout = () => {
                             iconPosition="left"
                             label="Пароль"
                             {...field}
-                        />
+                        >
+                            Пароль
+                        </Input>
                     )}
                 </Field>
                 <Button

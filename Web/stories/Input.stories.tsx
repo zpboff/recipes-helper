@@ -24,6 +24,7 @@ const Template: ComponentStory<typeof Input> = (args) => (
 export const Basic = Template.bind({});
 
 Basic.args = {
-    label: "Placeholder",
+    children: "Placeholder",
     icon: <LockIcon />,
+    loading: false,
 };

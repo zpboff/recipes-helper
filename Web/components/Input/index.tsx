@@ -5,13 +5,12 @@ import styles from "./Input.module.css";
 
 type IconPosition = "left" | "right";
 
-type Props = PropsWithChildren<
-    React.InputHTMLAttributes<HTMLInputElement> & {
-        icon?: React.ReactNode;
-        iconPosition?: IconPosition;
-        label?: React.ReactNode;
-    }
->;
+type Props = React.InputHTMLAttributes<HTMLInputElement> & {
+    children: React.ReactNode;
+    icon?: React.ReactNode;
+    iconPosition?: IconPosition;
+    loading?: boolean;
+};
 
 const InputIcon: React.FC<PropsWithChildren> = ({ children }) => (
     <span className={styles.icon}>{children}</span>
@@ -21,7 +20,7 @@ const Input: React.FC<Props> = ({
     children,
     icon,
     iconPosition = "left",
-    label,
+    loading = false,
     ...inputProps
 }) => {
     const ref = useRef<HTMLLabelElement>(null);
@@ -42,7 +41,7 @@ const Input: React.FC<Props> = ({
         >
             {iconPosition === "left" ? <InputIcon>{icon}</InputIcon> : null}
             <input {...inputProps} placeholder="&nbsp;" />
-            <span className={styles.label}>{label}</span>
+            <span className={styles.label}>{children}</span>
             {iconPosition === "right" ? <InputIcon>{icon}</InputIcon> : null}
         </label>
     );
