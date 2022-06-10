@@ -27,4 +27,5 @@ Basic.args = {
     children: "Placeholder",
     icon: <LockIcon />,
     loading: false,
+    disabled: false,
 };

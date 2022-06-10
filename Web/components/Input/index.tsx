@@ -1,6 +1,7 @@
 ﻿import clsx from "clsx";
 import React, { PropsWithChildren, useRef, useState } from "react";
 import { useClickOutside } from "../../hooks";
+import { Loader } from "../Loader";
 import styles from "./Input.module.css";
 
 type IconPosition = "left" | "right";
@@ -34,12 +35,20 @@ const Input: React.FC<Props> = ({
                 [styles.leftIcon]: !!icon && iconPosition === "left",
                 [styles.rightIcon]: !!icon && iconPosition === "right",
                 [styles.active]: focused || !!inputProps.value,
+                [styles.disabled]: inputProps.disabled,
+                [styles.loading]: loading,
             })}
             htmlFor={inputProps.id}
             onClick={() => setFocused(true)}
             ref={ref}
         >
-            {iconPosition === "left" ? <InputIcon>{icon}</InputIcon> : null}
+            {iconPosition === "left" ? (
+                loading ? (
+                    <Loader />
+                ) : (
+                    <InputIcon>{icon}</InputIcon>
+                )
+            ) : null}
             <input {...inputProps} placeholder="&nbsp;" />
             <span className={styles.label}>{children}</span>
             {iconPosition === "right" ? <InputIcon>{icon}</InputIcon> : null}

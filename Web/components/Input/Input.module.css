@@ -13,6 +13,11 @@
     font-size: 16px;
 }
 
+.input.disabled {
+    border-color: var(--gm-40);
+    background-color: var(--sub-content);
+}
+
 .leftIcon .label {
     left: 40px;
 }
@@ -21,6 +26,10 @@
     position: absolute;
     color: var(--add-text);
     transition: all 0.2s ease;
+}
+
+.input input:disabled {
+    background-color: transparent;
 }
 
 input:not(:placeholder-shown) ~ .label,
@@ -44,4 +53,11 @@ input:focus ~ .label {
 
 .icon {
     color: var(--gm-80);
+}
+
+.disabled .icon {
+    color: var(--gm-40);
+}
+
+.loading {
 }
