@@ -1,0 +1,50 @@
+.container {
+    position: absolute;
+    top: 100px;
+    right: 50%;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.notification {
+    display: inline-flex;
+    height: var(--m6);
+    border: 1px solid var(--add-text);
+    width: 256px;
+    border-radius: var(--m);
+    overflow: hidden;
+}
+
+.notification:not(:last-of-type) {
+    margin-bottom: var(--m2);
+}
+
+.status {
+    width: var(--m5);
+}
+
+.status.info {
+    background-color: var(--sub-content);
+}
+
+.status.success {
+    background-color: var(--negative-content);
+}
+
+.status.warning {
+    background-color: var(--warning-content);
+
+}
+
+.status.fail {
+    background-color: var(--negative-content);
+
+}
+
+.content {
+    flex-grow: 1;
+}
+
+.close {
+    width: var(--m5);
+}
