@@ -15,13 +15,13 @@ const NotificationTile: React.FC<Props> = ({ notification }) => {
 
     const handleRemove = () => removeNotification(notification.id);
 
-    useEffect(() => {
-        const timeout = setTimeout(handleRemove, notificationLifeTimeMs);
+    // useEffect(() => {
+    //     const timeout = setTimeout(handleRemove, notificationLifeTimeMs);
 
-        return () => {
-            clearTimeout(timeout);
-        }
-    }, [])
+    //     return () => {
+    //         clearTimeout(timeout);
+    //     }
+    // }, [])
 
     return (
         <div className={styles.notification}>

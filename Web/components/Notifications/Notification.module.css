@@ -1,7 +1,7 @@
 .container {
     position: absolute;
     top: 100px;
-    right: 50%;
+    right: var(--m3);
     display: inline-flex;
     flex-direction: column;
 }
@@ -9,9 +9,7 @@
 .notification {
     display: inline-flex;
     height: var(--m6);
-    border: 1px solid var(--add-text);
     width: 256px;
-    border-radius: var(--m);
     overflow: hidden;
 }
 
@@ -21,6 +19,11 @@
 
 .status {
     width: var(--m5);
+    border-top-left-radius: var(--m);
+    border-bottom-left-radius: var(--m);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .status.info {
@@ -43,8 +46,21 @@
 
 .content {
     flex-grow: 1;
+    border: solid var(--add-text);
+    border-width: 1px 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .close {
     width: var(--m5);
+    border: solid var(--add-text);
+    border-width: 1px 1px 1px 0;
+    border-top-right-radius: var(--m);
+    border-bottom-right-radius: var(--m);
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }

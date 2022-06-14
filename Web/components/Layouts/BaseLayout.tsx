@@ -2,7 +2,7 @@
 import Head from "next/head";
 import styles from "./Layout.module.css";
 import { Header } from './Header';
-import { NotificationsProvider } from '../Notification';
+import { NotificationsProvider } from '../Notifications';
 
 const BaseLayout: React.FC<PropsWithChildren> = ({ children }) => {
     return (
