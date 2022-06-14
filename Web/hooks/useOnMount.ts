@@ -1,6 +1,6 @@
 import { DependencyList, EffectCallback, useEffect, useRef } from "react"
 
-export const useOnMount = (callback: EffectCallback, deps: DependencyList) => {
+export const useOnMount = (callback: EffectCallback) => {
     const didMountRef = useRef(false);
 
     useEffect(() => {
@@ -10,5 +10,5 @@ export const useOnMount = (callback: EffectCallback, deps: DependencyList) => {
         }
 
         return callback();
-    }, deps);
+    }, []);
 }
