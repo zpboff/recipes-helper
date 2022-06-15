@@ -30,20 +30,12 @@ const NotificationTile: React.FC<Props> = ({ notification }) => {
     }, []);
 
     return (
-        <div className={styles.notification}>
-            <div className={clsx(styles.status, {
-                [styles.info]: notification.status === NotificationStatus.Info,
-                [styles.success]: notification.status === NotificationStatus.Success,
-                [styles.warning]: notification.status === NotificationStatus.Warning,
-                [styles.fail]: notification.status === NotificationStatus.Fail,
-            })}>
-                <Switch on={notification.status}>
-                    <Case when={NotificationStatus.Info} then={() => <CircleInfoIcon />} />
-                    <Case when={NotificationStatus.Success} then={() => <CircleSuccessIcon />} />
-                    <Case when={NotificationStatus.Warning} then={() => <CircleXIcon />} />
-                    <Case when={NotificationStatus.Fail} then={() => <CircleAlertIcon width={24} height={24} />} />
-                </Switch>
-            </div>
+        <div className={clsx(styles.notification, {
+            [styles.info]: notification.status === NotificationStatus.Info,
+            [styles.success]: notification.status === NotificationStatus.Success,
+            [styles.warning]: notification.status === NotificationStatus.Warning,
+            [styles.fail]: notification.status === NotificationStatus.Fail,
+        })}>
             <div className={styles.content}>
                 {notification.content}
             </div>

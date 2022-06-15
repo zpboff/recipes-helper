@@ -13,10 +13,10 @@ const BaseIcon: React.FC<PropsWithChildren<IconProps>> = ({
             strokeWidth={2}
             stroke="currentColor"
             fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             {...svgProps}
             viewBox="0 0 24 24"
-            width={16}
-            height={16}
             focusable={false}
             className={clsx(styles.icon, svgProps.className)}
         >

@@ -12,8 +12,20 @@ const Home: NextPage = () => {
     useOnMount(() => {
         console.count("notification")
         pushNotification({
-            content: "123",
+            content: "Инфо",
+            status: NotificationStatus.Info
+        });
+        pushNotification({
+            content: "Успех",
             status: NotificationStatus.Success
+        });
+        pushNotification({
+            content: "Внимание",
+            status: NotificationStatus.Warning
+        });
+        pushNotification({
+            content: "Ошибка",
+            status: NotificationStatus.Fail
         });
     })
 
