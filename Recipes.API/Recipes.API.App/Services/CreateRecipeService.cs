@@ -13,7 +13,6 @@ public class CreateRecipeService
 {
     private readonly IPublishEndpoint _publishEndpoint;
     private readonly IMongoCollection<Recipe> _collection;
-    private readonly IPublishEndpoint _publishEndpoint;
 
     public CreateRecipeService(IMongoFactory mongoFactory, RecipesMongoSettings mongoSettings,
         IPublishEndpoint publishEndpoint)
