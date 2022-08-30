@@ -3,7 +3,7 @@
 public class Step
 {   
     public string Id { get; set; } = null!;
-    public int Index { get; set; }
-    public string Content { get; set; }
-    public IEnumerable<string> Images { get; set; }
+    public int Order { get; set; }
+    public string? Content { get; set; }
+    public string? Image { get; set; }
 }

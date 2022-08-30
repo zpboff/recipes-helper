@@ -17,9 +17,9 @@ public class SearchController : ControllerBase
         _searchService = searchService;
     }
 
-    [Route("")]
+    [Route("/{query}")]
     [HttpGet]
-    public async Task<IEnumerable<RecipeDocument>> Search([FromQuery] string query)
+    public async Task<IEnumerable<RecipeDocument>> Index([FromQuery] string query)
     {
         return await _searchService.Search(query);
     }

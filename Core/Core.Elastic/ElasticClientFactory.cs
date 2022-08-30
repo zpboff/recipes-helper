@@ -8,7 +8,8 @@ public class ElasticClientFactory : IElasticClientFactory
     public ElasticsearchClient GetClient(IElasticSettings settings)
     {
         var clientSettings = new ElasticsearchClientSettings(new Uri(settings.ConnectionString))
-            .Authentication(new BasicAuthentication(settings.User, settings.Password));
+            .Authentication(new BasicAuthentication(settings.User, settings.Password))
+            .DefaultIndex(settings.Index);
 
         return new ElasticsearchClient(clientSettings);
     }
