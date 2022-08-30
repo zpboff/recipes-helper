@@ -1,10 +1,11 @@
 ﻿using FastEndpoints;
 using Recipes.API.App.Services;
+using Recipes.API.Models;
 using Recipes.API.Models.CreateRecipe;
 
 namespace Recipes.API.App.Endpoints;
 
-public class CreateRecipeEndpoint: Endpoint<CreateRecipeRequest, CreateRecipeResponse>
+public class CreateRecipeEndpoint: Endpoint<CreateRecipeRequest, RecipeIdentityResponse>
 {
     private readonly CreateRecipeService _createRecipeService;
     public CreateRecipeEndpoint(CreateRecipeService createRecipeService)
@@ -23,7 +24,7 @@ public class CreateRecipeEndpoint: Endpoint<CreateRecipeRequest, CreateRecipeRes
     {
         var recipeId = await _createRecipeService.CreateService(req, "");
 
-        await SendAsync(new CreateRecipeResponse
+        await SendAsync(new RecipeIdentityResponse
         {   
             Id = recipeId
         }, cancellation: ct);
