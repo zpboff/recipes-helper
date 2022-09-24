@@ -11,8 +11,6 @@ public static class RabbitDi
     {
         services.AddMassTransit(configurator =>
         {
-            configurator.UsingRabbitMq();
-            
             configurator.SetKebabCaseEndpointNameFormatter();
 
             var entryAssembly = Assembly.GetEntryAssembly();

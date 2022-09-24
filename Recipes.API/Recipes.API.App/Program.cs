@@ -25,7 +25,10 @@ builder.Services
     .AddHttpClient()
     .AddControllers();
 
-builder.Services.AddTransient<CreateRecipeService>();
+builder.Services
+    .AddTransient<CreateRecipeService>()
+    .AddTransient<UpdateRecipeService>();
+
 builder.Services
     .AddAuthorization(options =>
     {

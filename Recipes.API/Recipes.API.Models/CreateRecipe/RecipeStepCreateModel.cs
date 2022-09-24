@@ -2,7 +2,7 @@
 
 public class RecipeStepCreateModel
 {
-    public int Index { get; set; }
+    public int Order { get; set; }
     public string Content { get; set; } = null!;
     public string? Image { get; set; }
 }
