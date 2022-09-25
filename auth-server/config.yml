@@ -1,5 +1,5 @@
 sqlDb:
   host: "localhost"
   port: "5432"
-  user: "postgres"
+  user: "pgsql"
   pass: "mA089p9yhsP*"

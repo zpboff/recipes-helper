@@ -7,13 +7,15 @@ import (
 	"os"
 )
 
+type SqlDbConfig struct {
+	Host     string `yaml:"host", envconfig:"SQL_DB_HOST"`
+	Port     string `yaml:"port", envconfig:"SQL_DB_PORT"`
+	Username string `yaml:"user", envconfig:"SQL_DB_USER"`
+	Password string `yaml:"pass", envconfig:"SQL_DB_PASSWORD"`
+}
+
 type Config struct {
-	SqlDB struct {
-		Host     string `yaml:"host", envconfig:"SQL_DB_HOST"`
-		Port     string `yaml:"port", envconfig:"SQL_DB_PORT"`
-		Username string `yaml:"user", envconfig:"SQL_DB_USER"`
-		Password string `yaml:"pass", envconfig:"SQL_DB_PASSWORD"`
-	} `yaml:"sqlDb"`
+	SqlDB SqlDbConfig `yaml:"sqlDb"`
 }
 
 func processError(err error) {
