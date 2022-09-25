@@ -1,0 +1,181 @@
+2022-09-24T15:47:41.5989333+03:00 [INF] (FastEndpoints.StartupTimer) Registered 3 endpoints in 2191 milliseconds.
+2022-09-24T15:47:41.6304658+03:00 [DBG] (Microsoft.Extensions.Hosting.Internal.Host) Hosting starting
+2022-09-24T15:47:42.0018371+03:00 [INF] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager) User profile is available. Using '"C:\Users\ZpbOff\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-09-24T15:47:42.0066363+03:00 [DBG] (MassTransit.Transports.BusDepot) Starting bus instances: "IBus"
+2022-09-24T15:47:42.0098462+03:00 [DBG] (MassTransit) Starting bus: rabbitmq://localhost/
+2022-09-24T15:47:42.0272980+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository) Reading data from file '"C:\Users\ZpbOff\AppData\Local\ASP.NET\DataProtection-Keys\key-390fe91c-2524-44c3-b5d6-96521a90959b.xml"'.
+2022-09-24T15:47:42.0429019+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository) Reading data from file '"C:\Users\ZpbOff\AppData\Local\ASP.NET\DataProtection-Keys\key-60322868-6b0b-4ded-8d06-0731048b1517.xml"'.
+2022-09-24T15:47:42.0549691+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository) Reading data from file '"C:\Users\ZpbOff\AppData\Local\ASP.NET\DataProtection-Keys\key-74ada02f-ef78-4f02-98c3-09888fbe2223.xml"'.
+2022-09-24T15:47:42.0694069+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository) Reading data from file '"C:\Users\ZpbOff\AppData\Local\ASP.NET\DataProtection-Keys\key-99ba258b-cdf0-4954-9aa7-45d61b454d59.xml"'.
+2022-09-24T15:47:42.0721734+03:00 [DBG] (MassTransit) Connect: "root@localhost:5672/"
+2022-09-24T15:47:42.0786415+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository) Reading data from file '"C:\Users\ZpbOff\AppData\Local\ASP.NET\DataProtection-Keys\key-e02c14b3-7056-4086-bfcf-1daece6bb0fd.xml"'.
+2022-09-24T15:47:42.0943340+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager) Found key {390fe91c-2524-44c3-b5d6-96521a90959b}.
+2022-09-24T15:47:42.1079143+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager) Found key {60322868-6b0b-4ded-8d06-0731048b1517}.
+2022-09-24T15:47:42.1080697+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager) Found key {74ada02f-ef78-4f02-98c3-09888fbe2223}.
+2022-09-24T15:47:42.1081244+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager) Found key {99ba258b-cdf0-4954-9aa7-45d61b454d59}.
+2022-09-24T15:47:42.1081876+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager) Found key {e02c14b3-7056-4086-bfcf-1daece6bb0fd}.
+2022-09-24T15:47:42.1143608+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver) Considering key {74ada02f-ef78-4f02-98c3-09888fbe2223} with expiration date 2022-10-19 13:14:13Z as default key.
+2022-09-24T15:47:42.1165133+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.TypeForwardingActivator) Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=3.1.22.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2022-09-24T15:47:42.1180580+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor) Decrypting secret element using Windows DPAPI.
+2022-09-24T15:47:42.1193490+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.TypeForwardingActivator) Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=3.1.22.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2022-09-24T15:47:42.1214827+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory) Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2022-09-24T15:47:42.1226803+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory) Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2022-09-24T15:47:42.1242279+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider) Using key {74ada02f-ef78-4f02-98c3-09888fbe2223} as the default key.
+2022-09-24T15:47:42.1249087+03:00 [DBG] (Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService) Key ring with default key {74ada02f-ef78-4f02-98c3-09888fbe2223} was loaded during application startup.
+2022-09-24T15:47:42.1552103+03:00 [DBG] (MassTransit) Connected: "root@localhost:5672/" (address: "amqp://localhost:5672", local: 53051)
+2022-09-24T15:47:42.2342428+03:00 [DBG] (Sentry.ISentryClient) Initializing Hub for Dsn: '"https://d2ac5d5df79944d98fe9a0d6495189fd@o1213349.ingest.sentry.io/6352479"'.
+2022-09-24T15:47:42.2363840+03:00 [DBG] (Sentry.ISentryClient) Using 'GzipBufferedRequestBodyHandler' body compression strategy with level Optimal.
+2022-09-24T15:47:42.2744999+03:00 [DBG] (Sentry.ISentryClient) New scope pushed.
+2022-09-24T15:47:42.2750188+03:00 [DBG] (Sentry.ISentryClient) Registering integration: '"AutoSessionTrackingIntegration"'.
+2022-09-24T15:47:42.2751437+03:00 [DBG] (Sentry.ISentryClient) Registering integration: '"AppDomainUnhandledExceptionIntegration"'.
+2022-09-24T15:47:42.2754853+03:00 [DBG] (Sentry.ISentryClient) Registering integration: '"AppDomainProcessExitIntegration"'.
+2022-09-24T15:47:42.2757332+03:00 [DBG] (Sentry.ISentryClient) Registering integration: '"TaskUnobservedTaskExceptionIntegration"'.
+2022-09-24T15:47:42.2759505+03:00 [DBG] (Sentry.ISentryClient) Registering integration: '"SentryDiagnosticListenerIntegration"'.
+2022-09-24T15:47:42.2775008+03:00 [DBG] (MassTransit) Endpoint Ready: rabbitmq://localhost/DESKTOP3RI7A9L_RecipesAPIApp_bus_dtqoyyr3ug4n73pibdpjhkzab6?temporary=true
+2022-09-24T15:47:42.2807462+03:00 [INF] (MassTransit) Bus started: rabbitmq://localhost/
+2022-09-24T15:47:42.4787857+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer) Using development certificate: "CN=localhost" (Thumbprint: "6A2988E727BF5141E19B7353F4F147D207D594ED")
+2022-09-24T15:47:42.5074700+03:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7114"
+2022-09-24T15:47:42.5075390+03:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5114"
+2022-09-24T15:47:42.5075868+03:00 [DBG] (Microsoft.AspNetCore.Hosting.Diagnostics) Loaded hosting startup assembly "Recipes.API.App"
+2022-09-24T15:47:42.5076679+03:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-09-24T15:47:42.5076892+03:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-09-24T15:47:42.5077184+03:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "C:\Repositories\recipes-helper\Recipes.API\Recipes.API.App\"
+2022-09-24T15:47:42.5077421+03:00 [DBG] (Microsoft.Extensions.Hosting.Internal.Host) Hosting started
+2022-09-24T15:47:42.6898528+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets) Connection id ""0HMKU5BSDAPNF"" received FIN.
+2022-09-24T15:47:42.6962572+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMKU5BSDAPNF"" accepted.
+2022-09-24T15:47:42.6970161+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMKU5BSDAPNF"" started.
+2022-09-24T15:47:42.7115333+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware) Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2022-09-24T15:47:42.8795331+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMKU5BSDAPNF"" stopped.
+2022-09-24T15:47:42.8819527+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets) Connection id ""0HMKU5BSDAPNF"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2022-09-24T15:47:42.8859685+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMKU5BSDAPNG"" accepted.
+2022-09-24T15:47:42.8860708+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMKU5BSDAPNG"" started.
+2022-09-24T15:47:42.8889447+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMKU5BSDAPNH"" accepted.
+2022-09-24T15:47:42.8890889+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMKU5BSDAPNH"" started.
+2022-09-24T15:47:42.9610070+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets) Connection id ""0HMKU5BSDAPNH"" received FIN.
+2022-09-24T15:47:42.9624136+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets) Connection id ""0HMKU5BSDAPNG"" received FIN.
+2022-09-24T15:47:42.9684594+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware) Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090327): An unknown error occurred while processing the certificate.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2022-09-24T15:47:42.9684702+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware) Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090327): An unknown error occurred while processing the certificate.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2022-09-24T15:47:42.9702381+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMKU5BSDAPNH"" stopped.
+2022-09-24T15:47:42.9702398+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMKU5BSDAPNG"" stopped.
+2022-09-24T15:47:42.9705642+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets) Connection id ""0HMKU5BSDAPNG"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2022-09-24T15:47:42.9705657+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets) Connection id ""0HMKU5BSDAPNH"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2022-09-24T15:47:46.2358442+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMKU5BSDAPNI"" accepted.
+2022-09-24T15:47:46.2359429+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMKU5BSDAPNI"" started.
+2022-09-24T15:47:46.2365052+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMKU5BSDAPNJ"" accepted.
+2022-09-24T15:47:46.2367249+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMKU5BSDAPNJ"" started.
+2022-09-24T15:47:46.2392006+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets) Connection id ""0HMKU5BSDAPNJ"" received FIN.
+2022-09-24T15:47:46.2392007+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets) Connection id ""0HMKU5BSDAPNI"" received FIN.
+2022-09-24T15:47:46.2404577+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMKU5BSDAPNK"" accepted.
+2022-09-24T15:47:46.2405158+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMKU5BSDAPNK"" started.
+2022-09-24T15:47:46.2412943+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware) Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090327): An unknown error occurred while processing the certificate.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2022-09-24T15:47:46.2412790+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware) Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090327): An unknown error occurred while processing the certificate.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2022-09-24T15:47:46.2416096+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMKU5BSDAPNI"" stopped.
+2022-09-24T15:47:46.2419662+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Connections) Connection id ""0HMKU5BSDAPNJ"" stopped.
+2022-09-24T15:47:46.2419667+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets) Connection id ""0HMKU5BSDAPNI"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2022-09-24T15:47:46.2421525+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets) Connection id ""0HMKU5BSDAPNJ"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2022-09-24T15:47:46.2485914+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware) Connection "0HMKU5BSDAPNK" established using the following protocol: Tls13
+2022-09-24T15:47:46.2857497+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:7114/swagger - -
+2022-09-24T15:47:46.2874836+03:00 [DBG] (Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware) Wildcard detected, all requests with hosts will be allowed.
+2022-09-24T15:47:46.2895789+03:00 [DBG] (Sentry.ISentryClient) New scope pushed.
+2022-09-24T15:47:46.2899849+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.3202505+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.3206112+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.3489446+03:00 [DBG] (Sentry.ISentryClient) Disposing scope.
+2022-09-24T15:47:46.3524754+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:7114/swagger - - - 301 0 - 68.1759ms
+2022-09-24T15:47:46.3550961+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:7114/swagger/index.html - -
+2022-09-24T15:47:46.3552394+03:00 [DBG] (Sentry.ISentryClient) New scope pushed.
+2022-09-24T15:47:46.3552641+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.3554007+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.3554358+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.3955236+03:00 [DBG] (Sentry.ISentryClient) Disposing scope.
+2022-09-24T15:47:46.3957573+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:7114/swagger/index.html - - - 200 - text/html;charset=utf-8 40.6637ms
+2022-09-24T15:47:46.4153495+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:7114/swagger/swagger-ui.css - -
+2022-09-24T15:47:46.4160972+03:00 [DBG] (Sentry.ISentryClient) New scope pushed.
+2022-09-24T15:47:46.4162427+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:7114/swagger/swagger-ui-standalone-preset.js - -
+2022-09-24T15:47:46.4162682+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.4162657+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:7114/swagger/swagger-ui-bundle.js - -
+2022-09-24T15:47:46.4163790+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.4164146+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.4164279+03:00 [DBG] (Sentry.ISentryClient) New scope pushed.
+2022-09-24T15:47:46.4164189+03:00 [DBG] (Sentry.ISentryClient) New scope pushed.
+2022-09-24T15:47:46.4164998+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.4165474+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.4165626+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.4166264+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.4166333+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.4166894+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.4301700+03:00 [INF] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware) Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"'
+2022-09-24T15:47:46.4303485+03:00 [DBG] (Sentry.ISentryClient) Disposing scope.
+2022-09-24T15:47:46.4344434+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:7114/swagger/swagger-ui.css - - - 200 143632 text/css 19.1358ms
+2022-09-24T15:47:46.4351027+03:00 [INF] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware) Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+2022-09-24T15:47:46.4352047+03:00 [DBG] (Sentry.ISentryClient) Disposing scope.
+2022-09-24T15:47:46.4353112+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:7114/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 19.1733ms
+2022-09-24T15:47:46.4534481+03:00 [INF] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware) Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+2022-09-24T15:47:46.4544179+03:00 [DBG] (Sentry.ISentryClient) Disposing scope.
+2022-09-24T15:47:46.4549243+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:7114/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 39.0578ms
+2022-09-24T15:47:46.5966008+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:7114/swagger/v1/swagger.json - -
+2022-09-24T15:47:46.5967189+03:00 [DBG] (Sentry.ISentryClient) New scope pushed.
+2022-09-24T15:47:46.5967678+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.5967917+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.5968192+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.6176756+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:7114/swagger/favicon-32x32.png - -
+2022-09-24T15:47:46.6179788+03:00 [DBG] (Sentry.ISentryClient) New scope pushed.
+2022-09-24T15:47:46.6180908+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.6181664+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.6182744+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:46.6189129+03:00 [INF] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware) Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"'
+2022-09-24T15:47:46.6189866+03:00 [DBG] (Sentry.ISentryClient) Disposing scope.
+2022-09-24T15:47:46.6191779+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:7114/swagger/favicon-32x32.png - - - 200 628 image/png 2.1632ms
+2022-09-24T15:47:46.6918041+03:00 [DBG] (Sentry.ISentryClient) Disposing scope.
+2022-09-24T15:47:46.6920170+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:7114/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 95.6757ms
+2022-09-24T15:47:50.3811380+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 POST https://localhost:7114/create-recipe application/json 285
+2022-09-24T15:47:50.3818006+03:00 [DBG] (Sentry.ISentryClient) New scope pushed.
+2022-09-24T15:47:50.3818397+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:50.3818671+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:50.3818890+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:50.3822612+03:00 [DBG] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware) "POST" requests are not supported
+2022-09-24T15:47:50.4052927+03:00 [DBG] (Microsoft.AspNetCore.Routing.Matching.DfaMatcher) 1 candidate(s) found for the request path '"/create-recipe"'
+2022-09-24T15:47:50.4055796+03:00 [DBG] (Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware) Request matched endpoint '"HTTP: POST /create-recipe"'
+2022-09-24T15:47:50.4106055+03:00 [INF] (Sentry.ISentryClient) Started transaction with span ID '"02166ec1616e43ee"' and trace ID '"ed029a43d20d4a3cb81f0b316381e1f8"'.
+2022-09-24T15:47:50.4106758+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:50.4895240+03:00 [DBG] (Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler) AuthenticationScheme: "Bearer" was not authenticated.
+2022-09-24T15:47:50.9660161+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel) Connection id ""0HMKU5BSDAPNK"", Request id ""0HMKU5BSDAPNK:0000000F"": started reading request body.
+2022-09-24T15:47:50.9661562+03:00 [DBG] (Microsoft.AspNetCore.Server.Kestrel) Connection id ""0HMKU5BSDAPNK"", Request id ""0HMKU5BSDAPNK:0000000F"": done reading request body.
+2022-09-24T15:47:51.3258168+03:00 [DBG] (MassTransit.SendTransport) Declare exchange: "name: Recipes.API.Models.Shared.Messages:RecipeMessage, type: fanout, durable"
+2022-09-24T15:47:51.3838358+03:00 [DBG] (MassTransit.Messages) SEND rabbitmq://localhost/Recipes.API.Models.Shared.Messages:RecipeMessage 1c5d0000-9999-b42e-8ffa-08da9e2afdfc "Recipes.API.Models.Shared.Messages.RecipeMessage"
+2022-09-24T15:47:51.3909234+03:00 [DBG] (Sentry.ISentryClient) Changed transaction '"02166ec1616e43ee"', name set to '"POST /create-recipe"' after request pipeline executed.
+2022-09-24T15:47:51.3916519+03:00 [DBG] (Sentry.ISentryClient) Configuring the scope.
+2022-09-24T15:47:51.3991881+03:00 [DBG] (Sentry.ISentryClient) Attempting to read request body of size: 285, configured max: Always.
+2022-09-24T15:47:51.4077928+03:00 [INF] (Sentry.ISentryClient) Envelope queued up: '"bbb4b15cec6442fd88136fe2ccd071e4"'
+2022-09-24T15:47:51.4079111+03:00 [DBG] (Sentry.ISentryClient) Disposing scope.
+2022-09-24T15:47:51.4080641+03:00 [INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 POST https://localhost:7114/create-recipe application/json 285 - 200 - application/json 1026.9513ms
+2022-09-24T15:47:51.4582317+03:00 [DBG] (Sentry.ISentryClient) Envelope "bbb4b15cec6442fd88136fe2ccd071e4" handed off to transport. #1 in queue.
+2022-09-24T15:47:51.6097126+03:00 [DBG] (Sentry.ISentryClient) Envelope '"bbb4b15cec6442fd88136fe2ccd071e4"' sent successfully. Payload:
+"{\"sdk\":{\"name\":\"sentry.dotnet\",\"version\":\"3.16.0\"},\"event_id\":\"bbb4b15cec6442fd88136fe2ccd071e4\"}
+{\"type\":\"transaction\",\"length\":2689}
+{\"type\":\"transaction\",\"event_id\":\"bbb4b15cec6442fd88136fe2ccd071e4\",\"platform\":\"csharp\",\"release\":\"Recipes.API.App@1.0.0\",\"transaction\":\"POST /create-recipe\",\"start_timestamp\":\"2022-09-24T12:47:50.408874+00:00\",\"timestamp\":\"2022-09-24T12:47:51.3915599+00:00\",\"request\":{\"env\":{\"REMOTE_ADDR\":\"::1\",\"SERVER_NAME\":\"DESKTOP-3RI7A9L\",\"SERVER_PORT\":\"7114\",\"SERVER_SOFTWARE\":\"Kestrel\"},\"headers\":{\"Accept\":\"application/json\",\"Host\":\"localhost:7114\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36\",\":method\":\"POST\",\"Accept-Encoding\":\"gzip, deflate, br\",\"Accept-Language\":\"en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7\",\"Content-Type\":\"application/json\",\"Cookie\":\"lastPublishBlogArticleId=14611,newsCounterNeedAnimate=True,Rider-c3fc9722=8014365f-5db0-4a06-8693-39e4e596643b,originalReferer=http%3a%2f%2flocalhost%3a8050%2f,startPage=http%3A%2F%2Flocalhost%3A45451%2F,backwardBlogUrl=http%3A%2F%2Flocalhost%3A45451%2Fblog%2Fbizschool\",\"Origin\":\"https://localhost:7114\",\"Referer\":\"https://localhost:7114/swagger/index.html\",\"Content-Length\":\"285\",\"sec-ch-ua\":\"\u0022Google Chrome\u0022;v=\u0022105\u0022, \u0022Not)A;Brand\u0022;v=\u00228\u0022, \u0022Chromium\u0022;v=\u0022105\u0022\",\"sec-ch-ua-mobile\":\"?0\",\"sec-ch-ua-platform\":\"\u0022Windows\u0022\",\"sec-fetch-site\":\"same-origin\",\"sec-fetch-mode\":\"cors\",\"sec-fetch-dest\":\"empty\"},\"url\":\"https://localhost:7114/create-recipe\",\"method\":\"POST\",\"data\":\"{\n  \u0022title\u0022: \u0022string\u0022,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022previewImage\u0022: \u0022string\u0022,\n  \u0022ingredients\u0022: [\n    {\n      \u0022name\u0022: \u0022string\u0022,\n      \u0022count\u0022: 0,\n      \u0022measurement\u0022: \u0022string\u0022\n    }\n  ],\n  \u0022steps\u0022: [\n    {\n      \u0022order\u0022: 0,\n      \u0022content\u0022: \u0022string\u0022,\n      \u0022image\u0022: \u0022string\u0022\n    }\n  ]\n}\"},\"contexts\":{\"app\":{\"type\":\"app\",\"app_start_time\":\"2022-09-24T12:47:36.3214635+00:00\"},\"runtime\":{\"type\":\"runtime\",\"name\":\".NET\",\"version\":\"6.0.6\",\"raw_description\":\".NET 6.0.6\"},\"trace\":{\"type\":\"trace\",\"span_id\":\"02166ec1616e43ee\",\"trace_id\":\"ed029a43d20d4a3cb81f0b316381e1f8\",\"op\":\"http.server\",\"status\":\"ok\"},\"device\":{\"type\":\"device\",\"boot_time\":\"2022-09-22T08:37:32.0313253+00:00\"},\"os\":{\"type\":\"os\",\"raw_description\":\"Microsoft Windows 10.0.22000\"}},\"user\":{\"ip_address\":\"::1\"},\"environment\":\"development\",\"sdk\":{\"packages\":[{\"name\":\"nuget:sentry.dotnet\",\"version\":\"3.16.0\"},{\"name\":\"nuget:Sentry.AspNetCore\",\"version\":\"3.16.0\"}],\"name\":\"sentry.dotnet.aspnetcore\",\"version\":\"3.16.0\"},\"tags\":{\"TraceIdentifier\":\"0HMKU5BSDAPNK:0000000F\"}}
+"
