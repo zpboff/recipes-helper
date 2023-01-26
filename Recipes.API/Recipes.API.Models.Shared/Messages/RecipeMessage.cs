@@ -4,5 +4,5 @@ namespace Recipes.API.Models.Shared.Messages;
 
 public class RecipeMessage
 {
-    public Recipe Recipe { get; set; }
+    public Recipe Recipe { get; set; } = null!;
 }

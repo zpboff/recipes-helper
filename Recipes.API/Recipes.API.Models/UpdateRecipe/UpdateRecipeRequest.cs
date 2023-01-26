@@ -4,5 +4,5 @@ namespace Recipes.API.Models.UpdateRecipe;
 
 public class UpdateRecipeRequest: CreateRecipeRequest
 {
-    public string Id { get; set; }
+    public string Id { get; set; } = null!;
 }

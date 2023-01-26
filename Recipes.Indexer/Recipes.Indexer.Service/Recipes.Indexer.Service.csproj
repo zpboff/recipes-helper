@@ -25,4 +25,8 @@
     <ItemGroup>
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0-preview.3.22175.4" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Mappings" />
+    </ItemGroup>
 </Project>
