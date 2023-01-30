@@ -1,19 +1,16 @@
 using Core.Elastic;
-using Core.Mapper;
-using Core.RabbitMQ;
+using Core.MessageQueue.RabbitMQ;
 using Core.Settings;
-using MassTransit;
-using Recipes.Indexer.Service.Settings;
+using Recipes.Indexer.Service;
 
-var builder = Host.CreateDefaultBuilder(args);
-
-var host = builder.ConfigureServices((context, services) =>
+var host = Host.CreateDefaultBuilder(args)
+    .ConfigureServices((context, services) =>
     {
         services
             .RegisterConfiguration(context.Configuration)
-            .AddMapper()
             .AddElastic()
-            .AddRabbit<RecipesIndexerRabbitSettings>(configurator => { configurator.AddDelayedMessageScheduler(); });
+            .AddRabbitMq()
+            .AddHostedService<RecipesIndexer>();
     })
     .Build();
 

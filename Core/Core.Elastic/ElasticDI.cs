@@ -2,7 +2,7 @@
 
 namespace Core.Elastic;
 
-public static class ElasticDI
+public static class ElasticDi
 {
     public static IServiceCollection AddElastic(this IServiceCollection services)
     {

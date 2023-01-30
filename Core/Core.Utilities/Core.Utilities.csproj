@@ -1,13 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>netstandard2.1</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <LangVersion>10</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Recipes.API\Recipes.API.Models.Shared\Recipes.API.Models.Shared.csproj" />
+      <PackageReference Include="System.Text.Json" Version="7.0.1" />
     </ItemGroup>
 
 </Project>

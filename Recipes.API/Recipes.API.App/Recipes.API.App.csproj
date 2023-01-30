@@ -24,8 +24,9 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Core\Core.Logging\Core.Logging.csproj" />
+      <ProjectReference Include="..\..\Core\Core.MessageQueue\Core.MessageQueue.Public\Core.MessageQueue.Public.csproj" />
+      <ProjectReference Include="..\..\Core\Core.MessageQueue\Core.MessageQueue.RabbitMq\Core.MessageQueue.RabbitMq.csproj" />
       <ProjectReference Include="..\..\Core\Core.MongoDb\Core.MongoDb.csproj" />
-      <ProjectReference Include="..\..\Core\Core.RabbitMQ\Core.RabbitMQ.csproj" />
       <ProjectReference Include="..\Recipes.API.Models\Recipes.API.Models.csproj" />
         <ProjectReference Include="..\Recipes.API.Models.Shared\Recipes.API.Models.Shared.csproj" />
     </ItemGroup>

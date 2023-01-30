@@ -22,7 +22,7 @@ public class CreateRecipeEndpoint: Endpoint<CreateRecipeRequest, RecipeIdentityR
 
     public override async Task HandleAsync(CreateRecipeRequest req, CancellationToken ct)
     {
-        var recipeId = await _createRecipeService.CreateService(req, "");
+        var recipeId = await _createRecipeService.CreateRecipe(req, "");
 
         await SendAsync(new RecipeIdentityResponse
         {   

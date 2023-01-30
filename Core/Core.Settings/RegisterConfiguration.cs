@@ -10,13 +10,18 @@ namespace Core.Settings
         {
             var assembly = Assembly.GetEntryAssembly();
 
+            if (assembly == null)
+            {
+                return services;
+            }
+            
             var settings = assembly.GetTypes().Where(t => t.GetInterfaces().Contains(typeof(ISettings)));
             
             foreach (var setting in settings)
             {
                 services.AddSingleton(setting, configuration.GetSection(setting.Name).Get(setting));
             }
-            
+
             return services;
         }
     }

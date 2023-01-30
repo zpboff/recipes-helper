@@ -1,8 +1,8 @@
 ﻿using Core.Settings;
 
-namespace Core.RabbitMQ;
+namespace Core.MessageQueue.Public;
 
-public interface IRabbitSettings: ISettings
+public interface IMessageQueueSettings: ISettings
 {
     public string Host { get; set; }
     public string User { get; set; }

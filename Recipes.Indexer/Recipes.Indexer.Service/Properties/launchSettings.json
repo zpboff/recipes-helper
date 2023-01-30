@@ -1,6 +1,6 @@
 ﻿{
   "profiles": {
-    "Recipes.Indexator": {
+    "Recipes.Indexer.Service": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "environmentVariables": {

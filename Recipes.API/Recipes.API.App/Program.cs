@@ -1,12 +1,11 @@
 using Core.Logging;
+using Core.MessageQueue.RabbitMQ;
 using Core.MongoDb;
-using Core.RabbitMQ;
 using Core.Settings;
 using FastEndpoints;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Recipes.API.App.Services;
-using Recipes.API.App.Settings;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,7 +18,7 @@ builder.Services
     .AddSwaggerGen()
     .AddFastEndpoints()
     .AddMongoDb()
-    .AddRabbit<RecipesRabbitSettings>()
+    .AddRabbitMq()
     .RegisterConfiguration(builder.Configuration)
     .AddLogging(builder.Configuration)
     .AddHttpClient()

@@ -2,9 +2,9 @@
 
 namespace Core.SqlDb;
 
-public static class MongoDbDi
+public static class SqlDbDi
 {
-    public static IServiceCollection RegisterMongoDb(this IServiceCollection services)
+    public static IServiceCollection RegisterSqlDb(this IServiceCollection services)
     {
         services.AddTransient<ISqlConnectionFactory, SqlConnectionFactory>();
         

@@ -4,7 +4,7 @@ using Serilog;
 
 namespace Core.Logging;
 
-public static class LoggingDI
+public static class LoggingDi
 {
     public static IServiceCollection AddLogging(this IServiceCollection services, IConfiguration configuration)
     {

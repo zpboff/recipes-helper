@@ -1,6 +1,6 @@
-﻿using Core.MongoDb;
+﻿using Core.MessageQueue.Public;
+using Core.MongoDb;
 using Mapster;
-using MassTransit;
 using MongoDB.Driver;
 using Recipes.API.App.Settings;
 using Recipes.API.Models.CreateRecipe;
@@ -11,26 +11,28 @@ namespace Recipes.API.App.Services;
 
 public class CreateRecipeService
 {
-    private readonly IPublishEndpoint _publishEndpoint;
+    private readonly IMessageProducer _messageProducer;
     private readonly IMongoCollection<Recipe> _collection;
+    private readonly RecipesMessageQueueSettings _settings;
 
     public CreateRecipeService(IMongoFactory mongoFactory, RecipesMongoSettings mongoSettings,
-        IPublishEndpoint publishEndpoint)
+        IMessageProducer messageProducer, RecipesMessageQueueSettings settings)
     {
-        _publishEndpoint = publishEndpoint;
+        _messageProducer = messageProducer;
+        _settings = settings;
         _collection = mongoFactory.GetDataBase(mongoSettings)
             .GetCollection<Recipe>(mongoSettings.RecipesCollectionName);
     }
 
-    public async Task<string?> CreateService(CreateRecipeRequest request, string userId)
+    public async Task<string?> CreateRecipe(CreateRecipeRequest request, string userId)
     {
         var recipe = request.Adapt<Recipe>();
 
         recipe.Id = Guid.NewGuid().ToString();
         recipe.UserId = userId;
 
-        await _collection.InsertOneAsync(recipe);
-        await _publishEndpoint.Publish(new RecipeMessage
+        //await _collection.InsertOneAsync(recipe);
+        _messageProducer.Produce(_settings, new RecipeMessage
         {
             Recipe = recipe
         });
