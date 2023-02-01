@@ -5,7 +5,7 @@ using Recipes.API.Models.CreateRecipe;
 
 namespace Recipes.API.App.Endpoints;
 
-public class CreateRecipeEndpoint: Endpoint<CreateRecipeRequest, RecipeIdentityResponse>
+public class CreateRecipeEndpoint: Endpoint<CreateRecipeDto, RecipeIdentityResponse>
 {
     private readonly CreateRecipeService _createRecipeService;
     public CreateRecipeEndpoint(CreateRecipeService createRecipeService)
@@ -20,7 +20,7 @@ public class CreateRecipeEndpoint: Endpoint<CreateRecipeRequest, RecipeIdentityR
         AllowAnonymous();
     }
 
-    public override async Task HandleAsync(CreateRecipeRequest req, CancellationToken ct)
+    public override async Task HandleAsync(CreateRecipeDto req, CancellationToken ct)
     {
         var recipeId = await _createRecipeService.CreateRecipe(req, "");
 

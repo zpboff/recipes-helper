@@ -8,8 +8,6 @@
 
     <ItemGroup>
         <PackageReference Include="FastEndpoints" Version="3.10.0" />
-        <PackageReference Include="Mapster" Version="7.3.0" />
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.3" />
         <PackageReference Include="Sentry.AspNetCore" Version="3.16.0" />
         <PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
         <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
@@ -24,8 +22,8 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Core\Core.Logging\Core.Logging.csproj" />
-      <ProjectReference Include="..\..\Core\Core.MessageQueue\Core.MessageQueue.Public\Core.MessageQueue.Public.csproj" />
-      <ProjectReference Include="..\..\Core\Core.MessageQueue\Core.MessageQueue.RabbitMq\Core.MessageQueue.RabbitMq.csproj" />
+      <ProjectReference Include="..\..\Core\Core.MessageQueue\Core.MessageBus.Public\Core.MessageBus.Public.csproj" />
+      <ProjectReference Include="..\..\Core\Core.MessageQueue\Core.MessageBus.RabbitMq\Core.MessageBus.RabbitMq.csproj" />
       <ProjectReference Include="..\..\Core\Core.MongoDb\Core.MongoDb.csproj" />
       <ProjectReference Include="..\Recipes.API.Models\Recipes.API.Models.csproj" />
         <ProjectReference Include="..\Recipes.API.Models.Shared\Recipes.API.Models.Shared.csproj" />

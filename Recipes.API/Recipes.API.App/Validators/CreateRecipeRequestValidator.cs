@@ -3,7 +3,7 @@ using Recipes.API.Models.CreateRecipe;
 
 namespace Recipes.API.App.Validators;
 
-public class CreateRecipeRequestValidator : Validator<CreateRecipeRequest>
+public class CreateRecipeRequestValidator : Validator<CreateRecipeDto>
 {
     public CreateRecipeRequestValidator()
     {

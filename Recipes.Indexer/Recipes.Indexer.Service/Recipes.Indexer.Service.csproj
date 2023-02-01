@@ -13,7 +13,8 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Core\Core.Elastic\Core.Elastic.csproj" />
-      <ProjectReference Include="..\..\Core\Core.MessageQueue\Core.MessageQueue.RabbitMq\Core.MessageQueue.RabbitMq.csproj" />
+      <ProjectReference Include="..\..\Core\Core.Logging\Core.Logging.csproj" />
+      <ProjectReference Include="..\..\Core\Core.MessageQueue\Core.MessageBus.RabbitMq\Core.MessageBus.RabbitMq.csproj" />
       <ProjectReference Include="..\..\Recipes.API\Recipes.API.Models.Shared\Recipes.API.Models.Shared.csproj" />
       <ProjectReference Include="..\Recipes.Indexer.Models\Recipes.Indexer.Models.csproj" />
     </ItemGroup>

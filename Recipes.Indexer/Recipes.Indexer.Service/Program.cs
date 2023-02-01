@@ -1,5 +1,6 @@
 using Core.Elastic;
-using Core.MessageQueue.RabbitMQ;
+using Core.Logging;
+using Core.MessageBus.RabbitMQ;
 using Core.Settings;
 using Recipes.Indexer.Service;
 
@@ -8,6 +9,7 @@ var host = Host.CreateDefaultBuilder(args)
     {
         services
             .RegisterConfiguration(context.Configuration)
+            .AddSerilogLogging(context.Configuration)
             .AddElastic()
             .AddRabbitMq()
             .AddHostedService<RecipesIndexer>();

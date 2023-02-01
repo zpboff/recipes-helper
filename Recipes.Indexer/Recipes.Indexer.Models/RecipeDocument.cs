@@ -1,4 +1,4 @@
-﻿using Recipes.API.Models.Shared.Entities.Recipe;
+﻿using Recipes.API.Models.Shared;
 
 namespace Recipes.Indexer.Models;
 
@@ -10,7 +10,7 @@ public class RecipeDocument
     public string? Description { get; set; }
     public string[]? Ingredients { get; set; }
 
-    public static RecipeDocument FromRecipe(Recipe recipe)
+    public static RecipeDocument FromRecipe(RecipeReadDto recipe)
     {
         return new RecipeDocument
         {

@@ -6,7 +6,7 @@ using Recipes.API.Models.UpdateRecipe;
 
 namespace Recipes.API.App.Endpoints;
 
-public class UpdateRecipeEndpoint: Endpoint<UpdateRecipeRequest, RecipeIdentityResponse>
+public class UpdateRecipeEndpoint: Endpoint<UpdateRecipeDto, RecipeIdentityResponse>
 {
     private readonly UpdateRecipeService _updateRecipeService;
     
@@ -22,7 +22,7 @@ public class UpdateRecipeEndpoint: Endpoint<UpdateRecipeRequest, RecipeIdentityR
         AllowAnonymous();
     }
 
-    public override async Task HandleAsync(UpdateRecipeRequest req, CancellationToken ct)
+    public override async Task HandleAsync(UpdateRecipeDto req, CancellationToken ct)
     {
         var recipeId = await _updateRecipeService.UpdateRecipe(req, "");
 

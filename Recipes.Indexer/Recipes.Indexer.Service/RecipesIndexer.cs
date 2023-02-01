@@ -1,6 +1,6 @@
 using Core.Elastic;
-using Core.MessageQueue.Public;
-using Recipes.API.Models.Shared.Messages;
+using Core.MessageBus.Public;
+using Recipes.API.Models.Shared;
 using Recipes.Indexer.Models;
 using Recipes.Indexer.Service.Settings;
 
@@ -12,31 +12,39 @@ public class RecipesIndexer : BackgroundService
     private readonly IElasticClientFactory _clientFactory;
     private readonly RecipesIndexerElasticSettings _settings;
     private readonly IMessageConsumer _consumer;
-    private readonly RecipesIndexerMessageQueueSettings _queueSettings;
 
     public RecipesIndexer(ILogger<RecipesIndexer> logger, IElasticClientFactory clientFactory,
         RecipesIndexerElasticSettings settings, IMessageConsumer consumer,
-        RecipesIndexerMessageQueueSettings queueSettings)
+        RecipesIndexerMessageBusSettings busSettings)
     {
         _logger = logger;
         _clientFactory = clientFactory;
         _settings = settings;
-        _consumer = consumer;
-        _queueSettings = queueSettings;
+        _consumer = consumer.Initialize(busSettings);
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        _consumer.OnMessage<RecipeMessage>(_queueSettings, nameof(RecipesIndexer), OnMessage);
-
-        while (!stoppingToken.IsCancellationRequested)
+        try
         {
-            _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-            await Task.Delay(1000, stoppingToken);
+            _consumer.OnMessage<RecipeReadDto>(nameof(RecipesIndexer), OnMessage);
+
+            while (!stoppingToken.IsCancellationRequested)
+            {
+                await Task.Delay(1000, stoppingToken);
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex.Message, ex);
+        }
+        finally
+        {
+            _consumer.Dispose();
         }
     }
 
-    private async Task OnMessage(RecipeMessage message)
+    private async Task OnMessage(RecipeReadDto message)
     {
         var client = _clientFactory.GetClient(_settings);
 
@@ -49,7 +57,7 @@ public class RecipesIndexer : BackgroundService
             _logger.LogInformation("Index created: {0}", _settings.Index);
         }
 
-        var document = RecipeDocument.FromRecipe(message.Recipe);
+        var document = RecipeDocument.FromRecipe(message);
 
         await client.IndexAsync(document, _settings.Index);
 

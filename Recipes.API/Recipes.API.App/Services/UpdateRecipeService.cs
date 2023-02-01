@@ -1,10 +1,9 @@
-﻿using Core.MessageQueue.Public;
+﻿using Core.MessageBus.Public;
 using Core.MongoDb;
-using Mapster;
 using MongoDB.Driver;
+using Recipes.API.App.Extensions;
 using Recipes.API.App.Settings;
-using Recipes.API.Models.Shared.Entities.Recipe;
-using Recipes.API.Models.Shared.Messages;
+using Recipes.API.Models.Entities;
 using Recipes.API.Models.UpdateRecipe;
 
 namespace Recipes.API.App.Services;
@@ -13,25 +12,23 @@ public class UpdateRecipeService
 {
     private readonly IMessageProducer _messageProducer;
     private readonly IMongoCollection<Recipe> _collection;
-    private readonly RecipesMessageQueueSettings _settings;
 
     public UpdateRecipeService(IMongoFactory mongoFactory, RecipesMongoSettings mongoSettings,
-        IMessageProducer messageProducer, RecipesMessageQueueSettings settings)
+        IMessageProducer messageProducer, RecipesMessageBusSettings settings)
     {
-        _messageProducer = messageProducer;
-        _settings = settings;
+        _messageProducer = messageProducer.Initialize(settings);
         _collection = mongoFactory.GetDataBase(mongoSettings)
             .GetCollection<Recipe>(mongoSettings.RecipesCollectionName);
     }
 
-    public async Task<string?> UpdateRecipe(UpdateRecipeRequest request, string userId)
+    public async Task<string?> UpdateRecipe(UpdateRecipeDto dto, string userId)
     {
         var filter = Builders<Recipe>.Filter.And(
-            Builders<Recipe>.Filter.Eq(r => r.Id, request.Id),
+            Builders<Recipe>.Filter.Eq(r => r.Id, dto.Id),
             Builders<Recipe>.Filter.Eq(r => r.UserId, userId)
         );
 
-        var recipe = request.Adapt<Recipe>();
+        var recipe = dto.ToRecipe(userId);
 
         var result = await _collection.ReplaceOneAsync(filter, recipe);
 
@@ -39,11 +36,10 @@ public class UpdateRecipeService
         {
             return null;
         }
+
+        var message = recipe.ToRecipeReadDto();
         
-        _messageProducer.Produce(_settings, new RecipeMessage
-        {
-            Recipe = recipe
-        });
+        _messageProducer.Produce(message);
 
         return recipe.Id;
 

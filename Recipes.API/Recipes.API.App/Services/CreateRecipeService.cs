@@ -1,11 +1,10 @@
-﻿using Core.MessageQueue.Public;
+﻿using Core.MessageBus.Public;
 using Core.MongoDb;
-using Mapster;
 using MongoDB.Driver;
+using Recipes.API.App.Extensions;
 using Recipes.API.App.Settings;
 using Recipes.API.Models.CreateRecipe;
-using Recipes.API.Models.Shared.Entities.Recipe;
-using Recipes.API.Models.Shared.Messages;
+using Recipes.API.Models.Entities;
 
 namespace Recipes.API.App.Services;
 
@@ -13,29 +12,23 @@ public class CreateRecipeService
 {
     private readonly IMessageProducer _messageProducer;
     private readonly IMongoCollection<Recipe> _collection;
-    private readonly RecipesMessageQueueSettings _settings;
 
     public CreateRecipeService(IMongoFactory mongoFactory, RecipesMongoSettings mongoSettings,
-        IMessageProducer messageProducer, RecipesMessageQueueSettings settings)
+        IMessageProducer messageProducer, RecipesMessageBusSettings settings)
     {
-        _messageProducer = messageProducer;
-        _settings = settings;
+        _messageProducer = messageProducer.Initialize(settings);
         _collection = mongoFactory.GetDataBase(mongoSettings)
             .GetCollection<Recipe>(mongoSettings.RecipesCollectionName);
     }
 
-    public async Task<string?> CreateRecipe(CreateRecipeRequest request, string userId)
+    public async Task<string?> CreateRecipe(CreateRecipeDto dto, string userId)
     {
-        var recipe = request.Adapt<Recipe>();
+        var recipe = dto.ToRecipe(userId);
 
-        recipe.Id = Guid.NewGuid().ToString();
-        recipe.UserId = userId;
+        await _collection.InsertOneAsync(recipe);
 
-        //await _collection.InsertOneAsync(recipe);
-        _messageProducer.Produce(_settings, new RecipeMessage
-        {
-            Recipe = recipe
-        });
+        var readDto = recipe.ToRecipeReadDto();
+        _messageProducer.Produce(readDto);
 
         return recipe.Id;
     }
