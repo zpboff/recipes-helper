@@ -51,7 +51,7 @@ public class MessageConsumer: IMessageConsumer
         var queueName = caller;
             
         _connection.Channel.ExchangeDeclare(exchangeName, ExchangeType.Fanout);
-        _connection.Channel.QueueDeclare(queueName, true);
+        _connection.Channel.QueueDeclare(queueName, durable: true, exclusive: false, autoDelete: false);
         _connection.Channel.QueueBind(queueName, exchangeName, "");
             
         var consumer = new EventingBasicConsumer(_connection.Channel);
