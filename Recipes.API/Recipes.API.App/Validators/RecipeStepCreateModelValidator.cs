@@ -1,9 +1,9 @@
-﻿using FastEndpoints.Validation;
+﻿using FluentValidation;
 using Recipes.API.Models.CreateRecipe;
 
 namespace Recipes.API.App.Validators;
 
-public class RecipeStepCreateModelValidator : Validator<RecipeStepCreateDto>
+public class RecipeStepCreateModelValidator : AbstractValidator<RecipeStepCreateDto>
 {
     public RecipeStepCreateModelValidator()
     {

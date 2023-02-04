@@ -8,7 +8,7 @@ using Recipes.API.Models.UpdateRecipe;
 
 namespace Recipes.API.App.Services;
 
-public class UpdateRecipeService
+public class UpdateRecipeService: IUpdateRecipeService
 {
     private readonly IMessageProducer _messageProducer;
     private readonly IMongoCollection<Recipe> _collection;

@@ -8,7 +8,7 @@ using Recipes.API.Models.Entities;
 
 namespace Recipes.API.App.Services;
 
-public class CreateRecipeService
+public class CreateRecipeService: ICreateRecipeService
 {
     private readonly IMessageProducer _messageProducer;
     private readonly IMongoCollection<Recipe> _collection;
