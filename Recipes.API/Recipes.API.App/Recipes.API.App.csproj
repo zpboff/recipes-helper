@@ -30,4 +30,8 @@
         <ProjectReference Include="..\Recipes.API.Models.Shared\Recipes.API.Models.Shared.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Helpers" />
+    </ItemGroup>
+
 </Project>

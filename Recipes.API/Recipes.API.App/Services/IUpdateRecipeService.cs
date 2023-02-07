@@ -1,8 +1,9 @@
-﻿using Recipes.API.Models.UpdateRecipe;
+﻿using Core.Utilities;
+using Recipes.API.Models.UpdateRecipe;
 
 namespace Recipes.API.App.Services;
 
 public interface IUpdateRecipeService
 {
-    Task<string?> UpdateRecipe(UpdateRecipeDto dto, string userId);
+    Task<Maybe<string>> UpdateRecipe(UpdateRecipeDto dto, string userId, CancellationToken ct);
 }
