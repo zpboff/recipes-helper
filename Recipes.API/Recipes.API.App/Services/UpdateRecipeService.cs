@@ -1,11 +1,9 @@
 ﻿using Core.MessageBus.Public;
-using Core.MongoDb;
 using Core.Utilities;
 using FluentValidation;
-using MongoDB.Driver;
 using Recipes.API.App.Extensions;
+using Recipes.API.App.Repositories;
 using Recipes.API.App.Settings;
-using Recipes.API.Models.Entities;
 using Recipes.API.Models.UpdateRecipe;
 
 namespace Recipes.API.App.Services;
@@ -14,16 +12,14 @@ public class UpdateRecipeService: IUpdateRecipeService
 {
     private readonly IValidator<UpdateRecipeDto> _updateRecipeValidator;
     private readonly IMessageProducer _messageProducer;
-    private readonly IMongoCollection<Recipe> _collection;
+    private readonly IRecipeRepository _recipeRepository;
 
-    public UpdateRecipeService(IMongoFactory mongoFactory, RecipesMongoSettings mongoSettings,
-        IMessageProducer messageProducer, RecipesMessageBusSettings settings, 
-        IValidator<UpdateRecipeDto> updateRecipeValidator)
+    public UpdateRecipeService(IMessageProducer messageProducer, RecipesMessageBusSettings settings, 
+        IValidator<UpdateRecipeDto> updateRecipeValidator, IRecipeRepository recipeRepository)
     {
         _updateRecipeValidator = updateRecipeValidator;
+        _recipeRepository = recipeRepository;
         _messageProducer = messageProducer.Initialize(settings);
-        _collection = mongoFactory.GetDataBase(mongoSettings)
-            .GetCollection<Recipe>(mongoSettings.RecipesCollectionName);
     }
 
     public async Task<Maybe<string>> UpdateRecipe(UpdateRecipeDto dto, string userId, CancellationToken ct = default)
@@ -35,26 +31,18 @@ public class UpdateRecipeService: IUpdateRecipeService
             var errors = validationResult.ToErrorsDictionary();
             return Maybe<string>.None(errors);
         }
-        
-        var filter = Builders<Recipe>.Filter.And(
-            Builders<Recipe>.Filter.Eq(r => r.Id, dto.Id),
-            Builders<Recipe>.Filter.Eq(r => r.UserId, userId)
-        );
 
         var recipe = dto.ToRecipe(userId);
 
-        var result = await _collection.ReplaceOneAsync(filter, recipe, cancellationToken: ct);
+        var result = await _recipeRepository.Update(recipe, ct);
 
-        if (!result.IsAcknowledged)
+        if (result.IsValid)
         {
-            return Maybe<string>.None("Внутренняя ошибка приложения");
+            var message = recipe.ToRecipeReadDto();
+        
+            _messageProducer.Produce(message);
         }
 
-        var message = recipe.ToRecipeReadDto();
-        
-        _messageProducer.Produce(message);
-
-        return Maybe<string>.Some(recipe.Id);
-
+        return result;
     }
 }

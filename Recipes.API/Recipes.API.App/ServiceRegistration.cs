@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using Recipes.API.App.Repositories;
 using Recipes.API.App.Services;
 using Recipes.API.App.Validators;
 
@@ -11,7 +12,8 @@ public static class ServiceRegistration
         services
             .AddValidatorsFromAssemblyContaining<CreateRecipeRequestValidator>()
             .AddScoped<ICreateRecipeService, CreateRecipeService>()
-            .AddScoped<IUpdateRecipeService, UpdateRecipeService>();
+            .AddScoped<IUpdateRecipeService, UpdateRecipeService>()
+            .AddScoped<IRecipeRepository, RecipeRepository>();
         
         return services;
     }

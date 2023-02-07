@@ -1,29 +1,25 @@
 ﻿using Core.MessageBus.Public;
-using Core.MongoDb;
 using Core.Utilities;
 using FluentValidation;
-using MongoDB.Driver;
 using Recipes.API.App.Extensions;
+using Recipes.API.App.Repositories;
 using Recipes.API.App.Settings;
 using Recipes.API.Models.CreateRecipe;
-using Recipes.API.Models.Entities;
 
 namespace Recipes.API.App.Services;
 
 public class CreateRecipeService : ICreateRecipeService
 {
     private readonly IMessageProducer _messageProducer;
-    private readonly IMongoCollection<Recipe> _collection;
+    private readonly IRecipeRepository _recipeRepository;
     private readonly IValidator<CreateRecipeDto> _createRecipeValidator;
 
-    public CreateRecipeService(IMongoFactory mongoFactory, RecipesMongoSettings mongoSettings,
-        IMessageProducer messageProducer, RecipesMessageBusSettings settings,
-        IValidator<CreateRecipeDto> createRecipeValidator)
+    public CreateRecipeService(IMessageProducer messageProducer, RecipesMessageBusSettings settings,
+        IValidator<CreateRecipeDto> createRecipeValidator, IRecipeRepository recipeRepository)
     {
         _createRecipeValidator = createRecipeValidator;
+        _recipeRepository = recipeRepository;
         _messageProducer = messageProducer.Initialize(settings);
-        _collection = mongoFactory.GetDataBase(mongoSettings)
-            .GetCollection<Recipe>(mongoSettings.RecipesCollectionName);
     }
 
     public async Task<Maybe<string>> CreateRecipe(CreateRecipeDto dto, string userId, CancellationToken ct = default)
@@ -35,24 +31,17 @@ public class CreateRecipeService : ICreateRecipeService
             var errors = validationResult.ToErrorsDictionary();
             return Maybe<string>.None(errors);
         }
-        
+
         var recipe = dto.ToRecipe(userId);
 
-        await SaveRecipe(recipe, ct);
+        var result = await _recipeRepository.Save(recipe, ct);
 
-        var readDto = recipe.ToRecipeReadDto();
-        _messageProducer.Produce(readDto);
-
-        return Maybe<string>.Some(recipe.Id);
-    }
-
-    private async Task SaveRecipe(Recipe recipe, CancellationToken ct = default)
-    {
-        var options = new InsertOneOptions
+        if (result.IsValid)
         {
-            Comment = $"Recipe saving: {recipe.Id}"
-        };
-        
-        await _collection.InsertOneAsync(recipe, options, ct);
+            var readDto = recipe.ToRecipeReadDto();
+            _messageProducer.Produce(readDto);
+        }
+
+        return result;
     }
 }
