@@ -1,5 +1,5 @@
 ﻿using Core.Elastic;
-using Recipes.Indexer.Models;
+using Recipes.Indexer.Shared;
 using Recipes.Search.Api.Settings;
 
 namespace Recipes.Search.Api.Services;

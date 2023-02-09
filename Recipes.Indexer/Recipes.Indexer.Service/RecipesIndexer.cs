@@ -1,8 +1,8 @@
 using Core.Elastic;
 using Core.MessageBus.Public;
 using Recipes.API.Models.Shared;
-using Recipes.Indexer.Models;
 using Recipes.Indexer.Service.Settings;
+using Recipes.Indexer.Shared;
 
 namespace Recipes.Indexer.Service;
 
@@ -57,7 +57,7 @@ public class RecipesIndexer : BackgroundService
             _logger.LogInformation("Index created: {0}", _settings.Index);
         }
 
-        var document = RecipeDocument.FromRecipe(message);
+        var document = RecipeDocument.FromRecipeReadDto(message);
 
         await client.IndexAsync(document, _settings.Index);
 

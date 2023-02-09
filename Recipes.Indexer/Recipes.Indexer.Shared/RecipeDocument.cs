@@ -1,6 +1,6 @@
 ﻿using Recipes.API.Models.Shared;
 
-namespace Recipes.Indexer.Models;
+namespace Recipes.Indexer.Shared;
 
 public class RecipeDocument
 {
@@ -10,7 +10,7 @@ public class RecipeDocument
     public string? Description { get; set; }
     public string[]? Ingredients { get; set; }
 
-    public static RecipeDocument FromRecipe(RecipeReadDto recipe)
+    public static RecipeDocument FromRecipeReadDto(RecipeReadDto recipe)
     {
         return new RecipeDocument
         {
