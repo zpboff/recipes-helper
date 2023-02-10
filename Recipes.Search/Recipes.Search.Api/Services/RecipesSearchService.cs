@@ -15,13 +15,16 @@ public class RecipesSearchService
         _elasticSettings = elasticSettings;
     }
 
-    public async Task<IEnumerable<RecipeDocument>> Search(string query)
+    public async Task<IEnumerable<RecipeDocument>> Search(string query, int from, int size)
     {
         var client = _clientFactory.GetClient(_elasticSettings);
 
         var searchRes =
-            await client.SearchAsync<RecipeDocument>(cr =>
-                cr.Index(_elasticSettings.Index).Query(q => q.Match(s => s.Field(r => r.Title).Query(query))));
+            await client.SearchAsync<RecipeDocument>(cr => cr
+                .Index(_elasticSettings.Index)
+                .From(from)
+                .Size(size)
+                .Query(q => q.Match(s => s.Field(r => r.Title).Query(query))));
 
         return searchRes.Hits.Select(h => h.Source)!;
     }

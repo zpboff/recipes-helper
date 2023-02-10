@@ -1,5 +1,7 @@
 using Core.Elastic;
 using Core.MessageBus.Public;
+using Elastic.Clients.Elasticsearch;
+using Elastic.Clients.Elasticsearch.Mapping;
 using Recipes.API.Models.Shared;
 using Recipes.Indexer.Service.Settings;
 using Recipes.Indexer.Shared;
@@ -48,18 +50,37 @@ public class RecipesIndexer : BackgroundService
     {
         var client = _clientFactory.GetClient(_settings);
 
+        var document = RecipeDocument.FromRecipeReadDto(message);
+
         var indexExistsResponse = await client.Indices.ExistsAsync(_settings.Index);
 
         if (!indexExistsResponse.Exists)
         {
-            await client.Indices.CreateAsync(_settings.Index, crd => { crd.Mappings(crm => { crm.Enabled(); }); });
+            await client.Indices.CreateAsync(_settings.Index, crd =>
+            {
+                crd.Mappings(config =>
+                {
+                    config.Enabled().Properties<RecipeDocument>(cr =>
+                    {
+                        cr.Keyword(nameof(document.Id));
+                        cr.Text(nameof(document.Title));
+                        cr.Text(nameof(document.Description));
+                        cr.Keyword(nameof(document.UserId));
+                        cr.Text(nameof(document.Ingredients));
+                    });
+                });
+            });
 
             _logger.LogInformation("Index created: {0}", _settings.Index);
         }
 
-        var document = RecipeDocument.FromRecipeReadDto(message);
+        var response = await client.IndexAsync(document, req => req.Index(_settings.Index).Id(document.Id));
 
-        await client.IndexAsync(document, _settings.Index);
+        if (!response.IsValidResponse)
+        {
+            _logger.LogError("Recipe indexed: {0}", response.ElasticsearchServerError);
+            return;
+        }
 
         _logger.LogInformation("Recipe indexed: {0}", document.Id);
     }

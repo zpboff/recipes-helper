@@ -16,9 +16,9 @@ public class SearchController : ControllerBase
 
     [HttpGet]
     [Route("api/v1/[controller]/{query}")]
-    public async Task<IEnumerable<RecipeSearchReadDto>> Index(string query)
+    public async Task<IEnumerable<RecipeSearchReadDto>> Index(string query, int from, int size)
     {
-        var items = await _searchService.Search(query);
+        var items = await _searchService.Search(query, from, size);
 
         return items.Select(RecipeSearchReadDto.FromRecipeDocument);
     }
