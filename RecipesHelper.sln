@@ -27,7 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rabbitmq", "rabbitmq", "{3B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "seq", "seq", "{16DDB48F-48B1-4E52-98F9-314D7244F44F}"
 	ProjectSection(SolutionItems) = preProject
-		.docker\seq\docker-compose.yml = .docker\seq\docker-compose.yml
+		.docker\seq\dockerfile = .docker\seq\dockerfile
+		.docker\seq\.env = .docker\seq\.env
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Elastic", "Core\Core.Elastic\Core.Elastic.csproj", "{4532AF4E-9A1C-42D4-A7B5-25206B4DDC78}"
