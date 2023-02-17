@@ -39,7 +39,7 @@ public class RecipeControllerV1 : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> UpdateRecipe(UpdateRecipeDto req, CancellationToken ct)
+    public async Task<IActionResult> UpdateRecipe([FromBody] UpdateRecipeDto req, CancellationToken ct)
     {
         var recipeIdResult = await _updateRecipeService.UpdateRecipe(req, "", ct);
 
