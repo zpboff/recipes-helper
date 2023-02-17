@@ -1,6 +1,0 @@
-.icon {
-    --size: calc(1em + 2px);
-    height: var(--size);
-    width: var(--size);
-    margin-bottom: -0.1875em;
-}

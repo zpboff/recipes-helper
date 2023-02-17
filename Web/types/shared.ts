@@ -1,1 +1,0 @@
-export type Dictionary<TValue> = {[keyof in string]: TValue}

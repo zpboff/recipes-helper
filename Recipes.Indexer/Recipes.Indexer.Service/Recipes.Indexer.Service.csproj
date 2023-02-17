@@ -9,6 +9,7 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+        <PackageReference Include="Polly" Version="7.2.3" />
     </ItemGroup>
 
     <ItemGroup>
@@ -17,5 +18,11 @@
       <ProjectReference Include="..\..\Core\Core.MessageQueue\Core.MessageBus.RabbitMq\Core.MessageBus.RabbitMq.csproj" />
       <ProjectReference Include="..\..\Recipes.API\Recipes.API.Models.Shared\Recipes.API.Models.Shared.csproj" />
       <ProjectReference Include="..\Recipes.Indexer.Shared\Recipes.Indexer.Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="appsettings.Development.json">
+        <DependentUpon>appsettings.json</DependentUpon>
+      </Content>
     </ItemGroup>
 </Project>

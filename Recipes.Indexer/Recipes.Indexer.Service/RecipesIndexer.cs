@@ -1,7 +1,7 @@
 using Core.Elastic;
 using Core.MessageBus.Public;
-using Elastic.Clients.Elasticsearch;
-using Elastic.Clients.Elasticsearch.Mapping;
+using Polly;
+using Polly.Retry;
 using Recipes.API.Models.Shared;
 using Recipes.Indexer.Service.Settings;
 using Recipes.Indexer.Shared;
@@ -14,15 +14,17 @@ public class RecipesIndexer : BackgroundService
     private readonly IElasticClientFactory _clientFactory;
     private readonly RecipesIndexerElasticSettings _settings;
     private readonly IMessageConsumer _consumer;
+    private readonly AsyncRetryPolicy _retryPolicy;
 
     public RecipesIndexer(ILogger<RecipesIndexer> logger, IElasticClientFactory clientFactory,
         RecipesIndexerElasticSettings settings, IMessageConsumer consumer,
-        RecipesIndexerMessageBusSettings busSettings)
+        RecipesIndexerMessageBusSettings busSettings, RecipeIndexerSettings indexerSettings)
     {
         _logger = logger;
         _clientFactory = clientFactory;
         _settings = settings;
         _consumer = consumer.Initialize(busSettings);
+        _retryPolicy = Policy.Handle<Exception>().RetryAsync(indexerSettings.RetryCount);
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -46,7 +48,12 @@ public class RecipesIndexer : BackgroundService
         }
     }
 
-    private async Task OnMessage(RecipeReadDto message)
+    private Task OnMessage(RecipeReadDto message)
+    {
+        return _retryPolicy.ExecuteAsync(async () => await IndexRecipe(message));
+    }
+
+    private async Task IndexRecipe(RecipeReadDto message)
     {
         var client = _clientFactory.GetClient(_settings);
 
@@ -78,7 +85,7 @@ public class RecipesIndexer : BackgroundService
 
         if (!response.IsValidResponse)
         {
-            _logger.LogError("Recipe indexed: {0}", response.ElasticsearchServerError);
+            _logger.LogError("Recipe not indexed: {0}", response.ElasticsearchServerError);
             return;
         }
 
