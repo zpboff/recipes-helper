@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+    seq:
+        image: datalust/seq:latest
+        env_file: .env
+        restart: unless-stopped
+        ports:
+          - "5431:5431"
+          - "5432:80"
+        volumes:
+            - seq_data:/data
+volumes:
+  seq_data: 

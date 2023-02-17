@@ -33,7 +33,7 @@ public class RecipeRepository: IRecipeRepository
         }
         catch(Exception ex)
         {
-            _logger.LogError(ex.Message, ex);
+            _logger.LogError(ex, "Ошибка при сохранении рецепта {Id}", recipe.Id);
             return Maybe<string>.None("Ошибка при обновлении рецепта");
         }
     }
@@ -55,7 +55,7 @@ public class RecipeRepository: IRecipeRepository
         }
         catch(Exception ex)
         {
-            _logger.LogError(ex.Message, ex);
+            _logger.LogError(ex, "Ошибка при сохранении рецепта {Id}", recipe.Id);
             return Maybe<string>.None(ex.Message);
         }
     }

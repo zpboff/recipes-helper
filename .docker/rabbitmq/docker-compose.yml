@@ -4,10 +4,7 @@ services:
     rabbit:
         image: rabbitmq:3-management
         restart: always
+        env_file: .env
         ports:
             - "5672:5672"
-            - "15672:15672"
-        environment:
-            RABBITMQ_DEFAULT_USER: root
-            RABBITMQ_DEFAULT_PASS: example
-    
+            - "15672:15672"    

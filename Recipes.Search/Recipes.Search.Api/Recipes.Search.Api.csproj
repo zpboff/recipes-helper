@@ -12,6 +12,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Core\Core.Elastic\Core.Elastic.csproj" />
+      <ProjectReference Include="..\..\Core\Core.Logging\Core.Logging.csproj" />
       <ProjectReference Include="..\..\Recipes.Indexer\Recipes.Indexer.Shared\Recipes.Indexer.Shared.csproj" />
       <ProjectReference Include="..\Recipe.Search.Shared\Recipe.Search.Shared.csproj" />
     </ItemGroup>

@@ -1,18 +1,17 @@
-using System.Reflection;
 using Core.Logging;
 using Core.MessageBus.RabbitMQ;
 using Core.MongoDb;
 using Core.Settings;
-using FluentValidation;
 using Recipes.API.App;
 using Recipes.API.App.Services;
-using Recipes.API.App.Validators;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.WebHost.UseSentry();
-builder.Host.UseSerilog();
+builder.Host
+    .UseConfiguration()
+    .UseLogging();
 
 builder.Services
     .RegisterInternalServices()
@@ -20,8 +19,6 @@ builder.Services
     .AddSwaggerGen()
     .AddMongoDb()
     .AddRabbitMq()
-    .RegisterConfiguration(builder.Configuration)
-    .AddSerilogLogging(builder.Configuration)
     .AddHttpClient()
     .AddControllers();
 
@@ -37,6 +34,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseSerilogRequestLogging();
 app.UseHttpsRedirection();
     
 app.UseRouting();

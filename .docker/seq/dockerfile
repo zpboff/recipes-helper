@@ -1,2 +1,0 @@
-FROM datalust/seq:latest
-EXPOSE 5341

@@ -27,8 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rabbitmq", "rabbitmq", "{3B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "seq", "seq", "{16DDB48F-48B1-4E52-98F9-314D7244F44F}"
 	ProjectSection(SolutionItems) = preProject
-		.docker\seq\dockerfile = .docker\seq\dockerfile
-		.docker\seq\.env = .docker\seq\.env
+		.docker\seq\docker-compose.yml = .docker\seq\docker-compose.yml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Elastic", "Core\Core.Elastic\Core.Elastic.csproj", "{4532AF4E-9A1C-42D4-A7B5-25206B4DDC78}"
@@ -50,8 +49,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipes.API.Models", "Recipes.API\Recipes.API.Models\Recipes.API.Models.csproj", "{27616805-6A61-4EB1-9737-D3CB354EC865}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipes.API.Models.Shared", "Recipes.API\Recipes.API.Models.Shared\Recipes.API.Models.Shared.csproj", "{E8A43CE8-0B78-41DD-8BF6-A23DF98AA057}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BFF", "BFF", "{C1CF6CDB-7885-43CF-BE86-1E52997EEB89}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Utilities", "Core\Core.Utilities\Core.Utilities.csproj", "{CC402965-D020-47A4-9639-FCDA0FC1A5FC}"
 EndProject

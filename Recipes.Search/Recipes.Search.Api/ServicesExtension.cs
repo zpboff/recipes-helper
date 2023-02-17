@@ -8,10 +8,7 @@ public static class ServicesExtension
 {
     public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration)
     {
-        services
-            .RegisterConfiguration(configuration)
-            .AddElastic();
-    
+        services.AddElastic();
         services.AddTransient<RecipesSearchService>();
         
         return services;

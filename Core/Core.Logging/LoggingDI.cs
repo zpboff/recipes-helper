@@ -1,17 +1,14 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Hosting;
 using Serilog;
 
 namespace Core.Logging;
 
 public static class LoggingDi
 {
-    public static IServiceCollection AddSerilogLogging(this IServiceCollection services, IConfiguration configuration)
+    public static IHostBuilder UseLogging(this IHostBuilder hostBuilder)
     {
-        Log.Logger = new LoggerConfiguration()
-            .ReadFrom.Configuration(configuration)
-            .CreateLogger();
+        hostBuilder.UseSerilog((ctx, lc) => lc.ReadFrom.Configuration(ctx.Configuration));
         
-        return services;
+        return hostBuilder;
     } 
 }
