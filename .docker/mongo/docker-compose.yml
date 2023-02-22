@@ -9,5 +9,7 @@ services:
     env_file: .env      
     volumes:
       - data:/data/db
+      - config:/data/configdb
 volumes:
   data:
+  config:
