@@ -7,6 +7,8 @@ public class RecipeStepCreateModelValidator : AbstractValidator<RecipeStepCreate
 {
     public RecipeStepCreateModelValidator()
     {
-        RuleFor(s => s.Content).NotEmpty().WithMessage("Заполните описание");
+        RuleFor(s => s.Content).NotEmpty()
+            .WithMessage("Заполните описание")
+            .OverridePropertyName("content");
     }
 }

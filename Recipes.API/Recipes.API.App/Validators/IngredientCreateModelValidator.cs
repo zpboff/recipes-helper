@@ -7,8 +7,16 @@ public class IngredientCreateModelValidator : AbstractValidator<IngredientCreate
 {
     public IngredientCreateModelValidator()
     {
-        RuleFor(s => s.Name).NotEmpty().WithMessage("Введите наименование продукта");
-        RuleFor(s => s.Count).GreaterThan(0).WithMessage("Введите количество");
-        RuleFor(s => s.Measurement).NotEmpty().WithMessage("Укажите ед.изм");
+        RuleFor(s => s.Name).NotEmpty()
+            .WithMessage("Введите наименование продукта")
+            .OverridePropertyName("name");
+        
+        RuleFor(s => s.Count).GreaterThan(0)
+            .WithMessage("Введите количество")
+            .OverridePropertyName("count");
+        
+        RuleFor(s => s.Measurement).NotEmpty()
+            .WithMessage("Укажите ед.изм")
+            .OverridePropertyName("measurement");
     }
 }
