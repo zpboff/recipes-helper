@@ -21,6 +21,9 @@
       <Content Update="appsettings.development.json">
         <DependentUpon>appsettings.json</DependentUpon>
       </Content>
+      <Content Update="appsettings.Logging.json">
+        <DependentUpon>appsettings.json</DependentUpon>
+      </Content>
     </ItemGroup>
 
 </Project>

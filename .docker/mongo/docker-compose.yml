@@ -1,4 +1,4 @@
-version: '3.1'
+version: "3.9"
 
 services:
   mongo:
@@ -8,6 +8,6 @@ services:
       - "27018:27017"
     env_file: .env      
     volumes:
-      - mongodb:/data/db
+      - data:/data/db
 volumes:
-  mongodb:
+  data:

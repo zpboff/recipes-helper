@@ -9,6 +9,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.SqlDb", "Core\Core.SqlDb\Core.SqlDb.csproj", "{6C0F3B55-0A27-40B4-8184-EDA6EF19A113}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docker", ".docker", "{09C08F90-5D97-4ADA-AFD5-BE38F27145E9}"
+	ProjectSection(SolutionItems) = preProject
+		.docker\sql\docker-compose.yml = .docker\sql\docker-compose.yml
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "elastic", "elastic", "{99DCCC5F-8E79-4573-81B3-92AFC23BDB6E}"
 	ProjectSection(SolutionItems) = preProject

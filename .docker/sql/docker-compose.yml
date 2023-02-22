@@ -1,15 +1,13 @@
-version: '3.1'
+version: "3.9"
 
 services:
-  db:
+  sql:
     image: postgres
     restart: always
-    environment:
-      POSTGRES_USER: pgsql
-      POSTGRES_PASSWORD: mA089p9yhsP*
+    env_file: .env
     volumes:
-      - pgsqldata:/pgsql.d
+      - data:/pgsql.d
     ports:
       - "5432:5432"
 volumes:
-  pgsqldata:
+  ata:

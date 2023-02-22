@@ -1,22 +1,20 @@
-version: '2.2'
+version: "3.9"
+
 services:
   elastic:
     image: elasticsearch:8.1.2
     container_name: elastic
     volumes:
-      - elastic-volume:/usr/share/elasticsearch/data
+      - data:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
       - 9300:9300
-    environment:
-        discovery.type: 'single-node'
-        xpack.security.enabled: 'true'
-        ELASTIC_PASSWORD: '123456'
+    env_file: .env
     networks:
         - elastic
 
 volumes:
-  elastic-volume:
+  data:
     driver: local
 
 networks:
