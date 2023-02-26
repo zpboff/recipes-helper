@@ -1,7 +1,7 @@
 ﻿using Core.MessageBus.Public;
-using Core.Utilities;
 using FluentValidation;
 using Recipes.API.App.Extensions;
+using Recipes.API.App.Models;
 using Recipes.API.App.Repositories;
 using Recipes.API.App.Settings;
 using Recipes.API.Models.CreateRecipe;
@@ -22,14 +22,14 @@ public class CreateRecipeService : ICreateRecipeService
         _messageProducer = messageProducer.Initialize(settings);
     }
 
-    public async Task<Maybe<string>> CreateRecipe(CreateRecipeDto dto, string userId, CancellationToken ct = default)
+    public async Task<OperationResult<string>> CreateRecipe(CreateRecipeDto dto, string userId, CancellationToken ct = default)
     {
         var validationResult = await _createRecipeValidator.ValidateAsync(dto, ct);
 
         if (!validationResult.IsValid)
         {
             var errors = validationResult.ToErrorsDictionary();
-            return Maybe<string>.None(errors);
+            return OperationResult<string>.None(OperationStatus.BadRequest, errors);
         }
 
         var recipe = dto.ToRecipe(userId);
@@ -40,8 +40,9 @@ public class CreateRecipeService : ICreateRecipeService
         {
             var readDto = recipe.ToRecipeReadDto();
             _messageProducer.Produce(readDto);
+            return OperationResult<string>.Some(result.Value!);
         }
 
-        return result;
+        return OperationResult<string>.None(OperationStatus.InternalError);
     }
 }

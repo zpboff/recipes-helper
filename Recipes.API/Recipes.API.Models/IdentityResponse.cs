@@ -1,8 +1,8 @@
 ﻿namespace Recipes.API.Models;
 
-public class RecipeIdentityResponse
+public class IdentityResponse
 {
-    public RecipeIdentityResponse(string? id)
+    public IdentityResponse(string? id)
     {
         Id = id;
     }

@@ -8,10 +8,11 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.WebHost.UseSentry();
 builder.Host
     .UseConfiguration()
     .UseLogging();
+
+builder.WebHost.UseConfiguredSentry();
 
 builder.Services
     .RegisterInternalServices()
@@ -42,8 +43,6 @@ app.UseSentryTracing();
 
 app.UseAuthentication();
 app.UseAuthorization();
-
-app.UseSerilogRequestLogging();
 app.MapControllers();
 
 app.Run();
