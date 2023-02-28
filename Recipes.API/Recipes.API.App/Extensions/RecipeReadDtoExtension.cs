@@ -1,42 +1,41 @@
-﻿using Recipes.API.Models.Entities;
+﻿using Recipes.API.App.Models.Entities;
 using Recipes.API.Models.Shared;
-using Recipes.API.Models.Shared.Entities.Recipe;
 
 namespace Recipes.API.App.Extensions;
 
 public static class RecipeReadDtoExtension
 {
-    public static RecipeReadDto ToRecipeReadDto(this Recipe recipe)
+    public static RecipeReadDto ToRecipeReadDto(this RecipeEntity recipeEntity)
     {
         return new RecipeReadDto
         {
-            Id = recipe.Id,
-            Description = recipe.Description,
-            Ingredients = recipe.Ingredients.Select(i => i.ToIngredientReadDto()),
-            Steps = recipe.Steps.Select(s => s.ToStepReadDto()),
-            Title = recipe.Title,
-            UserId = recipe.UserId,
-            PreviewImage = recipe.PreviewImage
+            Id = recipeEntity.Id,
+            Description = recipeEntity.Description,
+            Ingredients = recipeEntity.Ingredients.Select(i => i.ToIngredientReadDto()),
+            Steps = recipeEntity.Steps.Select(s => s.ToStepReadDto()),
+            Title = recipeEntity.Title,
+            UserId = recipeEntity.UserId,
+            PreviewImage = recipeEntity.PreviewImage
         };
     }
 
-    private static StepReadDto ToStepReadDto(this Step step)
+    private static StepReadDto ToStepReadDto(this StepEntity stepEntity)
     {
         return new StepReadDto
         {
-            Content = step.Content,
-            Image = step.Image,
-            Order = step.Order
+            Content = stepEntity.Content,
+            Image = stepEntity.Image,
+            Order = stepEntity.Order
         };
     }
     
-    private static IngredientReadDto ToIngredientReadDto(this Ingredient ingredient)
+    private static IngredientReadDto ToIngredientReadDto(this IngredientEntity ingredientEntity)
     {
         return new IngredientReadDto
         {
-            Count = ingredient.Count,
-            Measurement = ingredient.Measurement,
-            Name = ingredient.Name
+            Count = ingredientEntity.Count,
+            Measurement = ingredientEntity.Measurement,
+            Name = ingredientEntity.Name
         };
     }
 }

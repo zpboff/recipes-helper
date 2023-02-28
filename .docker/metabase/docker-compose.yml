@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  metabase:
+    image: metabase/metabase
+    restart: always
+    ports:
+      - "5184:3000"
+    env_file: .env    
+    networks:
+      - db  
+networks:
+  db:
+    driver: bridge

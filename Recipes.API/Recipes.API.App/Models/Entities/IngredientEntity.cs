@@ -1,8 +1,8 @@
 ﻿using Core.Models;
 
-namespace Recipes.API.Models.Shared.Entities.Recipe;
+namespace Recipes.API.App.Models.Entities;
 
-public class Ingredient: IHasId
+public class IngredientEntity: IHasId
 {
     public string Id { get; set; } = null!;
     public string Name { get; set; } = null!;

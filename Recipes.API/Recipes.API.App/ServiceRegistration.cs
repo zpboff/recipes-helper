@@ -11,8 +11,7 @@ public static class ServiceRegistration
     {
         services
             .AddValidatorsFromAssemblyContaining<CreateRecipeRequestValidator>()
-            .AddScoped<ICreateRecipeService, CreateRecipeService>()
-            .AddScoped<IUpdateRecipeService, UpdateRecipeService>()
+            .AddScoped<IRecipeService, RecipeService>()
             .AddScoped<IRecipeRepository, RecipeRepository>();
         
         return services;

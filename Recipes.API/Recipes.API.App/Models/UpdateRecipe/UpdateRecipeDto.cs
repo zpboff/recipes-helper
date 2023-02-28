@@ -1,23 +1,26 @@
-﻿using Recipes.API.Models.Entities;
+﻿using Recipes.API.App.Models.CreateRecipe;
+using Recipes.API.App.Models.Entities;
 
-namespace Recipes.API.Models.CreateRecipe;
+namespace Recipes.API.App.Models.UpdateRecipe;
 
-public class CreateRecipeDto
+public class UpdateRecipeDto
 {
+    public string Id { get; set; } = null!;
     public string Title { get; set; } = null!;
     public string? Description { get; set; }
     public string? PreviewImage { get; set; }
     public IEnumerable<IngredientCreateDto> Ingredients { get; set; } = null!;
     public IEnumerable<RecipeStepCreateDto> Steps { get; set; } = null!;
-
-    public Recipe ToRecipe(string userId)
+    public bool IsDeleted { get; set; }
+    
+    public RecipeEntity ToRecipe(string userId)
     {
-        return new Recipe
+        return new RecipeEntity
         {
-            Id = Guid.NewGuid().ToString(),
+            Id = Id,
             Description = Description,
             Title = Title,
-            IsDeleted = false,
+            IsDeleted = IsDeleted,
             UserId = userId,
             PreviewImage = PreviewImage,
             Ingredients = Ingredients.Select(i => i.ToIngredient()),

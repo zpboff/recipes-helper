@@ -1,6 +1,6 @@
-﻿using Recipes.API.Models.Shared.Entities.Recipe;
+﻿using Recipes.API.App.Models.Entities;
 
-namespace Recipes.API.Models.CreateRecipe;
+namespace Recipes.API.App.Models.CreateRecipe;
 
 public class IngredientCreateDto
 {
@@ -8,9 +8,9 @@ public class IngredientCreateDto
     public float Count { get; set; }
     public string Measurement { get; set; } = null!;
 
-    public Ingredient ToIngredient()
+    public IngredientEntity ToIngredient()
     {
-        return new Ingredient
+        return new IngredientEntity
         {
             Id = Guid.NewGuid().ToString(),
             Count = Count,

@@ -1,11 +1,10 @@
 ﻿using System.Text.Json;
+using Core.Models;
 using Microsoft.AspNetCore.Mvc;
-using Recipes.API.App.Models;
+using Recipes.API.App.Models.CreateRecipe;
+using Recipes.API.App.Models.UpdateRecipe;
 using Recipes.API.App.Services;
 using Recipes.API.Models;
-using Recipes.API.Models.CreateRecipe;
-using Recipes.API.Models.UpdateRecipe;
-using Sentry;
 
 namespace Recipes.API.App.Controllers.V1;
 
@@ -13,21 +12,18 @@ namespace Recipes.API.App.Controllers.V1;
 public class RecipeControllerV1 : ControllerBase
 {
     private readonly ILogger<RecipeControllerV1> _logger;
-    private readonly ICreateRecipeService _createRecipeService;
-    private readonly IUpdateRecipeService _updateRecipeService;
+    private readonly IRecipeService _recipeService;
 
-    public RecipeControllerV1(ICreateRecipeService createRecipeService, IUpdateRecipeService updateRecipeService,
-        ILogger<RecipeControllerV1> logger)
+    public RecipeControllerV1(IRecipeService recipeService, ILogger<RecipeControllerV1> logger)
     {
-        _createRecipeService = createRecipeService;
-        _updateRecipeService = updateRecipeService;
+        _recipeService = recipeService;
         _logger = logger;
     }
 
     [HttpPut]
     public async Task<IActionResult> CreateRecipe([FromBody] CreateRecipeDto req, CancellationToken ct)
     {
-        var recipeIdResult = await _createRecipeService.CreateRecipe(req, "", ct);
+        var recipeIdResult = await _recipeService.CreateRecipe(req, "", ct);
 
         return ProcessResult(recipeIdResult, req);
     }
@@ -35,7 +31,7 @@ public class RecipeControllerV1 : ControllerBase
     [HttpPost]
     public async Task<IActionResult> UpdateRecipe([FromBody] UpdateRecipeDto req, CancellationToken ct)
     {
-        var recipeIdResult = await _updateRecipeService.UpdateRecipe(req, "", ct);
+        var recipeIdResult = await _recipeService.UpdateRecipe(req, "", ct);
         
         return ProcessResult(recipeIdResult, req);
     }

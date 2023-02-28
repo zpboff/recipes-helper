@@ -1,10 +1,11 @@
-﻿namespace Recipes.API.App.Models;
+﻿namespace Core.Models;
 
 public class OperationResult<TValue>
 {
     public OperationStatus Status { get; set; }
     public TValue? Value { get; set; }
     public object? Errors { get; set; }
+    public bool IsValid => Status == OperationStatus.Ok;
 
     public static OperationResult<TValue> Some(TValue value) => new()
     {

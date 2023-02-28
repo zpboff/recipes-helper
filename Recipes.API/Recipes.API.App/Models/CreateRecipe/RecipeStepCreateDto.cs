@@ -1,6 +1,6 @@
-﻿using Recipes.API.Models.Shared.Entities.Recipe;
+﻿using Recipes.API.App.Models.Entities;
 
-namespace Recipes.API.Models.CreateRecipe;
+namespace Recipes.API.App.Models.CreateRecipe;
 
 public class RecipeStepCreateDto
 {
@@ -8,9 +8,9 @@ public class RecipeStepCreateDto
     public string Content { get; set; } = null!;
     public string? Image { get; set; }
 
-    public Step ToStep()
+    public StepEntity ToStep()
     {
-        return new Step
+        return new StepEntity
         {
             Id = Guid.NewGuid().ToString(),
             Content = Content,

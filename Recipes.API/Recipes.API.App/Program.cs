@@ -23,10 +23,6 @@ builder.Services
     .AddHttpClient()
     .AddControllers();
 
-builder.Services
-    .AddTransient<CreateRecipeService>()
-    .AddTransient<UpdateRecipeService>();
-
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

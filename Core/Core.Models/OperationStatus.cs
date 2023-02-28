@@ -1,4 +1,4 @@
-﻿namespace Recipes.API.App.Models;
+﻿namespace Core.Models;
 
 public enum OperationStatus
 {

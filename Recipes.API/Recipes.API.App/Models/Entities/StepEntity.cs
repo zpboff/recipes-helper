@@ -1,6 +1,6 @@
-﻿namespace Recipes.API.Models.Shared.Entities.Recipe;
+﻿namespace Recipes.API.App.Models.Entities;
 
-public class Step
+public class StepEntity
 {   
     public string Id { get; set; } = null!;
     public int Order { get; set; }

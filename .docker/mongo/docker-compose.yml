@@ -10,6 +10,11 @@ services:
     volumes:
       - data:/data/db
       - config:/data/configdb
+    networks:
+      - metabase_db
 volumes:
   data:
   config:
+networks:
+  metabase_db:
+    external: true

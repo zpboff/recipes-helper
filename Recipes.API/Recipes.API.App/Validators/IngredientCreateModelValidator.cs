@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using Recipes.API.Models.CreateRecipe;
+using Recipes.API.App.Models.CreateRecipe;
 
 namespace Recipes.API.App.Validators;
 

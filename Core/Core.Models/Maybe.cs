@@ -1,4 +1,4 @@
-﻿namespace Core.Utilities;
+﻿namespace Core.Models;
 
 public struct Maybe<TValue>
 {
