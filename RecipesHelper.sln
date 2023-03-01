@@ -65,8 +65,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipe.Search.Shared", "Recipes.Search\Recipe.Search.Shared\Recipe.Search.Shared.csproj", "{CED34033-8E08-4336-BCCA-2B8D070BBC65}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{83ECDB8E-1A73-46B8-998F-8493FEE16305}"
+	ProjectSection(SolutionItems) = preProject
+		.docker\sql\docker-compose.yml = .docker\sql\docker-compose.yml
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "metabase", "metabase", "{136CF6C1-B681-417C-8FE0-4F06831EDBD5}"
+	ProjectSection(SolutionItems) = preProject
+		.docker\metabase\docker-compose.yml = .docker\metabase\docker-compose.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

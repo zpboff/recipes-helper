@@ -41,7 +41,7 @@ public class RecipeControllerV1 : ControllerBase
         switch (result.Status)
         {
             case OperationStatus.Ok:
-                return Ok(new IdentityResponse(result.Value));
+                return Ok(new IdentityResult(result.Value));
             case OperationStatus.InternalError:
                 _logger.LogError("Ошибка выполнения {Request}", JsonSerializer.Serialize(req));
                 return Problem(); 
