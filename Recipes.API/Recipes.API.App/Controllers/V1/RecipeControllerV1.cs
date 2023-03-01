@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Recipes.API.App.Models.CreateRecipe;
 using Recipes.API.App.Models.UpdateRecipe;
 using Recipes.API.App.Services;
-using Recipes.API.Models;
 
 namespace Recipes.API.App.Controllers.V1;
 
@@ -18,6 +17,14 @@ public class RecipeControllerV1 : ControllerBase
     {
         _recipeService = recipeService;
         _logger = logger;
+    }
+    
+    [HttpGet]
+    public async Task<IActionResult> GetRecipe(string id, CancellationToken ct)
+    {
+        var recipeResult = await _recipeService.GetRecipe(id, ct);
+        
+        return ProcessResult(recipeResult, id);
     }
 
     [HttpPut]
@@ -36,12 +43,12 @@ public class RecipeControllerV1 : ControllerBase
         return ProcessResult(recipeIdResult, req);
     }
 
-    private IActionResult ProcessResult(OperationResult<string> result, object req)
+    private IActionResult ProcessResult<T>(OperationResult<T> result, object req)
     {
         switch (result.Status)
         {
             case OperationStatus.Ok:
-                return Ok(new IdentityResult(result.Value));
+                return Ok(result.Value);
             case OperationStatus.InternalError:
                 _logger.LogError("Ошибка выполнения {Request}", JsonSerializer.Serialize(req));
                 return Problem(); 
