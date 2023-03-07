@@ -74,6 +74,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "metabase", "metabase", "{13
 		.docker\metabase\docker-compose.yml = .docker\metabase\docker-compose.yml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventService", "EventService", "{3FCBF6E3-100E-4F9C-8810-5D83CE6AEEBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventService.Shared", "EventService\EventService.Shared\EventService.Shared.csproj", "{CF9E319D-155F-4333-9380-1B51779146F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventService.Worker", "EventService\EventService.Worker\EventService.Worker.csproj", "{04A4E0A4-EE71-48D4-8E0E-2F7A3AF50A1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -144,6 +150,14 @@ Global
 		{CED34033-8E08-4336-BCCA-2B8D070BBC65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CED34033-8E08-4336-BCCA-2B8D070BBC65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CED34033-8E08-4336-BCCA-2B8D070BBC65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF9E319D-155F-4333-9380-1B51779146F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF9E319D-155F-4333-9380-1B51779146F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF9E319D-155F-4333-9380-1B51779146F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF9E319D-155F-4333-9380-1B51779146F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04A4E0A4-EE71-48D4-8E0E-2F7A3AF50A1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04A4E0A4-EE71-48D4-8E0E-2F7A3AF50A1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04A4E0A4-EE71-48D4-8E0E-2F7A3AF50A1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04A4E0A4-EE71-48D4-8E0E-2F7A3AF50A1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0F19B7B9-F81D-4240-9740-2E0BCB03A124} = {CE9DBBA1-DC7F-46AC-8606-DE055C064864}
@@ -169,5 +183,7 @@ Global
 		{CED34033-8E08-4336-BCCA-2B8D070BBC65} = {D89F625F-1C89-456D-ACCF-D3E0EC5DA667}
 		{83ECDB8E-1A73-46B8-998F-8493FEE16305} = {09C08F90-5D97-4ADA-AFD5-BE38F27145E9}
 		{136CF6C1-B681-417C-8FE0-4F06831EDBD5} = {09C08F90-5D97-4ADA-AFD5-BE38F27145E9}
+		{CF9E319D-155F-4333-9380-1B51779146F4} = {3FCBF6E3-100E-4F9C-8810-5D83CE6AEEBF}
+		{04A4E0A4-EE71-48D4-8E0E-2F7A3AF50A1B} = {3FCBF6E3-100E-4F9C-8810-5D83CE6AEEBF}
 	EndGlobalSection
 EndGlobal

@@ -12,7 +12,7 @@ namespace Core.Settings
 
             hostBuilder.ConfigureAppConfiguration(config =>
             {
-                config.AddJsonFile("appsettings.Logging.json");
+                config.AddJsonFile("appsettings.Logging.json", optional: true);
             });
 
             hostBuilder.ConfigureServices((context, services) =>

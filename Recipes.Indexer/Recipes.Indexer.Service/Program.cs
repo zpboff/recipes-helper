@@ -7,10 +7,12 @@ using Recipes.Indexer.Service;
 var host = Host.CreateDefaultBuilder(args)
     .UseConfiguration()
     .UseLogging()
-    .ConfigureServices(services => services.AddElastic()
-        .AddRabbitMq()
-        .AddHostedService<RecipesIndexer>()
-    )
+    .ConfigureServices(services =>
+    {
+        services.AddElastic()
+            .AddRabbitMq()
+            .AddHostedService<RecipesIndexer>();
+    })
     .Build();
 
 await host.RunAsync();
