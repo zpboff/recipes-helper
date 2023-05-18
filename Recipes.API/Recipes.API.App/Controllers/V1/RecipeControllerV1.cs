@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.ComponentModel;
+using System.Text.Json;
 using Core.Models;
 using Microsoft.AspNetCore.Mvc;
 using Recipes.API.App.Models.CreateRecipe;
@@ -50,13 +51,14 @@ public class RecipeControllerV1 : ControllerBase
             case OperationStatus.Ok:
                 return Ok(result.Value);
             case OperationStatus.InternalError:
+            case OperationStatus.Fail:
                 _logger.LogError("Ошибка выполнения {Request}", JsonSerializer.Serialize(req));
                 return Problem(); 
             case OperationStatus.BadRequest:
                 _logger.LogInformation("Плохой запрос {Request}", JsonSerializer.Serialize(req));
                 return BadRequest(result.Errors);
             default:
-                throw new ArgumentOutOfRangeException();
+                throw new InvalidEnumArgumentException();
         }
     }
 }
