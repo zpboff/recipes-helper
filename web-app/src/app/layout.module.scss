@@ -4,16 +4,10 @@
   grid-template-columns: 320px auto;
   grid-template-areas:
           "header header"
-          "side-menu content";
+          "page-content page-content";
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   height: 100vh;
   overflow: hidden;
-}
-
-.content {
-  grid-area: content;
-  overflow-x: hidden;
-  overflow-y: scroll;
 }

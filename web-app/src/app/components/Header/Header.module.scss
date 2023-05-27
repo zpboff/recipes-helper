@@ -1,5 +1,5 @@
 ﻿.header {
-  background: red;
-  grid-area: header;
-  height: 48px;
+  background: var(--main-color);
+  grid-row: 1;
+  grid-column: 1/3;
 }
