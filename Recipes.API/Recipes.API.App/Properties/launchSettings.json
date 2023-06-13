@@ -1,13 +1,5 @@
 ﻿{
   "$schema": "https://json.schemastore.org/launchsettings.json",
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:25613",
-      "sslPort": 44337
-    }
-  },
   "profiles": {
     "Recipes.API": {
       "commandName": "Project",

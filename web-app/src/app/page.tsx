@@ -10,6 +10,7 @@ export const metadata = {
 export default function Home() {
   return (
     <main className={styles.page}>
+      {process.env.BFF_URL}
       <RecommendationBlock />
       <RecipesList />
     </main>
