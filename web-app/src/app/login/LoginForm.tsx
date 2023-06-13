@@ -16,8 +16,8 @@ export function LoginForm({}: Props) {
     const changeEmail = (event: ChangeEvent<HTMLInputElement>) => emailChanged(event.target.value);
     const changePassword = (event: ChangeEvent<HTMLInputElement>) => passwordChanged(event.target.value);
     
-    const handleLogin = async (e: FormEvent) => {
-        e.preventDefault();
+    const handleLogin = async (event: FormEvent) => {
+        event.preventDefault();
         submitted();
     }
     
