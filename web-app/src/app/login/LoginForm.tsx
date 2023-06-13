@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { $email, $password, emailChanged, passwordChanged, submitted } from "@/app/login/login.logic";
+import { $email, $password, emailChanged, passwordChanged, submitted } from "@/app/login/Login.logic";
 import { useStore } from "effector-react";
 import React, { ChangeEvent, FormEvent } from 'react';
 import styles from './LoginForm.module.scss';

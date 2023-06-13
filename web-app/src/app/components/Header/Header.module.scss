@@ -1,7 +1,7 @@
 ﻿.header {
   background: var(--secondary-color);
   display: grid;
-  grid-template-columns: var(--content-padding) var(--side-menu-size) 1fr;
+  grid-template-columns: var(--content-padding) var(--side-menu-size) 1fr 1fr;
 }
 
 .logoBlock {

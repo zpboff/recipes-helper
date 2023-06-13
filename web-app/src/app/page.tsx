@@ -1,3 +1,5 @@
+import { RecipesList } from './landing/RecipeList/RecipeList';
+import { RecommendationBlock } from './landing/RecipeList/RecommendationBlock/RecommendationBlock';
 import styles from './page.module.css';
 
 export const metadata = {
@@ -8,7 +10,8 @@ export const metadata = {
 export default function Home() {
   return (
     <main className={styles.page}>
-      Main
+      <RecommendationBlock />
+      <RecipesList />
     </main>
   )
 }
