@@ -1,6 +1,6 @@
 import Fastify, { FastifyServerOptions } from 'fastify'
-import { useLoginRoute } from './login';
-import { useRegistrationRoute } from './registration';
+import { useLoginRoute } from './routes/login';
+import { useRegistrationRoute } from './routes/registration';
 
 export type AppOptions = Partial<FastifyServerOptions>;
 

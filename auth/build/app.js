@@ -5,8 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.buildApp = void 0;
 const fastify_1 = __importDefault(require("fastify"));
-const login_1 = require("./login");
-const registration_1 = require("./registration");
+const login_1 = require("./routes/login");
+const registration_1 = require("./routes/registration");
 async function buildApp(options = {}) {
     const fastify = (0, fastify_1.default)(options);
     (0, login_1.useLoginRoute)(fastify);
