@@ -63,26 +63,22 @@ public class RecipesIndexer : BackgroundService
 
         if (!indexExistsResponse.Exists)
         {
-            await client.Indices.CreateAsync(_settings.Index, crd =>
-            {
-                crd.Mappings(config =>
-                {
-                    config.Enabled().Properties<RecipeDocument>(cr =>
-                    {
-                        cr.Keyword(nameof(document.Id));
-                        cr.Text(nameof(document.Title));
-                        cr.Text(nameof(document.Description));
-                        cr.Keyword(nameof(document.UserId));
-                        cr.Text(nameof(document.Ingredients));
-                    });
-                });
-            });
+            await client.Indices.CreateAsync<RecipeDocument>(_settings.Index, config => config
+                .Mappings(map => map
+                    .Properties(cr => cr
+                        .Keyword(nameof(document.Id))
+                        .Keyword(nameof(document.UserId))
+                        .Text(nameof(document.Title))
+                        .Text(nameof(document.Description))
+                        .Text(nameof(document.Ingredients))
+                    )
+                )
+            );
 
             _logger.LogInformation("Index created: {0}", _settings.Index);
         }
 
         var response = await client.IndexAsync(document, req => req.Index(_settings.Index).Id(document.Id));
-
         if (!response.IsValidResponse)
         {
             _logger.LogError("Recipe not indexed: {0}", response.ElasticsearchServerError);
