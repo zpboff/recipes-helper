@@ -16,7 +16,7 @@ public class RecipeSearchReadDto
         {
             Id = recipeDocument.Id,
             Description = recipeDocument.Description,
-            Ingredients = recipeDocument.Ingredients,
+            Ingredients = recipeDocument.Ingredients?.Select(i => i.Name).ToArray(),
             Title = recipeDocument.Title,
             UserId = recipeDocument.UserId
         };
