@@ -1,5 +1,6 @@
-import { RecipesList } from './landing/RecipeList/RecipeList';
-import { RecommendationBlock } from './landing/RecipeList/RecommendationBlock/RecommendationBlock';
+import { RecipesList } from "@/app/features/recipe-list";
+import { RecommendationBlock } from "@/app/features/recommendations-block";
+import { PageLayout } from "@/app/layouts/page-layout/ui";
 import styles from './page.module.css';
 
 export const metadata = {
@@ -9,10 +10,12 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className={styles.page}>
-      {process.env.BFF_URL}
-      <RecommendationBlock />
-      <RecipesList />
-    </main>
+      <PageLayout>
+          <main className={styles.page}>
+              {process.env.BFF_URL}
+              <RecommendationBlock />
+              <RecipesList />
+          </main>
+      </PageLayout>
   )
 }
