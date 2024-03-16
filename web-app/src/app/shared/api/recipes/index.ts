@@ -1,2 +1,2 @@
-﻿export {} from './searchRecipe';
-export {} from "./model";
+﻿export { searchRecipe } from './searchRecipe';
+export { RecipesReadDto } from "./model";
