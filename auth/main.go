@@ -1,6 +1,7 @@
 package auth
 
 import (
+	"auth/config"
 	"auth/models"
 	"auth/routes"
 	"github.com/gin-gonic/gin"
@@ -12,8 +13,8 @@ func main() {
 	models.InitDB()
 	routes.AuthRoutes(r)
 
-	err := r.Run(":8080")
-	
+	err := r.Run(":" + config.GetConfig().Host)
+
 	if err != nil {
 		return
 	}
