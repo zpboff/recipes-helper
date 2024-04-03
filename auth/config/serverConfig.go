@@ -5,6 +5,7 @@ import (
 )
 
 type ServerConfig struct {
+	Host string
 	Port string
 }
 
@@ -22,7 +23,8 @@ func GetServerConfig() *ServerConfig {
 	}
 
 	serverConfig = &ServerConfig{
-		Port: os.Getenv("DB_PORT"),
+		Host: os.Getenv("SERVER_HOST"),
+		Port: os.Getenv("SERVER_PORT"),
 	}
 
 	return serverConfig

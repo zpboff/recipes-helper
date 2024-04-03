@@ -42,13 +42,6 @@ func Register(c *gin.Context) {
 	}
 
 	models.DB.Create(&user)
-
-	token, err := utils.GenerateToken(request.Email)
-
-	if err != nil {
-		c.JSON(500, gin.H{"error": err.Error()})
-		return
-	}
-
-	c.JSON(201, gin.H{"token": token})
+	
+	utils.AttachToken(c, request.Email)
 }
