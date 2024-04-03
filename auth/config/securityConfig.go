@@ -1,25 +1,11 @@
 package config
 
 import (
-	"github.com/joho/godotenv"
 	"log"
 	"os"
 	"strconv"
 	"time"
 )
-
-type DbConfig struct {
-	Host     string
-	Port     string
-	User     string
-	Password string
-	DBName   string
-	SSLMode  string
-}
-
-type ServerConfig struct {
-	Port string
-}
 
 type SecurityConfig struct {
 	AccessTokenExpiration   time.Duration
@@ -28,60 +14,17 @@ type SecurityConfig struct {
 	Secret                  string
 }
 
-var dbConfig *DbConfig
-var serverConfig *ServerConfig
 var securityConfig *SecurityConfig
-
-func GetServerConfig() *ServerConfig {
-	if serverConfig != nil {
-		return serverConfig
-	}
-
-	err := godotenv.Load()
-
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
-
-	serverConfig = &ServerConfig{
-		Port: os.Getenv("DB_PORT"),
-	}
-
-	return serverConfig
-}
-
-func GetDbConfig() *DbConfig {
-	if dbConfig != nil {
-		return dbConfig
-	}
-
-	err := godotenv.Load()
-
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
-
-	dbConfig = &DbConfig{
-		Host:     os.Getenv("DB_HOST"),
-		Port:     os.Getenv("DB_PORT"),
-		User:     os.Getenv("DB_USER"),
-		Password: os.Getenv("DB_PASSWORD"),
-		DBName:   os.Getenv("DB_NAME"),
-		SSLMode:  os.Getenv("DB_SSLMODE"),
-	}
-
-	return dbConfig
-}
 
 func GetSecurityConfig() *SecurityConfig {
 	if securityConfig != nil {
 		return securityConfig
 	}
 
-	err := godotenv.Load()
+	err := TryLoadConfigFile(".server.env")
 
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		return nil
 	}
 
 	salt, saltParsingError := strconv.Atoi(os.Getenv("SECURITY_SALT"))
