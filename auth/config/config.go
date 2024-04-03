@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 	"strconv"
+	"time"
 )
 
 type DbConfig struct {
@@ -21,8 +22,10 @@ type ServerConfig struct {
 }
 
 type SecurityConfig struct {
-	Salt   int
-	Secret string
+	AccessTokenExpiration   time.Duration
+	RefreshTokenInspiration time.Duration
+	Salt                    int
+	Secret                  string
 }
 
 var dbConfig *DbConfig
@@ -87,9 +90,23 @@ func GetSecurityConfig() *SecurityConfig {
 		log.Fatal("Incorrect Salt value")
 	}
 
+	accessTokenExpiration, accessTokenExpirationParsingError := strconv.Atoi(os.Getenv("SECURITY_ACCESS_TOKEN_EXPIRATION"))
+
+	if accessTokenExpirationParsingError != nil {
+		log.Fatal("Incorrect Salt value")
+	}
+
+	refreshTokenExpiration, refreshTokenExpirationParsingError := strconv.Atoi(os.Getenv("SECURITY_REFRESH_TOKEN_EXPIRATION"))
+
+	if refreshTokenExpirationParsingError != nil {
+		log.Fatal("Incorrect Salt value")
+	}
+
 	securityConfig = &SecurityConfig{
-		Salt:   salt,
-		Secret: os.Getenv("SECURITY_SECRET"),
+		AccessTokenExpiration:   time.Duration(accessTokenExpiration) * time.Minute,
+		RefreshTokenInspiration: time.Duration(refreshTokenExpiration) * time.Hour,
+		Salt:                    salt,
+		Secret:                  os.Getenv("SECURITY_SECRET"),
 	}
 
 	return securityConfig
