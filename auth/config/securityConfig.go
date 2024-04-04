@@ -11,7 +11,8 @@ type SecurityConfig struct {
 	AccessTokenExpiration   time.Duration
 	RefreshTokenInspiration time.Duration
 	Salt                    int
-	Secret                  string
+	AccessTokenSecret       string
+	RefreshTokenSecret      string
 }
 
 var securityConfig *SecurityConfig
@@ -49,7 +50,8 @@ func GetSecurityConfig() *SecurityConfig {
 		AccessTokenExpiration:   time.Duration(accessTokenExpiration) * time.Minute,
 		RefreshTokenInspiration: time.Duration(refreshTokenExpiration) * time.Hour,
 		Salt:                    salt,
-		Secret:                  os.Getenv("SECURITY_SECRET"),
+		AccessTokenSecret:       os.Getenv("SECURITY_ACCESS_SECRET"),
+		RefreshTokenSecret:      os.Getenv("SECURITY_REFRESH_SECRET"),
 	}
 
 	return securityConfig
