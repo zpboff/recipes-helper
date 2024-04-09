@@ -6,6 +6,7 @@ import (
 
 type RefreshToken struct {
 	gorm.Model
-	UserId     uint64
+	Token      string
+	UserId     uint
 	Expiration int64
 }

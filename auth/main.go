@@ -13,7 +13,7 @@ func main() {
 	models.InitDB()
 	routes.AuthRoutes(r)
 
-	err := r.Run(":" + config.GetServerConfig().Host)
+	err := r.Run(":" + config.GetServerConfig().Port)
 
 	if err != nil {
 		return

@@ -35,5 +35,5 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	utils.AttachToken(c, request.Email)
+	utils.GenerateTokens(c, existingUser.ID)
 }

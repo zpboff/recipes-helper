@@ -42,6 +42,6 @@ func Register(c *gin.Context) {
 	}
 
 	models.DB.Create(&user)
-	
-	utils.AttachToken(c, request.Email)
+
+	utils.GenerateTokens(c, user.ID)
 }
