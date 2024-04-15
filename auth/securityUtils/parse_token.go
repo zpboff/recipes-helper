@@ -1,8 +1,7 @@
-package utils
+package securityUtils
 
 import (
 	"auth/models"
-	"github.com/dgrijalva/jwt-go"
 )
 
 func ParseToken(tokenString string, secretKey []byte) (claims *models.Claims, err error) {

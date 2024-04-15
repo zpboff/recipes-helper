@@ -1,4 +1,4 @@
-package utils
+package securityUtils
 
 import (
 	"auth/config"

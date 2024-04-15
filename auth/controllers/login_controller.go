@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"auth/models"
-	"auth/utils"
+	"auth/securityUtils"
 	"github.com/gin-gonic/gin"
 )
 
@@ -28,12 +28,12 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	errHash := utils.CompareHashPassword(request.Password, existingUser.PasswordHash)
+	errHash := securityUtils.CompareHashPassword(request.Password, existingUser.PasswordHash)
 
 	if !errHash {
 		c.JSON(400, gin.H{"error": "Invalid password"})
 		return
 	}
 
-	utils.GenerateTokens(c, existingUser.ID)
+	securityUtils.GenerateTokens(c, existingUser.ID)
 }
