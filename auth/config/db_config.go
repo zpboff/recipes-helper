@@ -20,7 +20,7 @@ func GetDbConfig() *DbConfig {
 		return dbConfig
 	}
 
-	err := TryLoadConfigFile(".server.env")
+	err := TryLoadConfigFile(".db.env")
 
 	if err != nil {
 		return nil

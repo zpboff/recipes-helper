@@ -37,7 +37,6 @@ func Register(c *gin.Context) {
 
 	user := models.User{
 		PasswordHash: passwordHash,
-		Deleted:      false,
 		Email:        request.Email,
 	}
 
