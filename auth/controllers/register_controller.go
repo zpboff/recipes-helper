@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"auth/models"
-	"auth/securityUtils"
+	"auth/utils"
 	"github.com/gin-gonic/gin"
 )
 
@@ -28,7 +28,7 @@ func Register(c *gin.Context) {
 		return
 	}
 
-	passwordHash, errHash := securityUtils.GenerateHashPassword(request.Password)
+	passwordHash, errHash := utils.GenerateHashPassword(request.Password)
 
 	if errHash != nil {
 		c.JSON(500, gin.H{"error": "Could not generate password hash"})
@@ -42,5 +42,5 @@ func Register(c *gin.Context) {
 
 	models.DB.Create(&user)
 
-	securityUtils.GenerateTokens(c, user.ID)
+	utils.GenerateTokens(c, user.ID)
 }
