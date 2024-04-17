@@ -16,6 +16,25 @@ type TokenInfo struct {
 }
 
 func GenerateTokens(c *gin.Context, userId uint) {
+	GenerateAccessToken(c, userId)
+	GenerateRefreshToken(c, userId)
+}
+
+func GenerateAccessToken(c *gin.Context, userId uint) {
+	securityConfig := config.GetSecurityConfig()
+	subject := strconv.Itoa(int(userId))
+
+	accessTokenInfo := generateToken(securityConfig.AccessTokenExpiration, securityConfig.AccessTokenSecret, subject)
+
+	if accessTokenInfo == nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not generate access token"})
+		return
+	}
+
+	c.IndentedJSON(http.StatusOK, accessTokenInfo)
+}
+
+func GenerateRefreshToken(c *gin.Context, userId uint) {
 	securityConfig := config.GetSecurityConfig()
 	serverConfig := config.GetServerConfig()
 	subject := strconv.Itoa(int(userId))
@@ -33,16 +52,7 @@ func GenerateTokens(c *gin.Context, userId uint) {
 		UserId:     userId,
 	})
 
-	accessTokenInfo := generateToken(securityConfig.AccessTokenExpiration, securityConfig.AccessTokenSecret, subject)
-
-	if accessTokenInfo == nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not generate access token"})
-		return
-	}
-
 	c.SetCookie("token", refreshTokenInfo.token, int(refreshTokenInfo.expiration), "/api/auth", serverConfig.Host, false, true)
-
-	c.IndentedJSON(http.StatusOK, accessTokenInfo)
 }
 
 func generateToken(duration time.Duration, secret string, subject string) *TokenInfo {
