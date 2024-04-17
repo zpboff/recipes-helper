@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"auth/config"
 	"auth/models"
 	"auth/utils"
 	"github.com/gin-gonic/gin"
@@ -9,7 +8,6 @@ import (
 )
 
 func RefreshToken(c *gin.Context) {
-	serverConfig := config.GetServerConfig()
 	token, err := c.Cookie("token")
 
 	if err != nil || token == "" {
@@ -34,8 +32,8 @@ func RefreshToken(c *gin.Context) {
 		return
 	}
 
-	utils.GenerateAccessToken(c, refreshToken.UserId)
-	c.SetCookie("token", refreshToken.Token, int(refreshToken.Expiration), "/api/auth", serverConfig.Host, false, true)
+	accessToken := utils.GenerateAccessToken(refreshToken.UserId)
+	utils.AttachAccessTokenToResponse(c, accessToken)
 
 	c.Status(200)
 }

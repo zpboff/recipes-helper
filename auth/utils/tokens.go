@@ -16,16 +16,27 @@ type TokenInfo struct {
 }
 
 func GenerateTokens(c *gin.Context, userId uint) {
-	GenerateAccessToken(c, userId)
-	GenerateRefreshToken(c, userId)
+	accessToken := GenerateAccessToken(userId)
+	refreshToken := GenerateRefreshToken(userId)
+
+	AttachAccessTokenToResponse(c, accessToken)
+	AttachRefreshTokenToResponse(c, refreshToken)
 }
 
-func GenerateAccessToken(c *gin.Context, userId uint) {
+func GenerateAccessToken(userId uint) *TokenInfo {
 	securityConfig := config.GetSecurityConfig()
 	subject := strconv.Itoa(int(userId))
 
 	accessTokenInfo := generateToken(securityConfig.AccessTokenExpiration, securityConfig.AccessTokenSecret, subject)
 
+	if accessTokenInfo == nil {
+		return nil
+	}
+
+	return accessTokenInfo
+}
+
+func AttachAccessTokenToResponse(c *gin.Context, accessTokenInfo *TokenInfo) {
 	if accessTokenInfo == nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not generate access token"})
 		return
@@ -34,16 +45,14 @@ func GenerateAccessToken(c *gin.Context, userId uint) {
 	c.IndentedJSON(http.StatusOK, accessTokenInfo)
 }
 
-func GenerateRefreshToken(c *gin.Context, userId uint) {
+func GenerateRefreshToken(userId uint) *TokenInfo {
 	securityConfig := config.GetSecurityConfig()
-	serverConfig := config.GetServerConfig()
 	subject := strconv.Itoa(int(userId))
 
 	refreshTokenInfo := generateToken(securityConfig.RefreshTokenInspiration, securityConfig.RefreshTokenSecret, subject)
 
 	if refreshTokenInfo == nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not generate refresh token"})
-		return
+		return nil
 	}
 
 	models.DB.Create(&models.RefreshToken{
@@ -52,6 +61,11 @@ func GenerateRefreshToken(c *gin.Context, userId uint) {
 		UserId:     userId,
 	})
 
+	return refreshTokenInfo
+}
+
+func AttachRefreshTokenToResponse(c *gin.Context, refreshTokenInfo *TokenInfo) {
+	serverConfig := config.GetServerConfig()
 	c.SetCookie("token", refreshTokenInfo.token, int(refreshTokenInfo.expiration), "/api/auth", serverConfig.Host, false, true)
 }
 
