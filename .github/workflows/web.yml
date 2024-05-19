@@ -9,6 +9,9 @@ on:
 jobs:
     deployment:
         runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: ./web-app
         environment: production
         steps:
           - uses: actions/checkout@v4
