@@ -1,6 +1,6 @@
 ﻿import Link from "next/link";
 import { IconUser } from '@tabler/icons-react';
-import styles from './LoginLink.module.scss';
+import styles from './styles.module.scss';
 
 export function LoginLink() {
     return (

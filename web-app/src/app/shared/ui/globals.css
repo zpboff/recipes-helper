@@ -1,14 +1,11 @@
 :root {
-  --main-color: #f26157;
-  --secondary-color: #e9ecef;
-  --border-color: #dee2e6;
-  --content-bg-color: #f8f9fa;  
   --content-padding: 320px;
-  --side-menu-size: 298px;
+  --side-menu-size: 298px;  
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  outline: none;
 }

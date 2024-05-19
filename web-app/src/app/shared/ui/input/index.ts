@@ -1,1 +1,1 @@
-﻿export { createInputBehavior } from "./createInputBehavior";
+﻿export { Input } from "./input"

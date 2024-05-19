@@ -1,24 +1,18 @@
 "use client";
 
-import React, { ChangeEvent, FormEvent } from 'react';
-import { $query, queryChanged, searchSubmitted } from "@/app/features/search-block/model/store";
-import { useStore } from 'effector-react';
+import { Input } from "@/app/shared/ui/input";
+import React, { FormEvent, useState } from 'react';
 
 const SearchBlock: React.FC = () => {
-    const query = useStore($query);
-
-    const onQueryChange = (event: ChangeEvent<HTMLInputElement>) => {
-        queryChanged(event.target.value);
-    }
-
-    const handleSearch = (event: FormEvent) => {
+    const [query, setQuery] = useState("");
+    
+    function handleSearch(event: FormEvent) {
         event.preventDefault();
-        searchSubmitted();
     }
-
+    
     return (
         <form onSubmit={handleSearch}>
-            <input value={query} onChange={onQueryChange}/>
+            <Input value={query} onValueChange={setQuery} />
         </form>
     )
 }

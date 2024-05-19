@@ -12,7 +12,6 @@ export default function Home() {
   return (
       <PageLayout>
           <main className={styles.page}>
-              {process.env.BFF_URL}
               <RecommendationBlock />
               <RecipesList />
           </main>

@@ -1,10 +1,7 @@
 ﻿.header {
-  background: var(--secondary-color);
-  display: grid;
-  grid-template-columns: var(--content-padding) var(--side-menu-size) 1fr 1fr;
-}
-
-.logoBlock {
-  grid-column-start: 2;
-  display: inline-flex;
+  z-index: 30;
+  position: sticky;
+  top: 0;
+  background: var(--content-bg-color);
+  box-shadow: 0 2px 4px rgb(var(--content-shadow-color), .1);
 }

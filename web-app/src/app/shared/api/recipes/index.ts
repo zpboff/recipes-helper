@@ -1,2 +1,2 @@
 ﻿export { searchRecipe } from './searchRecipe';
-export { RecipesReadDto } from "./model";
+export { type RecipesReadDto } from "./model";

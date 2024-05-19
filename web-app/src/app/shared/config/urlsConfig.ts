@@ -1,4 +1,4 @@
-﻿import _ from "lodash/isNil";
+﻿import _ from "lodash";
 
 type UrlsConfig = {
     apiUrl: string;
