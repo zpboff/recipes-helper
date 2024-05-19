@@ -1,0 +1,19 @@
+name: web-deploy
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+jobs:
+    deployment:
+        runs-on: ubuntu-latest
+        environment: production
+        steps:
+          - name: deploy
+          - uses: actions/checkout@v4
+            with:
+                node-version: '20'
+          - run: npm ci
+          - run: npm run build
