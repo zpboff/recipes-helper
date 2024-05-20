@@ -14,7 +14,8 @@ jobs:
                 working-directory: ./web-app
         environment: production
         steps:
-            - uses: actions/checkout@v4
+            - name: Checkout repo
+                uses: actions/checkout@v4
                 with:
                     node-version: '20'
             - name: Build app
