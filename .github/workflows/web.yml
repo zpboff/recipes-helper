@@ -22,16 +22,22 @@ jobs:
                 node-version: '20'
             - name: Build app
               run: npm ci && npm run build
+            - name: Install sshpass
+              run: apt install sshpass
             - name: Create SSH key
               run: |
                  install -m 600 -D /dev/null ~/.ssh/id_rsa
                  echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-                 ssh-keyscan -H "${{ secrets.HOST }}" > ~/.ssh/known_hosts
+                 ssh-keyscan -H ${{ secrets.HOST }} > ~/.ssh/known_hosts
               shell: bash
               env:
                 SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
-                HOST: ${{secrets.HOST}}
-            - name: Deploy with rsync
-              run: rsync -rav --delete build/ ${{ secrets.USER }}@${{ secrets.HOST }}:${{ secrets.APP_DIR }}
-            - name: Start web app
-              run: ssh ${{ secrets.USER }}@${{ secrets.HOST }} "cd ${{ secrets.APP_DIR }} && npm run start"
+            - name: Deploy
+              uses: matheusvanzan/sshpass-action@v2
+              with:
+                host: ${{ secrets.HOST }}
+                user: ${{ secrets.USER }}
+                pass: ${{ secrets.PASSWORD }}
+                run: |
+                  rsync -rav --delete . ${{ secrets.USER }}@${{ secrets.HOST }}:${{ secrets.APP_DIR }}
+                  ssh ${{ secrets.USER }}@${{ secrets.HOST }} "cd ${{ secrets.APP_DIR }} && npm run start"
