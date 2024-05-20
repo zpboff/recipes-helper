@@ -22,8 +22,6 @@ jobs:
                 node-version: '20'
             - name: Build app
               run: npm ci && npm run build
-            - name: Install sshpass
-              run: apt install sshpass
             - name: Create SSH key
               run: |
                  install -m 600 -D /dev/null ~/.ssh/id_rsa
