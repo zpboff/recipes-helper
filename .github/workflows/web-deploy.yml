@@ -25,4 +25,4 @@ jobs:
     - name: Run tests
       run: npm test --if-present
     - name: Deploy
-      run: rsync -rav --delete . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_APP_DIR }}
+      run: rsync -rav --delete .next public next.config.js package.json ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_APP_DIR }}
