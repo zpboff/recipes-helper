@@ -14,6 +14,7 @@ export default function Home() {
           <main className={styles.page}>
               <RecommendationBlock />
               <RecipesList />
+              Deploy test
           </main>
       </PageLayout>
   )
