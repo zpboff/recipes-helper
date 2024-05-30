@@ -26,3 +26,9 @@ jobs:
       run: npm test --if-present
     - name: Deploy
       run: rsync -rav --delete .next public next.config.js package.json ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_APP_DIR }}
+    - name: Install packages on remote app
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        script: npm ci
