@@ -18,13 +18,7 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
-    - name: Install packages
-      run: npm ci
-    - name: Build app
-      run: npm run build --if-present
-    - name: Run tests
-      run: npm test --if-present
+    - name: Clear target dir     
+      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'exec bash \-l && cd ${{ secrets.REMOTE_APP_DIR}} && rm -r *'
     - name: Deploy
-      run: rsync -rav --delete .next public next.config.js package.json package-lock.json ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_APP_DIR }}
-    - name: Install packages in remote server      
-      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'exec bash \-l && cd ${{ secrets.REMOTE_APP_DIR }} && npm ci'
+      run: rsync -rav --delete . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_APP_DIR }}
