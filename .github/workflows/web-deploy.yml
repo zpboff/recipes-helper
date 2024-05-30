@@ -34,5 +34,4 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           cd ${{ secrets.REMOTE_APP_DIR }}
-          mkdir temp
           "$(which npm)" ci
