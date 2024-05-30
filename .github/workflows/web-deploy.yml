@@ -35,4 +35,4 @@ jobs:
         script: |
           cd ${{ secrets.REMOTE_APP_DIR }}
           mkdir temp
-          npm ci
+          "$(which npm)" ci
