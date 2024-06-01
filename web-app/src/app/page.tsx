@@ -15,7 +15,7 @@ export default function Home() {
               <RecommendationBlock />
               <RecipesList />
               <div style={{ padding: "15px", backgroundColor: "lightgrey" }}>
-                Deploy from docker registry
+                Deploy from docker registry 2
               </div>
           </main>
       </PageLayout>
