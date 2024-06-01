@@ -18,7 +18,12 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
-    - name: Clear target dir     
-      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'exec bash \-l && cd ${{ secrets.REMOTE_APP_DIR}} && rm -r *'
-    - name: Deploy
-      run: rsync -rav --delete . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_APP_DIR }}
+    #- name: Clear target dir     
+    #  run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'exec bash \-l && cd ${{ secrets.REMOTE_APP_DIR}} && rm -r *'
+    #- name: Deploy
+    #  run: rsync -rav --delete . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_APP_DIR }}- name: Log in to Docker Hub
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKER_USER }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
