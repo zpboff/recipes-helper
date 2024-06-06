@@ -1,0 +1,32 @@
+{
+  "name": "@recipes-helper/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tabler/icons-react": "^3.5.0",
+    "axios": "^1.7.2",
+    "classnames": "2.3.2",
+    "effector": "^23.2.2",
+    "effector-react": "^23.2.1",
+    "lodash": "^4.17.21",
+    "next": "14.2.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.4",
+    "@types/node": "20.2.0",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.3",
+    "sass": "^1.77.4",
+    "typescript": "^5.2.2"
+  }
+}

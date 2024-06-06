@@ -1,7 +1,7 @@
 "use client";
 
-import { Input } from "@/app/shared/ui/input";
 import React, { FormEvent, useState } from 'react';
+import {Input} from "@/app/shared/ui/input";
 
 const SearchBlock: React.FC = () => {
     const [query, setQuery] = useState("");
