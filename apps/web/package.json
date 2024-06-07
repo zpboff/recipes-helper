@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/themes": "^3.0.5",
+    "@recipes-helper/shared-ui": "*",
     "@tabler/icons-react": "^3.5.0",
     "axios": "^1.7.2",
     "classnames": "2.3.2",
