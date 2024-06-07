@@ -1,6 +1,7 @@
 import { PageLayout } from "@/app/layouts/page-layout/ui";
-import { Button } from "@recipes-helper/shared-ui";
-import styles from './page.module.css';
+import { Heading, Flex } from "@radix-ui/themes";
+import styles from './page.module.scss';
+import { ProductList } from "./widgets/product-list";
 
 export const metadata = {
     title: 'Главная - Подбор рецептов',
@@ -10,9 +11,10 @@ export const metadata = {
 export default function Home() {
   return (
       <PageLayout>
-          <main className={styles.page}>
-              <Button>1231232</Button>
-          </main>
+          <Flex className={styles.page} justify="center" direction="column">
+            <Heading size="7" className={styles.heading}>Рецепты</Heading>
+            <ProductList />
+          </Flex>
       </PageLayout>
   )
 }

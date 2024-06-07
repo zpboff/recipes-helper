@@ -6,7 +6,7 @@ import '@radix-ui/themes/styles.css';
 
 export function PageLayout({ children }: PropsWithChildren) {
     return (
-        <Theme>
+        <Theme className={styles.root}>
             <Header />
             <div className={styles.container}>
                 <div className={styles.grid}>

@@ -1,7 +1,13 @@
 ﻿.header {
+  height: 54px;
   z-index: 30;
   position: sticky;
   top: 0;
   background: var(--content-bg-color);
   box-shadow: 0 2px 4px rgb(var(--content-shadow-color), .1);
+  padding: 0 8px;
+}
+
+.searchBlock {
+  width: 480px;
 }

@@ -1,13 +1,19 @@
-﻿.container {
+﻿$header-height: 54px;
+
+.root {
+  overflow: hidden;
+}
+
+.container {
+  overflow: auto;
   display: grid;
-  width: 100vw;
+  height: calc(100vh - $header-height);
   grid-area: page-content;
   grid-template-columns: var(--content-padding) 1fr var(--content-padding);
 }
 
 .grid {
   display: grid;
-  width: 1240px;
   height: 100%;
   grid-template-columns: var(--side-menu-size) 1fr;
   grid-template-areas: "side-menu content";
