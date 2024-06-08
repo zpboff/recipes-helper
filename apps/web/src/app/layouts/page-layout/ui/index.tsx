@@ -8,13 +8,9 @@ export function PageLayout({ children }: PropsWithChildren) {
     return (
         <Theme className={styles.root}>
             <Header />
-            <div className={styles.container}>
-                <div className={styles.grid}>
-                    <main className={styles.content}>
-                        {children}
-                    </main>
-                </div>
-            </div>
+            <main className={styles.content}>
+                {children}
+            </main>
         </Theme>
     );
 }

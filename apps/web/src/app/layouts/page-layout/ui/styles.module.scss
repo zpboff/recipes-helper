@@ -4,31 +4,11 @@
   overflow: hidden;
 }
 
-.container {
-  overflow: auto;
-  display: grid;
-  height: calc(100vh - $header-height);
-  grid-area: page-content;
-  grid-template-columns: var(--content-padding) 1fr var(--content-padding);
-}
-
-.grid {
-  display: grid;
-  height: 100%;
-  grid-template-columns: var(--side-menu-size) 1fr;
-  grid-template-areas: "side-menu content";
-  background-color: var(--content-bg-color);
-  grid-column-start: 2;
-}
-
-.sideMenu {
-  grid-area: side-menu;
-  height: 100%;
-}
-
 .content {
-  grid-area: content;
   overflow-x: hidden;
+  height: calc(100vh - $header-height);
   overflow-y: auto;
+  display: flex;
   height: 100%;
+  justify-content: center;
 }
