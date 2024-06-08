@@ -2,16 +2,22 @@ import React from 'react';
 import { Box, Card, Inset, Text, Strong } from "@radix-ui/themes";
 
 type Props = {
-    
+    recipe: Recipe;
 };
 
-const ProductCard: React.FC<Props> = ({}) => {
+export type Recipe = {
+    id: string;
+    title: string;
+    image: string;
+};
+
+const RecipeCard: React.FC<Props> = ({ recipe }) => {
     return (
         <Box maxWidth="240px">
             <Card size="2">
                 <Inset clip="padding-box" side="top" pb="current">
                 <img
-                    src="https://images.unsplash.com/photo-1617050318658-a9a3175e34cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                    src={recipe.image}
                     alt="Bold typography"
                     style={{
                     display: 'block',
@@ -22,13 +28,10 @@ const ProductCard: React.FC<Props> = ({}) => {
                     }}
                 />
                 </Inset>
-                <Text as="p" size="3">
-                <Strong>Typography</Strong> is the art and technique of arranging type to
-                make written language legible, readable and appealing when displayed.
-                </Text>
+                <Text as="p" size="3">{recipe.title}</Text>
             </Card>
         </Box>
     )
 }
 
-export { ProductCard }
+export { RecipeCard }
