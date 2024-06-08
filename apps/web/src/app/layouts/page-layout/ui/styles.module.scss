@@ -1,14 +1,15 @@
 ﻿$header-height: 54px;
 
 .root {
-  overflow: hidden;
+  max-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .content {
   overflow-x: hidden;
-  height: calc(100vh - $header-height);
+  padding-top: $header-height;
   overflow-y: auto;
   display: flex;
-  height: 100%;
   justify-content: center;
 }

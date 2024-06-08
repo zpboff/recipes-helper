@@ -8,7 +8,7 @@ export function Header() {
                 <div>LOGO</div>
                 <TextField.Root placeholder="Поиск" size="3" className={styles.searchBlock} />
                 <Flex as='div' direction="row" gap="1">
-                    <Button size="3">Войти</Button>
+                    <Button size="3">Вход</Button>
                     <Button size="3">Регистрация</Button>
                 </Flex>                
             </Flex>
