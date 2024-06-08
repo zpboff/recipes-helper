@@ -1,6 +1,10 @@
 {
   "name": "recipes-helper",
   "packageManager": "yarn@4.2.2",
+  "private": "true",
+  "scripts": {
+    "web": "yarn workspace @recipes-helper/web build"
+  },
   "workspaces": [
     "apps/*",
     "packages/*"
