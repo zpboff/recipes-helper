@@ -14,7 +14,7 @@ type Response = {
 async function loadRecipes() {
     const { data: { recipes } } = await axios.get<Response>("https://api.spoonacular.com/recipes/random", {
         params: {
-            apiKey: process.env.RECIPES_API_KEY,
+            apiKey: process.env.SPOONACULAR_API_KEY,
             number: 9
         }
     });

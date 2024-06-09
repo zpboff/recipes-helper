@@ -32,3 +32,4 @@ dist-ssr
 *.sln
 *.sw?
 .yarn/install-state.gz
+apps/web/.infisical.json

@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "infisical run --env=dev --path=/recipes-helper -- next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "infisical run --env=prod --path=/recipes-helper -- next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@infisical/sdk": "^2.2.3",
     "@radix-ui/themes": "^3.0.5",
     "@recipes-helper/shared-ui": "*",
     "@tabler/icons-react": "^3.5.0",
