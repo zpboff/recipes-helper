@@ -1,18 +1,19 @@
-﻿import { login, LoginRequest } from "@/app/features/auth/by-email/api";
+﻿import { $identity } from "@/app/entities/identity";
+import { login, LoginRequest } from "../api";
 import { combine, createEffect, createEvent, createStore, forward, sample } from "effector";
 
 const $email = createStore("");
 const emailChanged = createEvent<string>();
-forward({ from: emailChanged, to: $email });
+sample({ clock: emailChanged, target: $email });
 
 const $password = createStore("");
 const passwordChanged = createEvent<string>();
-forward({ from: passwordChanged, to: $password });
-
+sample({ clock: passwordChanged, target: $password });
+ 
 const $loginRequest = combine($email, $password, (email, password): LoginRequest => ({ email, password }));
 const submitted = createEvent();
 
-const loginFx = createEffect<LoginRequest, void>({
+const loginFx = createEffect({
     name: "Login",
     handler: login
 });
@@ -24,10 +25,16 @@ sample({
     target: loginFx
 });
 
+sample({
+    clock: loginFx,
+    target: $identity
+})
+
 export {
     $email,
     $password,
     emailChanged,
     passwordChanged,
-    submitted
+    submitted,
+    loginFx
 }
