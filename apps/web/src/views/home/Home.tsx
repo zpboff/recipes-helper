@@ -3,11 +3,6 @@ import { Heading, Flex } from "@radix-ui/themes";
 import styles from './home.module.scss';
 import { RecipeList } from "../../widgets/recipe-list";
 
-export const metadata = {
-    title: 'Главная - Подбор рецептов',
-    description: 'Поиск рецептов по ингредиентам',
-}
-
 export default function Home() {
   return (
       <PageLayout>
