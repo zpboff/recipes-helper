@@ -1,6 +1,7 @@
 import { Box } from '@radix-ui/themes';
 import { Heading } from '@radix-ui/themes';
 import axios from 'axios';
+import Head from 'next/head';
 import React from 'react';
 
 type Recipe = {
@@ -27,12 +28,19 @@ const Recipe: React.FC<Props> = async ({ params: { id } }) => {
     const { id: recipeId, title } = await loadRecipe(id);
 
     return (
-        <Box>
-            <Box>{recipeId}</Box>
+        <>            
+            <Head>
+                <title>Recipes-helper</title>
+                <meta name="description" content={title} />
+            </Head>
             <Box>
-                <Heading>{title}</Heading>
+                <Box>{recipeId}</Box>
+                <Box>
+                    <Heading>{title}</Heading>
+                </Box>
             </Box>
-        </Box>
+        </>
+        
     )
 }
 
