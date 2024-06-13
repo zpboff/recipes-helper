@@ -3,7 +3,7 @@
 .content {
   overflow-x: hidden;
   padding-top: $header-height;
-  overflow-y: auto;
+  overflow-y: initial;
   display: flex;
   justify-content: center;
 }
