@@ -6,8 +6,8 @@ import styles from "./login.module.css";
 import { useUnit } from "effector-react";
 import { $email, $password, emailChanged, passwordChanged, submitted } from "@/features/auth/by-email/model";
 import { ChangeEvent, useEffect } from "react";
-import { $loggedIn } from "@/entities/identity";
 import { useRouter } from "next/navigation";
+import { $loggedIn } from "@/entities/identity/model/store";
 
 export const metadata = {
     title: 'Вход - Подбор рецептов',

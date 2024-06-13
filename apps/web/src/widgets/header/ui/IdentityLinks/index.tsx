@@ -1,9 +1,10 @@
 "use client";
+
 import React from 'react';
 import { useUnit } from 'effector-react';
-import { $loggedIn } from '@/entities/identity';
 import { Button } from '@radix-ui/themes';
 import { loginFx } from '@/features/auth/by-email';
+import { $loggedIn } from '@/entities/identity/model/store';
 
 type Props = {
     

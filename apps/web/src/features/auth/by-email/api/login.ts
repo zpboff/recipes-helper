@@ -1,4 +1,4 @@
-﻿import { Identity } from "@/entities/identity";
+﻿import { Identity } from "@/domain/identity";
 import { LoginRequest } from "@/features/auth/by-email/api/types";
 
 export const login = async ({ email, password }: LoginRequest): Promise<Identity> => {

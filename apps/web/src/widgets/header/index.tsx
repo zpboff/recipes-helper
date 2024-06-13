@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 import styles from './styles.module.scss';
-import {Flex, Button, TextField, Box } from "@radix-ui/themes";
+import {Flex, TextField } from "@radix-ui/themes";
 import { CategoryList } from '../category-list';
 import { IdentityLinks } from './ui/IdentityLinks';
 
