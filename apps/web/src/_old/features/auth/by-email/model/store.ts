@@ -1,4 +1,4 @@
-﻿import { $identity } from "@/entities/identity/model/store";
+﻿import { $identity } from "@/_old/model/store";
 import { login, LoginRequest } from "../api";
 import { combine, createEffect, createEvent, createStore, forward, sample } from "effector";
 

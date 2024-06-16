@@ -1,5 +1,5 @@
 import { Identity } from "@/domain/identity";
-import { Nullable } from "@/shared/model/types";
+import { Nullable } from "@/shared/types";
 import { createStore } from "effector";
 import { isNil } from "lodash";
 

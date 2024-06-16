@@ -7,7 +7,7 @@ import { useUnit } from "effector-react";
 import { $email, $password, emailChanged, passwordChanged, submitted } from "@/features/auth/by-email/model";
 import { ChangeEvent, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { $loggedIn } from "@/entities/identity/model/store";
+import { $loggedIn } from "@/_old/model/store";
 
 export const metadata = {
     title: 'Вход - Подбор рецептов',

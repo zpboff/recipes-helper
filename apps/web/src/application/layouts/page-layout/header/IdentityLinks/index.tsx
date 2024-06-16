@@ -4,7 +4,7 @@ import React from 'react';
 import { useUnit } from 'effector-react';
 import { Button } from '@radix-ui/themes';
 import { loginFx } from '@/features/auth/by-email';
-import { $loggedIn } from '@/entities/identity/model/store';
+import { $loggedIn } from '@/_old/model/store';
 
 type Props = {
     

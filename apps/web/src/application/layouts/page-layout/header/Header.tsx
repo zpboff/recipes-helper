@@ -1,11 +1,10 @@
 ﻿import React from 'react';
-import styles from './styles.module.scss';
+import styles from './header.module.css';
 import {Flex, TextField } from "@radix-ui/themes";
-import { CategoryList } from '../category-list';
-import { IdentityLinks } from './ui/IdentityLinks';
+import { IdentityLinks } from './IdentityLinks';
+import { CategoryList } from '@/layouts/page-layout/header/category-list';
 
 export function Header() {
-
     return (
         <Flex className={styles.header}  as="div" direction="row" gap="3" justify="between" align="center">
                 <CategoryList />
