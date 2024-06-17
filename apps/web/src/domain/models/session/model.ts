@@ -1,4 +1,4 @@
-import { Nullable } from "@/shared/types";
+import { Nullable } from "@/shared/global";
 
 export type Session = {
     name: string;

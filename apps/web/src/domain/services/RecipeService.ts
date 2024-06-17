@@ -1,12 +1,18 @@
 import { Recipe } from "../models/recipe/model";
-import { IRecipeService } from "../models/recipe/service";
+import { IRecipeService } from "../models/recipe/IRecipeService";
 import { IRecipeRepository } from "../repositories/IRecipeRepository";
-import { Maybe } from "@/shared/maybe";
+import { Maybe } from "@/core/utils/maybe";
+
+const getRecipe = async (repository: IRecipeRepository, id: string) => {
+    return repository.getRecipe(id);
+}
+
+const getRecipes = async (repository: IRecipeRepository, page: number) => {
+    return repository.getRecipes(page);
+}
 
 const createRecipe = async (repository: IRecipeRepository, recipe: Recipe) => {
-    const recipeId = repository.createRecipe(recipe);
-
-    return recipeId;
+    return repository.createRecipe(recipe);
 }
 
 const updateRecipe = async (repository: IRecipeRepository, recipe: Recipe): Promise<Maybe<boolean>> => {
@@ -24,6 +30,8 @@ const deleteRecipe = async (repository: IRecipeRepository, recipeId: string) => 
 }
 
 export const recipeService: IRecipeService = {
+    getRecipe,
+    getRecipes,
     createRecipe,
     deleteRecipe,
     updateRecipe

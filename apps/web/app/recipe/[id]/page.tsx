@@ -1,33 +1,30 @@
-import { PageLayout } from '@/layouts/page-layout/ui';
+import { PageLayout } from '@/application/layouts/page-layout';
+import { recipeService } from '@/domain/services/RecipeService';
+import { recipesRepository } from '@/infrastructure/repositories/recipes/recipesRepository';
 import { Box } from '@radix-ui/themes';
 import { Heading } from '@radix-ui/themes';
-import axios from 'axios';
+import { isNil } from 'lodash';
 import React from 'react';
-import { cache } from 'react'
+import { cache } from 'react';
 
-async function loadRecipe(id: string): Promise<Recipe> {
-    console.log('loadRecipe')
-    const { data } = await axios.get<Recipe>(`https://api.spoonacular.com/recipes/${id}/information`, {
-        params: {
-            apiKey: process.env.SPOONACULAR_API_KEY
-        }
-    });
-    return data;
+const loadRecipe = async (id: string) => {
+    const result = await recipeService.getRecipe(recipesRepository, id);
+
+    return result.value;
 }
 
 const cachedLoadRecipe = cache(loadRecipe);
 
 export async function generateMetadata({ params: { id } }: any) {
-    const { title } = await cachedLoadRecipe(id);
+    const recipe = await cachedLoadRecipe(id);
+
+    if(isNil(recipe)) {
+        return null;
+    }
 
     return {
-      title: `${title} - recipes-helper`,
+      title: `${recipe.title} - recipes-helper`,
     }
-}
-
-type Recipe = {
-    id: string;
-    title: string;
 }
 
 type Props = {
@@ -36,16 +33,20 @@ type Props = {
     }
 }
 
-const Recipe: React.FC<Props> = async ({ params: { id } }) => {
-    const { title } = await cachedLoadRecipe(id);
+const RecipePage: React.FC<Props> = async ({ params: { id } }) => {
+    const recipe = await cachedLoadRecipe(id);
+
+    if(isNil(recipe)) {
+        return null;
+    }
 
     return (
         <PageLayout>
             <Box height="100%">
-                <Heading>{title}</Heading>
+                <Heading>{recipe.title}</Heading>
             </Box>      
         </PageLayout>  
     )
 }
 
-export default Recipe;
+export default RecipePage;

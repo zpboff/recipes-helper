@@ -1,7 +1,7 @@
-import { PageLayout } from "@/layouts/page-layout/ui";
+import { PageLayout } from "@/application/layouts/page-layout";
 import { Heading, Flex } from "@radix-ui/themes";
 import styles from './home.module.scss';
-import { RecipeList } from "@/widgets/recipe-list";
+import { RecipeList } from "@/application/recipe-list";
 
 export const metadata = {
     title: 'Главная - Подбор рецептов',

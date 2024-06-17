@@ -1,5 +1,5 @@
-import '@/shared/ui/globals.css';
-import '@/shared/ui/colors.css';
+import '@/shared/globals.css';
+import '@/shared/colors.css';
 
 import { PropsWithChildren } from "react";
 
