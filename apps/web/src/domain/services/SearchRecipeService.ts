@@ -1,4 +1,3 @@
-import { Maybe } from "@/core/utils/maybe";
 import { ISearchRecipeService } from "../models/recipe/ISearchRecipeService";
 import { ISearchRecipeRepository } from "../repositories/ISearchRecipeRepository";
 
